@@ -132,11 +132,15 @@ input[type="reset"]:disabled {
 /* Home — full-screen intro hero (landing) */
 body.home {
   background: var(--bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-intro {
-  min-height: 100vh;
-  min-height: 100dvh;
+  flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,6 +248,28 @@ body.home {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--accent);
+}
+
+.site-title a,
+.hero-intro__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-title a:hover,
+.site-title a:focus-visible,
+.hero-intro__title a:hover,
+.hero-intro__title a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.site-title a:focus-visible,
+.hero-intro__title a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .site-tagline {
@@ -377,6 +403,13 @@ main li {
   font-size: 0.85rem;
   color: var(--muted);
   text-align: center;
+}
+
+body.home .site-footer--home {
+  margin-top: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
