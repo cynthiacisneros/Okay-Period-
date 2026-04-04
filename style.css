@@ -13,6 +13,8 @@
   --btn-radius: 14px;
   --btn-shadow: 0 2px 10px rgba(45, 36, 48, 0.07);
   --btn-shadow-hover: 0 6px 18px rgba(184, 92, 122, 0.18);
+  --font-display: "Fredoka", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -21,26 +23,14 @@
   }
 }
 
-/* Playfair Display — Google Fonts variable (replace uniquifier in your own projects) */
-.playfair-display-okay-period {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.playfair-display-okay-period-italic {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.playfair-display-okay-period-semibold {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+/* Fredoka: site logo & headings; Poppins: body (see body, taglines, paragraphs) */
+.site-title,
+.hero-intro__title,
+main h1,
+main h2,
+.nav-table th,
+.faq-item strong {
+  font-family: var(--font-display);
 }
 
 *,
@@ -52,7 +42,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.65;
   color: var(--text);
@@ -169,7 +159,6 @@ body.home {
 
 .hero-intro__title {
   margin: 0;
-  font-family: "Cal Sans", "Poppins", system-ui, sans-serif;
   font-size: clamp(2rem, 6vw, 2.85rem);
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -179,6 +168,7 @@ body.home {
 
 .hero-intro__tagline {
   margin: 0;
+  font-family: var(--font-body);
   font-size: clamp(1rem, 2.4vw, 1.15rem);
   line-height: 1.6;
   color: var(--muted);
@@ -191,11 +181,10 @@ body.home {
   justify-content: center;
   margin-top: 0.5rem;
   padding: 0.85rem 2.35rem;
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
+  letter-spacing: 0.04em;
   text-decoration: none;
   color: #fff;
   background: linear-gradient(145deg, #c76b88 0%, var(--accent) 50%, #a34d6a 100%);
@@ -242,10 +231,6 @@ body.home {
   }
 }
 
-.page-wrap--home-main {
-  scroll-margin-top: 0.5rem;
-}
-
 .site-header {
   text-align: center;
   padding-bottom: 1.25rem;
@@ -255,7 +240,6 @@ body.home {
 
 .site-title {
   margin: 0;
-  font-family: "Cal Sans", "Poppins", system-ui, sans-serif;
   font-size: 1.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -264,6 +248,7 @@ body.home {
 
 .site-tagline {
   margin: 0.35rem 0 0;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--muted);
 }
@@ -339,11 +324,13 @@ main {
 main h1 {
   margin-top: 0;
   font-size: 1.55rem;
+  font-weight: 600;
   color: var(--accent);
 }
 
 main h2 {
   font-size: 1.2rem;
+  font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--text);
@@ -370,6 +357,7 @@ main li {
 
 .faq-item strong {
   display: block;
+  font-weight: 600;
   color: var(--accent);
   margin-bottom: 0.35rem;
 }
