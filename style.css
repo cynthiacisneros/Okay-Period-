@@ -1549,57 +1549,82 @@ main.period-guide {
   margin-top: 1.15rem;
 }
 
-.period-guide .pg-callout {
-  padding-block: clamp(2.5rem, 5.5vw, 4rem);
-  padding-inline: 0;
-  border-radius: clamp(28px, 4vw, 40px);
-  background: color-mix(in srgb, var(--surface) 72%, transparent);
-  backdrop-filter: blur(16px) saturate(1.08);
-  -webkit-backdrop-filter: blur(16px) saturate(1.08);
-  border: 1px solid color-mix(in srgb, white 72%, var(--butter-yellow));
+.period-guide .pg-notice {
+  padding-block: clamp(2rem, 4.5vw, 3.75rem);
+}
+
+.period-guide .pg-notice__panel {
+  margin-inline: auto;
+  padding: clamp(1.85rem, 4.5vw, 2.85rem) clamp(1.5rem, 4vw, 2.75rem);
+  border-radius: clamp(24px, 4vw, 36px);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(14px) saturate(1.05);
+  -webkit-backdrop-filter: blur(14px) saturate(1.05);
+  border: 1px solid color-mix(in srgb, white 80%, var(--peachy-orange));
   box-shadow:
-    0 24px 64px color-mix(in srgb, var(--main-pink) 8%, transparent),
-    inset 0 1px 0 color-mix(in srgb, white 85%, transparent);
+    0 18px 48px color-mix(in srgb, var(--peachy-orange) 7%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 90%, transparent);
 }
 
-.period-guide .pg-callout .pg-container--wide {
-  padding-inline: clamp(1rem, 3.5vw, 2rem);
-}
-
-.period-guide .pg-callout__title {
-  margin: 0 0 0.85rem;
+.period-guide .pg-notice__title {
+  margin: 0 0 clamp(1.1rem, 2.2vw, 1.5rem);
+  text-align: center;
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--heading);
+  font-size: clamp(1.45rem, 3.2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  color: color-mix(in srgb, var(--heading) 90%, var(--peachy-orange));
 }
 
-.period-guide .pg-callout__emoji {
-  font-style: normal;
+.period-guide .pg-notice__body {
+  max-width: 38rem;
+  margin-inline: auto;
 }
 
-.period-guide .pg-callout__intro {
-  margin: 0 0 0.5rem;
-  color: var(--text);
+.period-guide .pg-notice__intro {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.9vw, 1.1rem);
+  line-height: 1.78;
+  color: color-mix(in srgb, var(--text) 94%, var(--deep-berry));
+  letter-spacing: 0.01em;
+}
+
+.period-guide .pg-notice__list {
+  list-style: none;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+
+.period-guide .pg-notice__list li {
+  position: relative;
+  margin: 0;
+  padding: 0.35rem 0 0.35rem 1.65rem;
+  font-size: clamp(1rem, 1.85vw, 1.08rem);
+  line-height: 1.62;
+  color: color-mix(in srgb, var(--text) 92%, var(--muted));
+  letter-spacing: 0.01em;
+}
+
+.period-guide .pg-notice__list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.78rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--hot-coral) 50%, var(--main-pink));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--main-pink) 10%, transparent);
+}
+
+.period-guide .pg-notice__closing {
+  margin: 1.35rem 0 0;
+  font-size: clamp(1.02rem, 1.9vw, 1.1rem);
+  line-height: 1.78;
+  color: color-mix(in srgb, var(--text) 94%, var(--deep-berry));
+  letter-spacing: 0.01em;
   font-weight: 500;
-}
-
-.period-guide .pg-callout__list {
-  margin: 0.65rem 0 1rem;
-  padding-left: 1.25rem;
-  color: var(--text);
-  line-height: 1.65;
-}
-
-.period-guide .pg-callout__list li {
-  margin: 0.4rem 0;
-}
-
-.period-guide .pg-callout__note {
-  margin: 1rem 0 0;
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.55;
 }
 
 .period-guide .pg-cta {
