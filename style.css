@@ -692,6 +692,104 @@ body.home .site-footer--home {
 }
 
 /* Period page: wider frame, flowing sections (not one main “card”) */
+body.period-page {
+  background-color: var(--bg);
+}
+
+/* Full-viewport soft gradient + blurred glow — one continuous dreamy canvas */
+.period-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--warm-cream) 96%, white) 0%,
+    var(--bg) 18%,
+    color-mix(in srgb, var(--bg) 94%, var(--touch-peach)) 42%,
+    color-mix(in srgb, var(--bg) 92%, var(--lavender-mist)) 68%,
+    color-mix(in srgb, var(--warm-cream) 88%, var(--touch-pink)) 100%
+  );
+}
+
+.period-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background:
+    radial-gradient(
+      ellipse 72% 56% at 10% 6%,
+      color-mix(in srgb, var(--main-pink) 30%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 68% 52% at 92% 10%,
+      color-mix(in srgb, var(--hot-coral) 24%, transparent) 0%,
+      transparent 56%
+    ),
+    radial-gradient(
+      ellipse 88% 48% at 50% 102%,
+      color-mix(in srgb, var(--peachy-orange) 22%, transparent) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 52% 44% at 4% 52%,
+      color-mix(in srgb, var(--butter-pop) 20%, transparent) 0%,
+      transparent 54%
+    ),
+    radial-gradient(
+      ellipse 48% 40% at 98% 45%,
+      color-mix(in srgb, var(--main-pink) 16%, transparent) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 48% 38%,
+      color-mix(in srgb, var(--hot-coral) 12%, transparent) 0%,
+      transparent 58%
+    );
+  filter: blur(64px);
+  opacity: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .period-atmosphere::before {
+    filter: blur(28px);
+    opacity: 0.85;
+  }
+}
+
+body.period-page .page-wrap.page-wrap--period {
+  position: relative;
+  z-index: 1;
+}
+
+body.period-page .site-nav {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 68%, transparent) 0%,
+    color-mix(in srgb, var(--warm-cream) 45%, transparent) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.12);
+  -webkit-backdrop-filter: blur(20px) saturate(1.12);
+  border-bottom: 1px solid color-mix(in srgb, white 50%, var(--main-pink));
+  box-shadow: 0 10px 40px color-mix(in srgb, var(--main-pink) 8%, transparent);
+}
+
+body.period-page .site-header {
+  border-bottom: none;
+  margin-bottom: clamp(1rem, 3vw, 1.65rem);
+  padding-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+body.period-page .site-footer {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, white 72%, var(--border-soft));
+  background: transparent;
+  border-radius: 0;
+}
+
 body.period-page .page-wrap.page-wrap--period {
   max-width: min(76rem, 100%);
   padding-inline: clamp(1.1rem, 4vw, 2.35rem);
@@ -734,35 +832,15 @@ main.period-guide {
 
 .period-guide .pg-section {
   margin-top: 0;
-  padding-block: clamp(2.5rem, 5.5vw, 4.75rem);
+  padding-block: clamp(2.75rem, 6vw, 5.25rem);
 }
 
 .period-guide .pg-hero {
   text-align: center;
-  padding-block: clamp(1.35rem, 3vw, 2.5rem) clamp(2rem, 4.5vw, 3.25rem);
-  margin-bottom: clamp(0.25rem, 1.5vw, 0.75rem);
-  background:
-    radial-gradient(
-      ellipse 125% 90% at 50% -15%,
-      color-mix(in srgb, var(--main-pink) 40%, transparent) 0%,
-      transparent 58%
-    ),
-    radial-gradient(
-      ellipse 85% 70% at 100% 8%,
-      color-mix(in srgb, var(--peachy-orange) 36%, transparent) 0%,
-      transparent 52%
-    ),
-    radial-gradient(
-      ellipse 70% 55% at 0% 20%,
-      color-mix(in srgb, var(--butter-pop) 32%, transparent) 0%,
-      transparent 48%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--warm-cream) 94%, white) 0%,
-      color-mix(in srgb, var(--bg) 88%, var(--cream)) 100%
-    );
-  border-radius: 0 0 clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px);
+  padding-block: clamp(1.25rem, 3vw, 2.25rem) clamp(1.75rem, 4vw, 2.75rem);
+  margin-bottom: 0;
+  background: none;
+  border-radius: 0;
 }
 
 .period-guide .pg-hero__inner {
@@ -806,17 +884,14 @@ main.period-guide {
 .period-guide .pg-hero__poster-frame {
   padding: clamp(0.65rem, 1.5vw, 0.95rem);
   border-radius: clamp(22px, 3vw, 28px);
-  background: linear-gradient(
-    155deg,
-    color-mix(in srgb, var(--surface) 92%, white) 0%,
-    color-mix(in srgb, var(--surface) 82%, var(--lavender-mist)) 50%,
-    color-mix(in srgb, var(--surface) 90%, var(--highlight-bg)) 100%
-  );
-  border: 1px solid color-mix(in srgb, var(--main-pink) 24%, var(--border-soft));
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  border: 1px solid color-mix(in srgb, white 70%, var(--main-pink));
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 90%, var(--butter-pop)),
-    0 18px 48px color-mix(in srgb, var(--main-pink) 18%, transparent),
-    0 6px 22px color-mix(in srgb, var(--peachy-orange) 12%, transparent);
+    0 20px 56px color-mix(in srgb, var(--main-pink) 12%, transparent),
+    0 8px 28px color-mix(in srgb, var(--peachy-orange) 8%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 88%, transparent);
 }
 
 .period-guide .pg-hero__poster-img {
@@ -855,7 +930,7 @@ main.period-guide {
 }
 
 .period-guide .pg-intro {
-  padding-block: clamp(1.75rem, 4vw, 3rem);
+  padding-block: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 
 .period-guide .pg-intro__text {
@@ -867,19 +942,14 @@ main.period-guide {
 }
 
 .period-guide .pg-cards {
-  margin-top: clamp(0.5rem, 2vw, 1.25rem);
-  padding-block: clamp(2.85rem, 6vw, 5.25rem);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--warm-cream) 62%, var(--peachy-orange)) 0%,
-    color-mix(in srgb, var(--surface) 95%, var(--touch-peach)) 52%,
-    color-mix(in srgb, var(--warm-cream) 90%, white) 100%
-  );
-  border-radius: clamp(24px, 4vw, 36px);
+  margin-top: 0;
+  padding-block: clamp(2.25rem, 5vw, 4.25rem);
+  background: none;
+  border-radius: 0;
 }
 
 .period-guide .pg-timeline {
-  padding-block: clamp(2.75rem, 6vw, 5rem);
+  padding-block: clamp(2.5rem, 5.5vw, 4.75rem);
 }
 
 .period-guide .pg-card-grid {
@@ -894,12 +964,12 @@ main.period-guide {
 .period-guide .pg-card {
   margin: 0;
   padding: clamp(1.35rem, 2.5vw, 1.65rem) clamp(1.2rem, 2.2vw, 1.5rem) clamp(1.5rem, 2.8vw, 1.85rem);
-  border-radius: 20px;
-  background: var(--surface-warm);
-  border: 1px solid var(--border-soft);
-  box-shadow:
-    0 6px 22px color-mix(in srgb, var(--peachy-orange) 16%, transparent),
-    0 1px 0 color-mix(in srgb, white 92%, var(--butter-pop));
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 76%, transparent);
+  backdrop-filter: blur(12px) saturate(1.06);
+  -webkit-backdrop-filter: blur(12px) saturate(1.06);
+  border: 1px solid color-mix(in srgb, white 78%, var(--peachy-orange));
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--main-pink) 7%, transparent);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
@@ -908,18 +978,18 @@ main.period-guide {
 }
 
 .period-guide .pg-card:nth-child(2) {
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
 }
 
 .period-guide .pg-card:nth-child(3) {
-  background: color-mix(in srgb, var(--surface) 88%, var(--highlight-cool));
+  background: color-mix(in srgb, var(--surface) 74%, color-mix(in srgb, var(--highlight-cool) 35%, transparent));
 }
 
 .period-guide .pg-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 44px color-mix(in srgb, var(--main-pink) 26%, transparent);
-  border-color: color-mix(in srgb, var(--main-pink) 42%, var(--border));
-  background: var(--surface);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px color-mix(in srgb, var(--main-pink) 14%, transparent);
+  border-color: color-mix(in srgb, white 55%, var(--main-pink));
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
 }
 
 .period-guide .pg-card__icon {
@@ -973,11 +1043,11 @@ main.period-guide {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: color-mix(in srgb, white 70%, var(--butter-yellow));
-  border: 2px solid color-mix(in srgb, var(--soft-peach) 40%, white);
+  background: color-mix(in srgb, white 65%, var(--butter-yellow));
+  border: 1px solid color-mix(in srgb, white 65%, var(--peachy-orange));
   font-size: 1.35rem;
   line-height: 1;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--coral-pink) 14%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--main-pink) 10%, transparent);
 }
 
 .period-guide .pg-timeline__step-title {
@@ -1011,17 +1081,18 @@ main.period-guide {
     top: 2.1rem;
     left: 10%;
     right: 10%;
-    height: 5px;
+    height: 4px;
     background: linear-gradient(
       90deg,
-      var(--main-pink),
-      var(--hot-coral),
-      var(--peachy-orange),
-      var(--butter-pop)
+      color-mix(in srgb, var(--main-pink) 55%, transparent),
+      color-mix(in srgb, var(--hot-coral) 50%, transparent),
+      color-mix(in srgb, var(--peachy-orange) 48%, transparent),
+      color-mix(in srgb, var(--butter-pop) 45%, transparent)
     );
-    border-radius: 6px;
+    border-radius: 999px;
     z-index: 0;
-    opacity: 0.85;
+    opacity: 0.9;
+    box-shadow: 0 0 24px color-mix(in srgb, var(--main-pink) 18%, transparent);
   }
 
   .period-guide .pg-timeline__step {
@@ -1045,7 +1116,7 @@ main.period-guide {
     gap: 1.35rem;
     margin-left: 0.5rem;
     padding-left: 1.25rem;
-    border-left: 4px solid color-mix(in srgb, var(--peachy-orange) 48%, var(--main-pink));
+    border-left: 3px solid color-mix(in srgb, var(--main-pink) 32%, var(--peachy-orange));
   }
 
   .period-guide .pg-timeline__step {
@@ -1062,17 +1133,16 @@ main.period-guide {
 }
 
 .period-guide .pg-callout {
-  padding-block: clamp(2.75rem, 6vw, 4.5rem);
+  padding-block: clamp(2.5rem, 5.5vw, 4rem);
   padding-inline: 0;
-  border-radius: clamp(26px, 4vw, 36px);
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--highlight-bg) 50%, var(--warm-cream)) 0%,
-    color-mix(in srgb, var(--warm-cream) 78%, var(--touch-peach)) 55%,
-    color-mix(in srgb, var(--surface) 92%, var(--highlight-cool)) 100%
-  );
-  border: none;
-  box-shadow: 0 24px 56px color-mix(in srgb, var(--main-pink) 11%, transparent);
+  border-radius: clamp(28px, 4vw, 40px);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  border: 1px solid color-mix(in srgb, white 72%, var(--butter-yellow));
+  box-shadow:
+    0 24px 64px color-mix(in srgb, var(--main-pink) 8%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 85%, transparent);
 }
 
 .period-guide .pg-callout .pg-container--wide {
@@ -1117,17 +1187,15 @@ main.period-guide {
 
 .period-guide .pg-cta {
   text-align: center;
-  padding-block: clamp(2.85rem, 6vw, 4.75rem);
+  padding-block: clamp(2.5rem, 5.5vw, 4.25rem);
   padding-inline: 0;
-  margin-top: clamp(0.25rem, 1.5vw, 0.75rem);
-  border-radius: clamp(26px, 4vw, 36px);
-  background: linear-gradient(
-    168deg,
-    color-mix(in srgb, var(--surface-cool) 90%, var(--cream)),
-    color-mix(in srgb, var(--surface) 94%, var(--lavender-mist)) 100%
-  );
-  border: 1px solid color-mix(in srgb, var(--main-pink) 22%, var(--border-soft));
-  box-shadow: 0 16px 44px color-mix(in srgb, var(--main-pink) 10%, transparent);
+  margin-top: 0;
+  border-radius: clamp(28px, 4vw, 40px);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(16px) saturate(1.06);
+  -webkit-backdrop-filter: blur(16px) saturate(1.06);
+  border: 1px solid color-mix(in srgb, white 75%, var(--main-pink));
+  box-shadow: 0 20px 56px color-mix(in srgb, var(--peachy-orange) 9%, transparent);
 }
 
 .period-guide .pg-cta .pg-container--wide {
@@ -1210,13 +1278,15 @@ main.period-guide {
 
 .period-guide .pg-btn--outline {
   color: var(--deep-berry);
-  background: var(--surface);
-  border: 2px solid color-mix(in srgb, var(--hot-coral) 58%, var(--border));
-  box-shadow: var(--btn-shadow);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 2px solid color-mix(in srgb, var(--hot-coral) 50%, var(--border-soft));
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--main-pink) 10%, transparent);
 }
 
 .period-guide .pg-btn--outline:hover {
-  background: color-mix(in srgb, var(--hot-coral) 11%, white);
+  background: color-mix(in srgb, var(--hot-coral) 14%, white);
   color: var(--hot-coral);
   border-color: var(--hot-coral);
   transform: translateY(-3px);
