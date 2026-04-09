@@ -316,6 +316,59 @@ body.home {
   margin-bottom: 1.85rem;
 }
 
+/* Non-home pages: treat header H1 like a small left logo */
+body:not(.home) .site-header {
+  text-align: left;
+  padding-top: 0.65rem;
+}
+
+body:not(.home) .site-title {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.85rem;
+  z-index: 250;
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  padding: 0.55rem 0.9rem 0.58rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
+  border: 1px solid color-mix(in srgb, white 68%, var(--main-pink));
+  box-shadow:
+    0 14px 40px color-mix(in srgb, var(--main-pink) 16%, transparent),
+    0 6px 18px color-mix(in srgb, var(--peachy-orange) 10%, transparent);
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+}
+
+body:not(.home) .site-tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  max-width: 38rem;
+}
+
+@media (max-width: 560px) {
+  body:not(.home) .site-title {
+    top: 0.6rem;
+    left: 0.65rem;
+    font-size: 1.02rem;
+    padding: 0.5rem 0.8rem 0.54rem;
+  }
+}
+
+/* Give content breathing room under the fixed corner logo */
+body:not(.home) .page-wrap {
+  padding-top: 4.25rem;
+}
+
+@media (max-width: 560px) {
+  body:not(.home) .page-wrap {
+    padding-top: 4.1rem;
+  }
+}
+
 .site-title {
   margin: 0;
   font-size: clamp(2.4rem, 6vw, 2.95rem);
