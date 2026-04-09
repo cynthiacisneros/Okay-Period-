@@ -28,29 +28,141 @@
   </nav>
   <div class="page-wrap">
     <header class="site-header">
-      <h1 class="site-title logo-title"><a href="index.html">Okay Period</a></h1>
+      <p class="site-title logo-title"><a href="index.html">Okay Period</a></p>
       <p class="site-tagline">Clear, kind information about menstruation</p>
     </header>
 
+    <main id="main-content" class="period-guide" tabindex="-1">
+      <section class="pg-hero" aria-labelledby="pg-hero-heading">
+        <div class="pg-hero__text">
+          <h1 id="pg-hero-heading" class="pg-hero__title">What Is a Period?</h1>
+          <p class="pg-hero__lede">A simple guide to what’s happening in your body.</p>
+        </div>
+        <div class="pg-hero__art" role="img" aria-label="Decorative illustration: calendar, cycle, and flower">
+          <svg class="pg-hero__svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="pgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f8ad9d"/>
+                <stop offset="100%" stop-color="#fbc4ab"/>
+              </linearGradient>
+              <linearGradient id="pgGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f4978e"/>
+                <stop offset="100%" stop-color="#f08080"/>
+              </linearGradient>
+            </defs>
+            <rect x="24" y="32" width="88" height="96" rx="12" fill="url(#pgGrad1)" opacity="0.85"/>
+            <rect x="36" y="48" width="64" height="12" rx="4" fill="#fffefc" opacity="0.7"/>
+            <circle cx="52" cy="82" r="6" fill="#fffefc" opacity="0.55"/>
+            <circle cx="72" cy="82" r="6" fill="#fffefc" opacity="0.55"/>
+            <circle cx="92" cy="82" r="6" fill="#fffefc" opacity="0.55"/>
+            <circle cx="52" cy="102" r="6" fill="#fffefc" opacity="0.4"/>
+            <circle cx="72" cy="102" r="6" fill="#fffefc" opacity="0.4"/>
+            <circle cx="92" cy="102" r="6" fill="#fffefc" opacity="0.4"/>
+            <path d="M160 160 C140 120 140 80 160 48 C180 80 180 120 160 160 Z" fill="url(#pgGrad2)" opacity="0.35"/>
+            <circle cx="160" cy="100" r="28" fill="none" stroke="#f08080" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+            <circle cx="160" cy="100" r="8" fill="#f4978e" opacity="0.9"/>
+            <g transform="translate(228 56)">
+              <circle cx="32" cy="40" r="18" fill="#f8ad9d" opacity="0.9"/>
+              <ellipse cx="32" cy="18" rx="10" ry="22" fill="#f4978e" opacity="0.75" transform="rotate(-15 32 18)"/>
+              <ellipse cx="18" cy="28" rx="10" ry="22" fill="#fbc4ab" opacity="0.75" transform="rotate(-75 18 28)"/>
+              <ellipse cx="46" cy="28" rx="10" ry="22" fill="#ffdab9" opacity="0.85" transform="rotate(75 46 28)"/>
+              <circle cx="32" cy="40" r="8" fill="#fffefc" opacity="0.5"/>
+            </g>
+            <text x="48" y="168" font-family="system-ui, sans-serif" font-size="11" fill="#5c383c" opacity="0.45">your rhythm · your pace</text>
+          </svg>
+        </div>
+        <p class="pg-hero__intro">
+          A <strong>period</strong> (menstruation) is monthly bleeding from the uterus through the vagina.
+          It’s part of your <strong>menstrual cycle</strong>—your body’s rhythm of preparing for a possible pregnancy,
+          then resetting if pregnancy does not occur.
+        </p>
+      </section>
 
-    <main id="main-content" tabindex="-1">
-      <h1>What Is a Period?</h1>
-      <p>
-        A <strong>period</strong> (menstruation) is monthly bleeding from the uterus through
-        the vagina. It is one part of the <strong>menstrual cycle</strong>, the body’s rhythm
-        of preparing for a possible pregnancy and then resetting if pregnancy does not occur.
-      </p>
-      <h2>What happens in a typical cycle?</h2>
-      <p>
-        The lining of the uterus thickens. If no fertilized egg implants, hormone levels
-        shift, the lining sheds, and blood and tissue leave the body—often over several days.
-        Cycle length and flow vary widely from person to person and can change over time.
-      </p>
-      <h2>Why it matters</h2>
-      <p>
-        Understanding periods helps people recognize what is normal for them, plan for
-        comfort and hygiene, and know when to ask a healthcare professional for guidance.
-      </p>
+      <section class="pg-section pg-cards" aria-labelledby="pg-cards-heading">
+        <h2 id="pg-cards-heading" class="pg-visually-hidden">Three things to know</h2>
+        <ul class="pg-card-grid">
+          <li class="pg-card">
+            <span class="pg-card__icon" aria-hidden="true">🩸</span>
+            <h3 class="pg-card__title">The lining sheds</h3>
+            <p class="pg-card__text">Your uterus builds a lining each month. If pregnancy does not happen, your body sheds that lining.</p>
+          </li>
+          <li class="pg-card">
+            <span class="pg-card__icon" aria-hidden="true">📅</span>
+            <h3 class="pg-card__title">It happens monthly</h3>
+            <p class="pg-card__text">Periods usually happen about once a month, but everyone’s cycle can be a little different.</p>
+          </li>
+          <li class="pg-card">
+            <span class="pg-card__icon" aria-hidden="true">🌸</span>
+            <h3 class="pg-card__title">It’s normal</h3>
+            <p class="pg-card__text">Periods are a normal part of growing up, even if they feel confusing at first.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="pg-section pg-timeline" aria-labelledby="pg-timeline-heading">
+        <h2 id="pg-timeline-heading" class="pg-timeline__title">What happens in a cycle?</h2>
+        <ol class="pg-timeline__track">
+          <li class="pg-timeline__step">
+            <div class="pg-timeline__marker">
+              <span class="pg-timeline__icon" aria-hidden="true">✨</span>
+            </div>
+            <div class="pg-timeline__body">
+              <h3 class="pg-timeline__step-title">Your body prepares</h3>
+              <p class="pg-timeline__step-text">The uterus builds up a lining.</p>
+            </div>
+          </li>
+          <li class="pg-timeline__step">
+            <div class="pg-timeline__marker">
+              <span class="pg-timeline__icon" aria-hidden="true">💫</span>
+            </div>
+            <div class="pg-timeline__body">
+              <h3 class="pg-timeline__step-title">Hormones shift</h3>
+              <p class="pg-timeline__step-text">Hormones help guide changes in the cycle.</p>
+            </div>
+          </li>
+          <li class="pg-timeline__step">
+            <div class="pg-timeline__marker">
+              <span class="pg-timeline__icon" aria-hidden="true">💗</span>
+            </div>
+            <div class="pg-timeline__body">
+              <h3 class="pg-timeline__step-title">Your period begins</h3>
+              <p class="pg-timeline__step-text">The lining leaves the body through the vagina.</p>
+            </div>
+          </li>
+          <li class="pg-timeline__step">
+            <div class="pg-timeline__marker">
+              <span class="pg-timeline__icon" aria-hidden="true">🔁</span>
+            </div>
+            <div class="pg-timeline__body">
+              <h3 class="pg-timeline__step-title">The cycle starts again</h3>
+              <p class="pg-timeline__step-text">The body resets and begins preparing again.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="pg-section pg-callout" aria-labelledby="pg-callout-heading">
+        <h2 id="pg-callout-heading" class="pg-callout__title">
+          Why it matters <span class="pg-callout__emoji" aria-hidden="true">💡</span>
+        </h2>
+        <p class="pg-callout__intro">Learning about periods can help you:</p>
+        <ul class="pg-callout__list">
+          <li>Feel less confused</li>
+          <li>Know what is normal for your body</li>
+          <li>Feel more prepared</li>
+          <li>Know when to ask for help</li>
+        </ul>
+        <p class="pg-callout__note">Everyone’s body is different. If something worries you, talking to a trusted adult or healthcare provider is always okay.</p>
+      </section>
+
+      <section class="pg-section pg-cta" aria-labelledby="pg-cta-heading">
+        <h2 id="pg-cta-heading" class="pg-cta__title">Still have questions?</h2>
+        <p class="pg-cta__text">Keep exploring—there’s more friendly info just a click away.</p>
+        <div class="pg-cta__actions">
+          <a href="faq.html" class="pg-btn pg-btn--primary">Read FAQs</a>
+          <a href="products.html" class="pg-btn pg-btn--outline">Explore Products</a>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
