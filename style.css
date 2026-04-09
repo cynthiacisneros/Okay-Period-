@@ -682,35 +682,80 @@ main.period-guide {
   letter-spacing: 0.01em;
 }
 
+.period-guide .pg-hero {
+  text-align: center;
+}
+
+.period-guide .pg-hero__text {
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
 .period-guide .pg-hero__lede {
   margin: 0.65rem 0 0;
   font-size: 1.12rem;
   color: var(--muted);
   line-height: 1.55;
   max-width: 28rem;
+  margin-inline: auto;
 }
 
-.period-guide .pg-hero__art {
-  margin: 1.75rem 0 1.5rem;
-  padding: 1.5rem 1.25rem;
-  border-radius: 22px;
+/* Featured poster — “Period days are ok” art */
+.period-guide .pg-hero__poster {
+  margin: 2rem auto 2.35rem;
+  max-width: min(21rem, 90vw);
+  padding: 0;
+}
+
+.period-guide .pg-hero__poster-frame {
+  padding: 0.7rem;
+  border-radius: 24px;
   background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--highlight-cool) 55%, white),
-    color-mix(in srgb, var(--cream) 50%, white)
+    155deg,
+    var(--surface) 0%,
+    color-mix(in srgb, var(--surface) 88%, var(--highlight-cool)) 55%,
+    color-mix(in srgb, var(--surface) 94%, var(--highlight-bg)) 100%
   );
-  border: 1px solid color-mix(in srgb, var(--soft-blue) 28%, var(--border));
+  border: 1px solid var(--border-soft);
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 82%, var(--soft-blue)),
-    0 10px 36px color-mix(in srgb, var(--tangerine) 12%, transparent);
+    inset 0 1px 0 color-mix(in srgb, white 92%, var(--butter-yellow)),
+    0 14px 44px color-mix(in srgb, var(--coral-pink) 18%, transparent),
+    0 4px 16px color-mix(in srgb, var(--tangerine) 14%, transparent);
 }
 
-.period-guide .pg-hero__svg {
+.period-guide .pg-hero__poster-img {
   display: block;
   width: 100%;
-  max-width: 24rem;
   height: auto;
-  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border) 40%, transparent);
+}
+
+.period-guide .pg-hero__credit {
+  margin: 0.75rem 0 0;
+  padding: 0 0.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-body);
+  line-height: 1.4;
+}
+
+.period-guide .pg-hero__credit a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.period-guide .pg-hero__credit a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.period-guide .pg-hero__credit a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .period-guide .pg-hero__intro {
@@ -719,6 +764,25 @@ main.period-guide {
   line-height: 1.7;
   color: var(--text);
   max-width: 38rem;
+  margin-inline: auto;
+  text-align: left;
+  padding-top: 0.15rem;
+}
+
+@media (min-width: 640px) {
+  .period-guide .pg-hero__poster {
+    max-width: min(24rem, 92%);
+    margin: 2.35rem auto 2.6rem;
+  }
+
+  .period-guide .pg-hero__poster-frame {
+    padding: 0.85rem;
+    border-radius: 26px;
+  }
+
+  .period-guide .pg-hero__poster-img {
+    border-radius: 20px;
+  }
 }
 
 .period-guide .pg-section {
