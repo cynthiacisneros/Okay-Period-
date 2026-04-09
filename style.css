@@ -607,3 +607,401 @@ body.home .site-footer--home {
   flex-shrink: 0;
 }
 
+/* ---------- What Is a Period? — visual guide ---------- */
+
+.pg-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+main.period-guide {
+  padding: 2rem 1.35rem 2.5rem;
+}
+
+.period-guide .pg-hero__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 5.5vw, 2.85rem);
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.period-guide .pg-hero__lede {
+  margin: 0.65rem 0 0;
+  font-size: 1.12rem;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 28rem;
+}
+
+.period-guide .pg-hero__art {
+  margin: 1.75rem 0 1.5rem;
+  padding: 1.5rem 1.25rem;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--soft-apricot) 55%, white),
+    color-mix(in srgb, var(--peach-fuzz) 42%, white)
+  );
+  border: 1px solid color-mix(in srgb, var(--border) 75%, var(--powder-blush));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 75%, transparent),
+    0 8px 28px color-mix(in srgb, var(--sweet-salmon) 14%, transparent);
+}
+
+.period-guide .pg-hero__svg {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+.period-guide .pg-hero__intro {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 38rem;
+}
+
+.period-guide .pg-section {
+  margin-top: 2.75rem;
+}
+
+.period-guide .pg-card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.period-guide .pg-card {
+  margin: 0;
+  padding: 1.35rem 1.15rem 1.5rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, white 92%, var(--peach-fuzz));
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--sweet-salmon) 10%, transparent);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.period-guide .pg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--light-coral) 18%, transparent);
+  border-color: color-mix(in srgb, var(--powder-blush) 65%, var(--border));
+}
+
+.period-guide .pg-card__icon {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.period-guide .pg-card__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.period-guide .pg-card__text {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.period-guide .pg-timeline__title {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.period-guide .pg-timeline__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.period-guide .pg-timeline__marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.period-guide .pg-timeline__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, white 78%, var(--powder-blush));
+  border: 2px solid color-mix(in srgb, var(--peach-fuzz) 75%, white);
+  font-size: 1.35rem;
+  line-height: 1;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--sweet-salmon) 14%, transparent);
+}
+
+.period-guide .pg-timeline__step-title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.period-guide .pg-timeline__step-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (min-width: 900px) {
+  .period-guide .pg-timeline__track {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    position: relative;
+    padding-top: 0.35rem;
+  }
+
+  .period-guide .pg-timeline__track::before {
+    content: "";
+    position: absolute;
+    top: 2.1rem;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--powder-blush),
+      var(--peach-fuzz),
+      var(--soft-apricot)
+    );
+    border-radius: 4px;
+    z-index: 0;
+  }
+
+  .period-guide .pg-timeline__step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding: 0 0.35rem;
+  }
+
+  .period-guide .pg-timeline__marker {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .period-guide .pg-timeline__track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    margin-left: 0.5rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid color-mix(in srgb, var(--powder-blush) 55%, var(--border));
+  }
+
+  .period-guide .pg-timeline__step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    text-align: left;
+  }
+
+  .period-guide .pg-timeline__marker {
+    margin-bottom: 0;
+  }
+}
+
+.period-guide .pg-callout {
+  padding: 1.75rem 1.65rem 1.85rem;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--highlight-bg) 88%, var(--peach-fuzz)),
+    color-mix(in srgb, white 90%, var(--soft-apricot))
+  );
+  border: 1px solid color-mix(in srgb, var(--powder-blush) 40%, var(--border));
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--light-coral) 12%, transparent);
+}
+
+.period-guide .pg-callout__title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.period-guide .pg-callout__emoji {
+  font-style: normal;
+}
+
+.period-guide .pg-callout__intro {
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.period-guide .pg-callout__list {
+  margin: 0.65rem 0 1rem;
+  padding-left: 1.25rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.period-guide .pg-callout__list li {
+  margin: 0.4rem 0;
+}
+
+.period-guide .pg-callout__note {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.period-guide .pg-cta {
+  text-align: center;
+  padding: 2rem 1.35rem;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--surface) 70%, var(--bg));
+  border: 1px dashed color-mix(in srgb, var(--border) 85%, var(--powder-blush));
+}
+
+.period-guide .pg-cta__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.42rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.period-guide .pg-cta__text {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--muted);
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+}
+
+.period-guide .pg-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  margin-top: 1.35rem;
+}
+
+.period-guide .pg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.65rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease,
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.period-guide .pg-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.period-guide .pg-btn--primary {
+  color: var(--text-on-accent);
+  background: linear-gradient(
+    145deg,
+    var(--powder-blush) 0%,
+    var(--sweet-salmon) 48%,
+    var(--accent-deep) 100%
+  );
+  border-color: color-mix(in srgb, white 50%, var(--peach-fuzz));
+  box-shadow:
+    0 4px 16px color-mix(in srgb, var(--light-coral) 32%, transparent),
+    0 1px 3px color-mix(in srgb, var(--sweet-salmon) 12%, transparent);
+}
+
+.period-guide .pg-btn--primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow:
+    0 8px 24px color-mix(in srgb, var(--sweet-salmon) 38%, transparent),
+    0 2px 6px color-mix(in srgb, var(--light-coral) 15%, transparent);
+}
+
+.period-guide .pg-btn--outline {
+  color: var(--link);
+  background: var(--surface);
+  border-color: color-mix(in srgb, var(--sweet-salmon) 35%, var(--border));
+  box-shadow: var(--btn-shadow);
+}
+
+.period-guide .pg-btn--outline:hover {
+  background: var(--highlight-bg);
+  color: var(--link-hover);
+  border-color: color-mix(in srgb, var(--powder-blush) 50%, var(--border));
+  transform: translateY(-2px);
+  box-shadow: var(--btn-shadow-hover);
+}
+
+@media (max-width: 768px) {
+  .period-guide .pg-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main.period-guide {
+    padding: 1.65rem 1.1rem 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .period-guide .pg-card:hover,
+  .period-guide .pg-btn--primary:hover,
+  .period-guide .pg-btn--outline:hover {
+    transform: none;
+  }
+}
+
