@@ -10,39 +10,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav class="site-nav" id="site-nav" aria-label="Site pages">
+    <div class="site-nav__inner">
+      <button type="button" class="site-nav__toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open menu">
+        <span class="site-nav__toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="site-nav__toggle-text" aria-hidden="true">Menu</span>
+      </button>
+      <ul id="site-nav-menu" class="site-nav__list">
+        <li><a href="welcome.html" class="site-nav__link">Welcome</a></li>
+        <li><a href="about.html" class="site-nav__link" aria-current="page">About</a></li>
+        <li><a href="whatisaperiod.html" class="site-nav__link">What Is a Period?</a></li>
+        <li><a href="tips.html" class="site-nav__link">Tips</a></li>
+        <li><a href="products.html" class="site-nav__link">Products</a></li>
+        <li><a href="resources.html" class="site-nav__link">Resources</a></li>
+        <li><a href="faq.html" class="site-nav__link">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="page-wrap">
     <header class="site-header">
       <h1 class="site-title logo-title"><a href="index.html">Okay Period</a></h1>
       <p class="site-tagline">Clear, kind information about menstruation</p>
     </header>
 
-    <table class="nav-table" role="navigation" aria-label="Site pages">
-      <caption>Navigate this site</caption>
-      <thead>
-        <tr>
-          <th scope="col">Home</th>
-          <th scope="col">Learn</th>
-          <th scope="col">Support</th>
-          <th scope="col">More</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="welcome.html">Welcome</a></td>
-          <td><a href="about.html" aria-current="page">About</a></td>
-          <td><a href="whatisaperiod.html">What Is a Period?</a></td>
-          <td><a href="tips.html">Tips</a></td>
-        </tr>
-        <tr>
-          <td><a href="products.html">Products</a></td>
-          <td><a href="resources.html">Resources</a></td>
-          <td><a href="faq.html">FAQ</a></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <h1>About This Site</h1>
       <p>
         <strong>Okay Period</strong> is a small educational site focused on menstrual health
@@ -60,5 +53,6 @@
       <p>Okay, period - is for educational purposes. Not medical advice.</p>
     </footer>
   </div>
+  <script src="nav.js" defer></script>
 </body>
 </html>
