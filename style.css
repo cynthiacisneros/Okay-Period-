@@ -836,6 +836,463 @@ html:has(body.period-page) {
   }
 }
 
+/* ---------- Tips page ---------- */
+body.tips-page {
+  --tips-font-body: "Nunito", system-ui, sans-serif;
+  background-color: var(--bg);
+}
+
+body.tips-page {
+  font-family: var(--tips-font-body);
+}
+
+body.tips-page main,
+body.tips-page p,
+body.tips-page li {
+  font-family: var(--tips-font-body);
+}
+
+body.tips-page .page-wrap.page-wrap--tips {
+  max-width: min(76rem, 100%);
+  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Full-viewport dreamy glow for the entire page (no harsh section breaks) */
+.tips-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--warm-cream) 96%, white) 0%,
+    var(--bg) 18%,
+    color-mix(in srgb, var(--bg) 94%, var(--touch-peach)) 44%,
+    color-mix(in srgb, var(--bg) 92%, var(--lavender-mist)) 70%,
+    color-mix(in srgb, var(--warm-cream) 88%, var(--touch-pink)) 100%
+  );
+}
+
+.tips-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 12% 8%,
+      color-mix(in srgb, var(--main-pink) 30%, transparent) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 64% 50% at 92% 12%,
+      color-mix(in srgb, var(--hot-coral) 24%, transparent) 0%,
+      transparent 56%
+    ),
+    radial-gradient(
+      ellipse 80% 46% at 50% 102%,
+      color-mix(in srgb, var(--peachy-orange) 22%, transparent) 0%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 52% 44% at 6% 58%,
+      color-mix(in srgb, var(--butter-pop) 20%, transparent) 0%,
+      transparent 54%
+    ),
+    radial-gradient(
+      ellipse 44% 40% at 98% 44%,
+      color-mix(in srgb, color-mix(in srgb, #7a7cff 22%, white) 28%, transparent) 0%,
+      transparent 52%
+    );
+  filter: blur(64px);
+  opacity: 0.92;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tips-atmosphere::before {
+    filter: blur(28px);
+    opacity: 0.86;
+  }
+}
+
+/* Tips page should not feel like a big "main card" */
+main.tips-guide {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.tips-container {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+}
+
+.tips-container--wide {
+  max-width: 70rem;
+}
+
+.tips-section {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.tips-section__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  color: var(--heading);
+  letter-spacing: 0.015em;
+}
+
+.tips-section__lede {
+  margin: 0.7rem 0 0;
+  max-width: 48rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Hero */
+.tips-hero {
+  padding-block: clamp(1.35rem, 3.5vw, 2.2rem) clamp(2.1rem, 4.5vw, 3.15rem);
+}
+
+.tips-hero__inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(1.25rem, 3.5vw, 2.25rem);
+  align-items: start;
+}
+
+.tips-hero__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5.6vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: 0.02em;
+  color: var(--heading);
+}
+
+.tips-hero__subtitle {
+  margin: 0.85rem 0 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.tips-hero__intro {
+  margin: 1.05rem 0 0;
+  max-width: 46rem;
+  color: var(--text);
+  line-height: 1.78;
+}
+
+.tips-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.tips-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.35rem;
+  border-radius: 999px;
+  font-family: var(--tips-font-body);
+  font-weight: 800;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, background 0.22s ease,
+    color 0.22s ease, border-color 0.22s ease;
+}
+
+.tips-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.tips-btn--primary {
+  color: var(--text-on-accent);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--deep-berry) 42%, transparent);
+  background: linear-gradient(145deg, var(--main-pink) 0%, var(--hot-coral) 54%, var(--accent-deep) 100%);
+  border: 2px solid color-mix(in srgb, white 58%, var(--butter-pop));
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--main-pink) 26%, transparent);
+}
+
+.tips-btn--primary:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04) saturate(1.06);
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--hot-coral) 34%, transparent);
+}
+
+.tips-btn--ghost {
+  color: var(--deep-berry);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  border: 2px solid color-mix(in srgb, var(--hot-coral) 38%, white);
+  backdrop-filter: blur(12px) saturate(1.06);
+  -webkit-backdrop-filter: blur(12px) saturate(1.06);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--main-pink) 10%, transparent);
+}
+
+.tips-btn--ghost:hover {
+  transform: translateY(-3px);
+  background: color-mix(in srgb, var(--hot-coral) 14%, white);
+  border-color: var(--hot-coral);
+  color: var(--hot-coral);
+}
+
+.tips-hero__badge {
+  border-radius: 26px;
+  padding: 1.15rem 1.15rem 1.25rem;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px solid color-mix(in srgb, white 72%, var(--main-pink));
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  box-shadow:
+    0 18px 50px color-mix(in srgb, var(--main-pink) 10%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 85%, transparent);
+}
+
+.tips-hero__badge-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: color-mix(in srgb, var(--deep-berry) 70%, var(--hot-coral));
+}
+
+.tips-hero__badge-main {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.1;
+}
+
+.tips-hero__badge-sub {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Grid */
+.tips-grid {
+  list-style: none;
+  margin: 1.65rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.tips-card {
+  border-radius: 22px;
+  padding: 1.25rem 1.15rem 1.35rem;
+  background: color-mix(in srgb, var(--surface) 76%, transparent);
+  border: 1px solid color-mix(in srgb, white 78%, var(--peachy-orange));
+  box-shadow: 0 14px 42px color-mix(in srgb, var(--main-pink) 8%, transparent);
+  backdrop-filter: blur(12px) saturate(1.06);
+  -webkit-backdrop-filter: blur(12px) saturate(1.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.tips-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 54px color-mix(in srgb, var(--hot-coral) 14%, transparent);
+  border-color: color-mix(in srgb, white 55%, var(--main-pink));
+}
+
+.tips-card__icon {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  background: color-mix(in srgb, white 64%, var(--butter-pop));
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--butter-pop) 22%, transparent);
+  margin-bottom: 0.85rem;
+}
+
+.tips-card__title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--heading);
+}
+
+.tips-card__text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Feature columns */
+.tips-columns {
+  margin-top: 1.65rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.65rem);
+}
+
+.tips-pill {
+  border-radius: 24px;
+  padding: 1.3rem 1.2rem 1.25rem;
+  background: color-mix(in srgb, var(--surface) 74%, transparent);
+  border: 1px solid color-mix(in srgb, white 76%, var(--highlight-cool));
+  backdrop-filter: blur(14px) saturate(1.06);
+  -webkit-backdrop-filter: blur(14px) saturate(1.06);
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--peachy-orange) 10%, transparent);
+}
+
+.tips-pill__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--heading);
+}
+
+.tips-pill__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.tips-pill__list li {
+  margin: 0.35rem 0;
+}
+
+/* Reassurance */
+.tips-reassure {
+  padding-block: clamp(2.5rem, 5.5vw, 4.5rem);
+}
+
+.tips-reassure__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
+  font-weight: 800;
+  color: var(--heading);
+}
+
+.tips-reassure__content {
+  margin-top: 1rem;
+  border-radius: 28px;
+  padding: 1.6rem 1.45rem;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  border: 1px solid color-mix(in srgb, white 75%, var(--butter-pop));
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  box-shadow: 0 22px 58px color-mix(in srgb, var(--main-pink) 10%, transparent);
+}
+
+.tips-reassure__content p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.tips-reassure__list {
+  margin: 0.95rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.tips-reassure__list li {
+  margin: 0.4rem 0;
+}
+
+/* When to ask for help */
+.tips-alert {
+  margin-top: 1.35rem;
+  border-radius: 26px;
+  padding: 1.4rem 1.35rem;
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  border: 1px solid color-mix(in srgb, white 74%, var(--main-pink));
+  backdrop-filter: blur(16px) saturate(1.08);
+  -webkit-backdrop-filter: blur(16px) saturate(1.08);
+  box-shadow: 0 18px 52px color-mix(in srgb, var(--hot-coral) 10%, transparent);
+}
+
+.tips-alert__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.tips-alert__list li {
+  margin: 0.45rem 0;
+}
+
+.tips-alert__note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Subtle load-in motion (tasteful) */
+@media (prefers-reduced-motion: no-preference) {
+  .tips-hero__text,
+  .tips-hero__badge,
+  .tips-section {
+    animation: tips-fade-up 520ms ease both;
+  }
+
+  .tips-section {
+    animation-delay: 90ms;
+  }
+
+  @keyframes tips-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .tips-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tips-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 main.period-guide {
   --pg-wide: min(70rem, 100%);
   --pg-prose: 40rem;

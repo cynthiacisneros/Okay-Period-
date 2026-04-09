@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tips — Okay Period</title>
+  <title>Period Tips — Okay Period</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="tips-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="tips-atmosphere" aria-hidden="true"></div>
   <nav class="site-nav" id="site-nav" aria-label="Site pages">
     <div class="site-nav__inner">
       <button type="button" class="site-nav__toggle" aria-expanded="false" aria-controls="site-nav-menu" aria-label="Open menu">
@@ -26,27 +27,166 @@
       </ul>
     </div>
   </nav>
-  <div class="page-wrap">
+  <div class="page-wrap page-wrap--tips">
     <header class="site-header">
       <h1 class="site-title logo-title"><a href="index.html">Okay Period</a></h1>
       <p class="site-tagline">Clear, kind information about menstruation</p>
     </header>
 
+    <main id="main-content" class="tips-guide" tabindex="-1">
+      <header class="tips-hero" aria-labelledby="tips-hero-title">
+        <div class="tips-container tips-hero__inner">
+          <div class="tips-hero__text">
+            <h2 id="tips-hero-title" class="tips-hero__title">Period Tips</h2>
+            <p class="tips-hero__subtitle">Real-life tips to help you feel more prepared, more comfortable, and less stressed.</p>
+            <p class="tips-hero__intro">
+              Your period is a normal part of how your body grows and changes. It can still feel weird, annoying, or confusing at first—and that’s okay.
+              These tips are here to help you feel supported while you figure out what works best for <em>you</em>.
+            </p>
+            <div class="tips-hero__actions" role="group" aria-label="Explore more">
+              <a class="tips-btn tips-btn--primary" href="products.html">See product options</a>
+              <a class="tips-btn tips-btn--ghost" href="faq.html">Read FAQs</a>
+            </div>
+          </div>
 
-    <main id="main-content" tabindex="-1">
-      <h1>Tips for Period Comfort</h1>
-      <p>Small habits can make a big difference. Here are ideas many people find helpful:</p>
-      <ul>
-        <li>Keep supplies you prefer (pads, tampons, cups, period underwear) in your bag or locker.</li>
-        <li>Stay hydrated and eat regular meals; gentle movement or stretching may ease cramps for some.</li>
-        <li>Use a heating pad or warm bath for cramping, if that feels good for your body.</li>
-        <li>Rest when you can; sleep and stress both affect how you feel day to day.</li>
-        <li>Track your cycle in a calendar or app so patterns are easier to notice over time.</li>
-      </ul>
-      <p>
-        Severe pain, very heavy bleeding, or feeling faint are reasons to reach out to a
-        healthcare provider—not something you have to “just put up with.”
-      </p>
+          <div class="tips-hero__badge" aria-hidden="true">
+            <p class="tips-hero__badge-kicker">little reminder</p>
+            <p class="tips-hero__badge-main">You’re not alone.</p>
+            <p class="tips-hero__badge-sub">Millions of girls are learning this too.</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="tips-section tips-quick" aria-labelledby="tips-quick-title">
+        <div class="tips-container tips-container--wide">
+          <h2 id="tips-quick-title" class="tips-section__title">Quick tips (save-worthy)</h2>
+          <p class="tips-section__lede">Tiny habits that can make a big difference—pick a few and try them this month.</p>
+
+          <ul class="tips-grid" aria-label="Quick period tips">
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">👜</span>
+              <h3 class="tips-card__title">Carry supplies with you</h3>
+              <p class="tips-card__text">Keep a pad/tampon, a spare pair of underwear, and a small zip bag in your backpack—future you will be so grateful.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">📅</span>
+              <h3 class="tips-card__title">Track your cycle</h3>
+              <p class="tips-card__text">A calendar or app can help you feel less surprised. Even a quick note like “day 1” is enough.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">👚</span>
+              <h3 class="tips-card__title">Wear what feels comfy</h3>
+              <p class="tips-card__text">Soft pants, cozy layers, or anything that makes you feel like yourself is a win. Comfort is the vibe.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">🔥</span>
+              <h3 class="tips-card__title">Use heat for cramps</h3>
+              <p class="tips-card__text">A heating pad, warm water bottle, or warm shower can help your body relax when cramps show up.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">💧</span>
+              <h3 class="tips-card__title">Drink water</h3>
+              <p class="tips-card__text">Hydration can help with headaches and tiredness. If water is boring, add a lemon slice or use a cute bottle.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">😴</span>
+              <h3 class="tips-card__title">Rest when you need to</h3>
+              <p class="tips-card__text">Your body is doing a lot. Small breaks count—sit down, stretch, breathe, and give yourself permission to slow down.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">🫶</span>
+              <h3 class="tips-card__title">Ask for help</h3>
+              <p class="tips-card__text">A trusted adult, school nurse, or older sibling can help with supplies, questions, or just reassurance.</p>
+            </li>
+            <li class="tips-card">
+              <span class="tips-card__icon" aria-hidden="true">🌈</span>
+              <h3 class="tips-card__title">Everyone is different</h3>
+              <p class="tips-card__text">Your flow, cramps, and mood might not match your friends’. That doesn’t mean anything is “wrong.”</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="tips-section tips-feature" aria-labelledby="tips-feature-title">
+        <div class="tips-container tips-container--wide">
+          <h2 id="tips-feature-title" class="tips-section__title">What helps during your period?</h2>
+          <p class="tips-section__lede">A quick “menu” of ideas—mix and match what feels good for you.</p>
+
+          <div class="tips-columns" role="list">
+            <article class="tips-pill" role="listitem" aria-labelledby="tips-cramps">
+              <h3 id="tips-cramps" class="tips-pill__title">For cramps</h3>
+              <ul class="tips-pill__list">
+                <li>Heat (heating pad or warm shower)</li>
+                <li>Gentle stretching or a short walk</li>
+                <li>Rest + slow breathing</li>
+                <li>Talk to an adult about pain relief options if you need them</li>
+              </ul>
+            </article>
+
+            <article class="tips-pill" role="listitem" aria-labelledby="tips-school">
+              <h3 id="tips-school" class="tips-pill__title">For school days</h3>
+              <ul class="tips-pill__list">
+                <li>Pack “just in case” supplies</li>
+                <li>Wear darker bottoms if it helps you feel calm</li>
+                <li>Know where the bathroom is + when you can go</li>
+                <li>Ask the nurse for help if you need it (that’s literally their job)</li>
+              </ul>
+            </article>
+
+            <article class="tips-pill" role="listitem" aria-labelledby="tips-tired">
+              <h3 id="tips-tired" class="tips-pill__title">For tired days</h3>
+              <ul class="tips-pill__list">
+                <li>Snack with protein + carbs (like yogurt + granola)</li>
+                <li>Drink water</li>
+                <li>Do one thing at a time</li>
+                <li>Early bedtime if you can</li>
+              </ul>
+            </article>
+
+            <article class="tips-pill" role="listitem" aria-labelledby="tips-emotional">
+              <h3 id="tips-emotional" class="tips-pill__title">For feeling emotional</h3>
+              <ul class="tips-pill__list">
+                <li>It’s okay—hormones can make feelings feel bigger</li>
+                <li>Text a friend who gets you</li>
+                <li>Put on music, a comfort show, or do something cozy</li>
+                <li>Be extra kind to yourself (you deserve it)</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips-section tips-reassure" aria-labelledby="tips-reassure-title">
+        <div class="tips-container tips-container--wide">
+          <h2 id="tips-reassure-title" class="tips-reassure__title">A gentle reminder 💗</h2>
+          <div class="tips-reassure__content">
+            <p>Your period is normal. And it’s normal to feel unsure at first.</p>
+            <ul class="tips-reassure__list">
+              <li>It’s okay to ask questions (even if you feel shy).</li>
+              <li>It may take time to learn what feels best for you—and that’s okay.</li>
+              <li>Everyone’s body is different, so your experience may not look exactly like someone else’s.</li>
+              <li>You do not need to feel embarrassed. Your body deserves respect and care.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips-section tips-help" aria-labelledby="tips-help-title">
+        <div class="tips-container tips-container--wide">
+          <h2 id="tips-help-title" class="tips-section__title">When to ask an adult</h2>
+          <p class="tips-section__lede">This isn’t meant to scare you—just a calm checklist. If something feels “too much,” it’s okay to speak up.</p>
+
+          <div class="tips-alert" role="note" aria-label="When to get help">
+            <ul class="tips-alert__list">
+              <li><strong>Very strong pain</strong> that stops you from doing normal activities</li>
+              <li><strong>Bleeding that feels unusually heavy</strong> for you</li>
+              <li><strong>Feeling dizzy or very unwell</strong></li>
+              <li><strong>Worries or questions that won’t go away</strong></li>
+            </ul>
+            <p class="tips-alert__note">A trusted adult, school nurse, or doctor can help you feel safe and supported. You deserve care.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
