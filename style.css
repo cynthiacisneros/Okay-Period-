@@ -1,30 +1,48 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Core palette */
-  --light-coral: #f08080;
-  --sweet-salmon: #f4978e;
-  --powder-blush: #f8ad9d;
-  --peach-fuzz: #fbc4ab;
-  --soft-apricot: #ffdab9;
+  /* Brand palette — Okay, Period! */
+  --coral-pink: #ff7a7a;
+  --tangerine: #ffb085;
+  --butter-yellow: #fff0a8;
+  --soft-blue: #bde0fe;
+  --off-white: #fffdf9;
 
-  /* Semantic colors — derived only from the palette (+ white/black for contrast) */
-  --bg: color-mix(in srgb, var(--soft-apricot) 44%, white);
-  --surface: color-mix(in srgb, white 90%, var(--peach-fuzz));
-  --text: color-mix(in srgb, var(--light-coral) 24%, #1a1214 76%);
-  --muted: color-mix(in srgb, var(--sweet-salmon) 34%, #3a2f32 66%);
-  --accent: var(--light-coral);
-  --accent-deep: color-mix(in srgb, var(--sweet-salmon) 68%, #5c383c 32%);
-  --accent-soft: color-mix(in srgb, var(--powder-blush) 48%, var(--soft-apricot));
-  --border: color-mix(in srgb, var(--peach-fuzz) 62%, var(--sweet-salmon) 38%);
-  --link: color-mix(in srgb, var(--light-coral) 50%, #321e22 50%);
-  --link-hover: color-mix(in srgb, var(--light-coral) 34%, #231418 66%);
-  --highlight-bg: color-mix(in srgb, var(--peach-fuzz) 30%, white);
-  --text-on-accent: #fffefc;
+  /* Friendly tints for gradients, borders, and hovers */
+  --touch-pink: color-mix(in srgb, var(--coral-pink) 42%, white);
+  --touch-peach: color-mix(in srgb, var(--tangerine) 34%, white);
+  --cream: color-mix(in srgb, var(--butter-yellow) 42%, var(--off-white));
+  --sky-tint: color-mix(in srgb, var(--soft-blue) 38%, white);
+
+  /* Text (warm, readable — no harsh black) */
+  --text: #4e3d3d;
+  --text-muted: color-mix(in srgb, #4e3d3d 58%, #9a8585 42%);
+  --muted: var(--text-muted);
+  --heading: color-mix(in srgb, var(--coral-pink) 34%, #5c3840 66%);
+
+  /* Surfaces */
+  --bg: var(--off-white);
+  --surface: #ffffff;
+  --surface-warm: color-mix(in srgb, var(--surface) 91%, var(--butter-yellow));
+  --surface-cool: color-mix(in srgb, var(--surface) 86%, var(--soft-blue));
+
+  /* UI semantics */
+  --accent: var(--coral-pink);
+  --accent-deep: color-mix(in srgb, var(--coral-pink) 52%, #b83d4a 48%);
+  --accent-soft: color-mix(in srgb, var(--tangerine) 28%, var(--off-white));
+  --border: color-mix(in srgb, var(--tangerine) 38%, white 62%);
+  --border-soft: color-mix(in srgb, var(--border) 72%, white);
+  --link: color-mix(in srgb, #c2515c 52%, var(--text) 48%);
+  --link-hover: color-mix(in srgb, var(--coral-pink) 45%, #3d2c2c 55%);
+  --highlight-bg: color-mix(in srgb, var(--butter-yellow) 40%, white);
+  --highlight-cool: color-mix(in srgb, var(--soft-blue) 34%, white);
+  --text-on-accent: #ffffff;
 
   --btn-radius: 14px;
-  --btn-shadow: 0 2px 12px color-mix(in srgb, var(--light-coral) 20%, transparent);
-  --btn-shadow-hover: 0 6px 22px color-mix(in srgb, var(--sweet-salmon) 32%, transparent);
+  --btn-shadow: 0 4px 18px color-mix(in srgb, var(--coral-pink) 22%, transparent);
+  --btn-shadow-hover: 0 10px 30px color-mix(in srgb, var(--coral-pink) 32%, transparent),
+    0 3px 12px color-mix(in srgb, var(--tangerine) 20%, transparent);
+
   --font-logo: "Cormorant Garamond", Georgia, serif;
   --font-heading: "Fredoka", system-ui, sans-serif;
   --font-body: "Poppins", system-ui, sans-serif;
@@ -96,9 +114,9 @@ input[type="button"]:hover,
 input[type="reset"]:hover {
   background: var(--highlight-bg);
   color: var(--link-hover);
-  border-color: color-mix(in srgb, var(--sweet-salmon) 45%, transparent);
+  border-color: color-mix(in srgb, var(--tangerine) 55%, white);
   box-shadow: var(--btn-shadow-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 button:focus-visible,
@@ -165,20 +183,25 @@ body.home {
   text-align: center;
   background:
     radial-gradient(
-      ellipse 120% 80% at 50% 0%,
-      color-mix(in srgb, var(--powder-blush) 52%, transparent) 0%,
-      transparent 55%
+      ellipse 125% 90% at 50% -8%,
+      color-mix(in srgb, var(--soft-blue) 48%, transparent) 0%,
+      transparent 58%
     ),
     radial-gradient(
-      ellipse 90% 70% at 80% 100%,
-      color-mix(in srgb, var(--sweet-salmon) 28%, transparent) 0%,
+      ellipse 85% 65% at 92% 92%,
+      color-mix(in srgb, var(--tangerine) 38%, transparent) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 70% 55% at 6% 88%,
+      color-mix(in srgb, var(--butter-yellow) 42%, transparent) 0%,
       transparent 50%
     ),
     linear-gradient(
       180deg,
-      var(--soft-apricot) 0%,
-      var(--bg) 45%,
-      color-mix(in srgb, var(--peach-fuzz) 55%, var(--soft-apricot)) 100%
+      var(--cream) 0%,
+      var(--bg) 48%,
+      color-mix(in srgb, var(--touch-peach) 24%, var(--off-white)) 100%
     );
 }
 
@@ -194,7 +217,7 @@ body.home {
 .hero-intro__title {
   margin: 0;
   font-size: clamp(2.75rem, 8vw, 4rem);
-  color: var(--accent);
+  color: var(--heading);
   line-height: 1.12;
 }
 
@@ -212,24 +235,25 @@ body.home {
   align-items: center;
   justify-content: center;
   margin-top: 0.5rem;
-  padding: 0.85rem 2.35rem;
+  padding: 0.88rem 2.4rem;
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--text-on-accent);
+  text-shadow: 0 1px 2px color-mix(in srgb, #4e3d3d 35%, transparent);
   background: linear-gradient(
     145deg,
-    var(--powder-blush) 0%,
-    var(--sweet-salmon) 48%,
+    var(--tangerine) 0%,
+    var(--coral-pink) 42%,
     var(--accent-deep) 100%
   );
-  border: 1px solid color-mix(in srgb, white 55%, var(--peach-fuzz));
+  border: 2px solid color-mix(in srgb, white 70%, var(--butter-yellow));
   border-radius: 999px;
   box-shadow:
-    0 4px 18px color-mix(in srgb, var(--light-coral) 35%, transparent),
-    0 1px 3px color-mix(in srgb, var(--sweet-salmon) 15%, transparent);
+    0 6px 22px color-mix(in srgb, var(--coral-pink) 38%, transparent),
+    0 2px 8px color-mix(in srgb, var(--tangerine) 22%, transparent);
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
@@ -238,17 +262,17 @@ body.home {
 }
 
 .hero-intro__cta:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.04);
+  transform: translateY(-3px);
+  filter: brightness(1.05) saturate(1.05);
   box-shadow:
-    0 10px 30px color-mix(in srgb, var(--sweet-salmon) 42%, transparent),
-    0 3px 10px color-mix(in srgb, var(--light-coral) 18%, transparent);
-  border-color: color-mix(in srgb, white 70%, var(--soft-apricot));
+    0 14px 36px color-mix(in srgb, var(--coral-pink) 42%, transparent),
+    0 4px 14px color-mix(in srgb, var(--tangerine) 28%, transparent);
+  border-color: color-mix(in srgb, white 55%, var(--touch-peach));
   color: var(--text-on-accent);
 }
 
 .hero-intro__cta:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--heading);
   outline-offset: 4px;
   color: var(--text-on-accent);
 }
@@ -257,8 +281,8 @@ body.home {
   transform: translateY(0);
   filter: brightness(0.98);
   box-shadow:
-    0 3px 14px color-mix(in srgb, var(--light-coral) 30%, transparent),
-    0 1px 3px color-mix(in srgb, var(--sweet-salmon) 12%, transparent);
+    0 3px 14px color-mix(in srgb, var(--coral-pink) 30%, transparent),
+    0 1px 3px color-mix(in srgb, var(--tangerine) 12%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -277,8 +301,8 @@ body.home {
 
 .site-title {
   margin: 0;
-  font-size: 2.5rem;
-  color: var(--accent);
+  font-size: 2.55rem;
+  color: var(--heading);
   line-height: 1.15;
 }
 
@@ -321,11 +345,13 @@ body.home {
   margin: 0.5rem;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-on-accent);
-  background: linear-gradient(160deg, var(--sweet-salmon), var(--light-coral));
+  text-shadow: 0 1px 2px color-mix(in srgb, #4e3d3d 35%, transparent);
+  background: linear-gradient(155deg, var(--tangerine), var(--coral-pink), var(--accent-deep));
   border-radius: var(--btn-radius);
   text-decoration: none;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--coral-pink) 30%, transparent);
   transform: translateY(-120%);
   transition: transform 0.2s ease;
 }
@@ -341,11 +367,11 @@ body.home {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: color-mix(in srgb, var(--surface) 82%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
-  box-shadow: 0 6px 28px color-mix(in srgb, var(--peach-fuzz) 35%, transparent);
+  background: color-mix(in srgb, var(--surface) 72%, var(--sky-tint));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--tangerine) 16%, transparent);
 }
 
 .site-nav__inner {
@@ -393,8 +419,8 @@ body.home {
 .site-nav__link:hover {
   background: var(--highlight-bg);
   color: var(--link-hover);
-  border-color: color-mix(in srgb, var(--peach-fuzz) 65%, transparent);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--sweet-salmon) 18%, transparent);
+  border-color: color-mix(in srgb, var(--tangerine) 50%, white);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--coral-pink) 16%, transparent);
   transform: translateY(-2px);
 }
 
@@ -405,18 +431,20 @@ body.home {
 }
 
 .site-nav__link[aria-current="page"] {
-  background: linear-gradient(155deg, var(--sweet-salmon), var(--light-coral));
+  background: linear-gradient(155deg, var(--tangerine), var(--coral-pink), var(--accent-deep));
   color: var(--text-on-accent);
+  text-shadow: 0 1px 2px color-mix(in srgb, #4e3d3d 32%, transparent);
   font-weight: 600;
-  border-color: color-mix(in srgb, white 40%, var(--powder-blush));
-  box-shadow: 0 3px 14px color-mix(in srgb, var(--light-coral) 35%, transparent);
+  border-color: color-mix(in srgb, white 55%, var(--butter-yellow));
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--coral-pink) 38%, transparent);
   transform: none;
 }
 
 .site-nav__link[aria-current="page"]:hover {
   color: var(--text-on-accent);
-  filter: brightness(1.03);
-  transform: translateY(-1px);
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--coral-pink) 35%, transparent);
 }
 
 .site-nav__toggle {
@@ -536,25 +564,30 @@ body.home {
 
 main {
   background: var(--surface);
-  padding: 1.5rem 1.35rem 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
+  padding: 1.65rem 1.45rem 2.15rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 6px 32px color-mix(in srgb, var(--tangerine) 14%, transparent),
+    0 1px 0 color-mix(in srgb, white 88%, var(--butter-yellow));
 }
 
 main h1 {
   margin-top: 0;
-  font-size: 2.125rem;
+  font-size: 2.35rem;
   font-weight: 600;
-  color: var(--accent);
-  line-height: 1.2;
+  color: var(--heading);
+  line-height: 1.18;
+  letter-spacing: 0.01em;
 }
 
 main h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text);
+  margin-top: 1.65rem;
+  margin-bottom: 0.55rem;
+  color: var(--heading);
+  letter-spacing: 0.015em;
 }
 
 main p {
@@ -579,7 +612,7 @@ main li {
 .faq-item strong {
   display: block;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--heading);
   margin-bottom: 0.35rem;
 }
 
@@ -593,18 +626,26 @@ main li {
 
 .site-footer {
   margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  padding: 1.15rem 0.75rem 0.25rem;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.88rem;
   color: var(--muted);
   text-align: center;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--sky-tint) 22%, transparent)
+  );
+  border-radius: 12px 12px 0 0;
 }
 
 body.home .site-footer--home {
   margin-top: 0;
   padding: 1rem 1.25rem 1.25rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-soft);
   flex-shrink: 0;
+  background: color-mix(in srgb, var(--off-white) 85%, var(--soft-blue));
+  border-radius: 0;
 }
 
 /* ---------- What Is a Period? — visual guide ---------- */
@@ -623,14 +664,20 @@ body.home .site-footer--home {
 
 main.period-guide {
   padding: 2rem 1.35rem 2.5rem;
+  background: linear-gradient(
+    165deg,
+    var(--surface) 0%,
+    color-mix(in srgb, var(--surface) 94%, var(--highlight-cool)) 55%,
+    color-mix(in srgb, var(--surface) 96%, var(--highlight-bg)) 100%
+  );
 }
 
 .period-guide .pg-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.1rem, 5.5vw, 2.85rem);
+  font-size: clamp(2.15rem, 5.5vw, 2.95rem);
   font-weight: 600;
-  color: var(--accent);
+  color: var(--heading);
   line-height: 1.15;
   letter-spacing: 0.01em;
 }
@@ -646,16 +693,16 @@ main.period-guide {
 .period-guide .pg-hero__art {
   margin: 1.75rem 0 1.5rem;
   padding: 1.5rem 1.25rem;
-  border-radius: 20px;
+  border-radius: 22px;
   background: linear-gradient(
     145deg,
-    color-mix(in srgb, var(--soft-apricot) 55%, white),
-    color-mix(in srgb, var(--peach-fuzz) 42%, white)
+    color-mix(in srgb, var(--highlight-cool) 55%, white),
+    color-mix(in srgb, var(--cream) 50%, white)
   );
-  border: 1px solid color-mix(in srgb, var(--border) 75%, var(--powder-blush));
+  border: 1px solid color-mix(in srgb, var(--soft-blue) 28%, var(--border));
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 75%, transparent),
-    0 8px 28px color-mix(in srgb, var(--sweet-salmon) 14%, transparent);
+    inset 0 1px 0 color-mix(in srgb, white 82%, var(--soft-blue)),
+    0 10px 36px color-mix(in srgb, var(--tangerine) 12%, transparent);
 }
 
 .period-guide .pg-hero__svg {
@@ -690,20 +737,32 @@ main.period-guide {
 .period-guide .pg-card {
   margin: 0;
   padding: 1.35rem 1.15rem 1.5rem;
-  border-radius: 16px;
-  background: color-mix(in srgb, white 92%, var(--peach-fuzz));
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--sweet-salmon) 10%, transparent);
+  border-radius: 18px;
+  background: var(--surface-warm);
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 6px 22px color-mix(in srgb, var(--tangerine) 12%, transparent),
+    0 1px 0 color-mix(in srgb, white 90%, var(--butter-yellow));
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.period-guide .pg-card:nth-child(2) {
+  background: var(--surface);
+}
+
+.period-guide .pg-card:nth-child(3) {
+  background: color-mix(in srgb, var(--surface) 88%, var(--highlight-cool));
 }
 
 .period-guide .pg-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--light-coral) 18%, transparent);
-  border-color: color-mix(in srgb, var(--powder-blush) 65%, var(--border));
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px color-mix(in srgb, var(--coral-pink) 18%, transparent);
+  border-color: color-mix(in srgb, var(--tangerine) 45%, var(--border));
+  background: var(--surface);
 }
 
 .period-guide .pg-card__icon {
@@ -716,9 +775,9 @@ main.period-guide {
 .period-guide .pg-card__title {
   margin: 0 0 0.5rem;
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.12rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--heading);
 }
 
 .period-guide .pg-card__text {
@@ -731,9 +790,9 @@ main.period-guide {
 .period-guide .pg-timeline__title {
   margin: 0 0 1.75rem;
   font-family: var(--font-heading);
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--heading);
   text-align: center;
 }
 
@@ -757,19 +816,19 @@ main.period-guide {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: color-mix(in srgb, white 78%, var(--powder-blush));
-  border: 2px solid color-mix(in srgb, var(--peach-fuzz) 75%, white);
+  background: color-mix(in srgb, white 70%, var(--butter-yellow));
+  border: 2px solid color-mix(in srgb, var(--tangerine) 40%, white);
   font-size: 1.35rem;
   line-height: 1;
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--sweet-salmon) 14%, transparent);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--coral-pink) 14%, transparent);
 }
 
 .period-guide .pg-timeline__step-title {
   margin: 0 0 0.35rem;
   font-family: var(--font-heading);
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--heading);
 }
 
 .period-guide .pg-timeline__step-text {
@@ -795,15 +854,17 @@ main.period-guide {
     top: 2.1rem;
     left: 10%;
     right: 10%;
-    height: 4px;
+    height: 5px;
     background: linear-gradient(
       90deg,
-      var(--powder-blush),
-      var(--peach-fuzz),
-      var(--soft-apricot)
+      var(--soft-blue),
+      var(--tangerine),
+      var(--butter-yellow),
+      var(--touch-pink)
     );
-    border-radius: 4px;
+    border-radius: 6px;
     z-index: 0;
+    opacity: 0.85;
   }
 
   .period-guide .pg-timeline__step {
@@ -827,7 +888,7 @@ main.period-guide {
     gap: 1.35rem;
     margin-left: 0.5rem;
     padding-left: 1.25rem;
-    border-left: 4px solid color-mix(in srgb, var(--powder-blush) 55%, var(--border));
+    border-left: 4px solid color-mix(in srgb, var(--tangerine) 50%, var(--soft-blue));
   }
 
   .period-guide .pg-timeline__step {
@@ -844,23 +905,23 @@ main.period-guide {
 }
 
 .period-guide .pg-callout {
-  padding: 1.75rem 1.65rem 1.85rem;
-  border-radius: 18px;
+  padding: 1.85rem 1.7rem 1.95rem;
+  border-radius: 20px;
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, var(--highlight-bg) 88%, var(--peach-fuzz)),
-    color-mix(in srgb, white 90%, var(--soft-apricot))
+    color-mix(in srgb, var(--highlight-bg) 75%, white),
+    color-mix(in srgb, var(--highlight-cool) 35%, var(--off-white))
   );
-  border: 1px solid color-mix(in srgb, var(--powder-blush) 40%, var(--border));
-  box-shadow: 0 6px 24px color-mix(in srgb, var(--light-coral) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tangerine) 35%, var(--border));
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--coral-pink) 10%, transparent);
 }
 
 .period-guide .pg-callout__title {
   margin: 0 0 0.85rem;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.38rem;
   font-weight: 600;
-  color: var(--text);
+  color: var(--heading);
 }
 
 .period-guide .pg-callout__emoji {
@@ -893,18 +954,22 @@ main.period-guide {
 
 .period-guide .pg-cta {
   text-align: center;
-  padding: 2rem 1.35rem;
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--surface) 70%, var(--bg));
-  border: 1px dashed color-mix(in srgb, var(--border) 85%, var(--powder-blush));
+  padding: 2.1rem 1.4rem;
+  border-radius: 22px;
+  background: linear-gradient(
+    165deg,
+    var(--surface-cool),
+    color-mix(in srgb, var(--surface) 92%, var(--off-white))
+  );
+  border: 2px dashed color-mix(in srgb, var(--soft-blue) 45%, var(--tangerine));
 }
 
 .period-guide .pg-cta__title {
   margin: 0 0 0.5rem;
   font-family: var(--font-heading);
-  font-size: 1.42rem;
+  font-size: 1.45rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--heading);
 }
 
 .period-guide .pg-cta__text {
@@ -952,38 +1017,39 @@ main.period-guide {
 
 .period-guide .pg-btn--primary {
   color: var(--text-on-accent);
+  text-shadow: 0 1px 2px color-mix(in srgb, #4e3d3d 35%, transparent);
   background: linear-gradient(
     145deg,
-    var(--powder-blush) 0%,
-    var(--sweet-salmon) 48%,
+    var(--tangerine) 0%,
+    var(--coral-pink) 48%,
     var(--accent-deep) 100%
   );
-  border-color: color-mix(in srgb, white 50%, var(--peach-fuzz));
+  border-color: color-mix(in srgb, white 60%, var(--butter-yellow));
   box-shadow:
-    0 4px 16px color-mix(in srgb, var(--light-coral) 32%, transparent),
-    0 1px 3px color-mix(in srgb, var(--sweet-salmon) 12%, transparent);
+    0 6px 22px color-mix(in srgb, var(--coral-pink) 35%, transparent),
+    0 2px 8px color-mix(in srgb, var(--tangerine) 18%, transparent);
 }
 
 .period-guide .pg-btn--primary:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.03);
+  transform: translateY(-3px);
+  filter: brightness(1.05) saturate(1.04);
   box-shadow:
-    0 8px 24px color-mix(in srgb, var(--sweet-salmon) 38%, transparent),
-    0 2px 6px color-mix(in srgb, var(--light-coral) 15%, transparent);
+    0 12px 32px color-mix(in srgb, var(--coral-pink) 38%, transparent),
+    0 4px 12px color-mix(in srgb, var(--tangerine) 22%, transparent);
 }
 
 .period-guide .pg-btn--outline {
   color: var(--link);
   background: var(--surface);
-  border-color: color-mix(in srgb, var(--sweet-salmon) 35%, var(--border));
+  border-color: color-mix(in srgb, var(--tangerine) 42%, var(--border));
   box-shadow: var(--btn-shadow);
 }
 
 .period-guide .pg-btn--outline:hover {
-  background: var(--highlight-bg);
+  background: var(--highlight-cool);
   color: var(--link-hover);
-  border-color: color-mix(in srgb, var(--powder-blush) 50%, var(--border));
-  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--soft-blue) 35%, var(--tangerine));
+  transform: translateY(-3px);
   box-shadow: var(--btn-shadow-hover);
 }
 
