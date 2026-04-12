@@ -1732,386 +1732,122 @@ main.period-guide {
   padding-block: clamp(0.35rem, 1.5vw, 1rem) clamp(2.25rem, 5vw, 3.75rem);
 }
 
-.period-guide .pg-flow--acc {
+/* Immersive story scroll (What Is a Period?) */
+.period-guide .pg-flow--story {
   gap: 0;
-  padding-block: clamp(0.45rem, 1.8vw, 1.1rem) clamp(1.85rem, 4.5vw, 3.35rem);
+  max-width: min(46rem, 100%);
+  margin-inline: auto;
+  padding-block: clamp(1.25rem, 3.5vw, 2.25rem) clamp(2.25rem, 5.5vw, 4rem);
 }
 
-/* ---------- Accordion (What Is a Period?) ---------- */
-
-.period-guide .pg-acc-stack {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.2rem, 2.8vw, 1.75rem);
+.period-guide .pg-story-stream {
   width: 100%;
 }
 
-.period-guide .pg-acc__item {
-  position: relative;
-  overflow: hidden;
-  border-radius: clamp(22px, 3.2vw, 30px);
-  background: color-mix(in srgb, var(--surface) 78%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border-soft) 55%, var(--warm-white));
-  box-shadow:
-    0 6px 32px color-mix(in srgb, var(--taupe) 11%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--warm-white) 55%, transparent) inset,
-    0 1px 0 color-mix(in srgb, var(--warm-white) 40%, transparent) inset;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition:
-    box-shadow 0.4s ease,
-    border-color 0.35s ease;
+.period-guide .pg-story {
+  padding-block: clamp(2.75rem, 7vw, 5.25rem);
 }
 
-.period-guide .pg-acc__item::before {
-  content: "";
-  position: absolute;
-  top: -40%;
-  right: -18%;
-  width: 52%;
-  height: 88%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 40% 40%,
-    color-mix(in srgb, var(--burgundy) 11%, transparent) 0%,
-    transparent 68%
-  );
-  filter: blur(40px);
-  opacity: 0.5;
-  pointer-events: none;
-  z-index: 0;
+.period-guide .pg-story:first-child {
+  padding-top: clamp(1.5rem, 4vw, 2.75rem);
 }
 
-.period-guide .pg-acc__item.is-open {
-  border-color: color-mix(in srgb, var(--border-soft) 40%, var(--taupe));
-  box-shadow:
-    0 10px 40px color-mix(in srgb, var(--taupe) 14%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--warm-white) 60%, transparent) inset,
-    0 0 28px color-mix(in srgb, var(--burgundy) 6%, transparent);
-}
-
-.period-guide .pg-acc__heading {
-  position: relative;
-  z-index: 1;
+.period-guide .pg-story__question {
   margin: 0;
-  font: inherit;
-}
-
-.period-guide .pg-acc__trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: clamp(1.05rem, 2.4vw, 1.3rem) clamp(1.05rem, 2.2vw, 1.2rem);
-  text-align: left;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  transition: background 0.25s ease;
-}
-
-.period-guide .pg-acc__trigger:hover {
-  background: color-mix(in srgb, var(--warm-white) 35%, transparent);
-}
-
-.period-guide .pg-acc__trigger:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
-  border-radius: clamp(18px, 2.5vw, 24px);
-}
-
-.period-guide .pg-acc__trigger-text {
-  position: relative;
-  z-index: 1;
-  min-width: 0;
-  flex: 1;
-}
-
-.period-guide .pg-acc__title {
-  display: block;
+  max-width: min(100%, 26rem);
   font-family: var(--font-heading);
-  font-size: clamp(1.12rem, 2.5vw, 1.34rem);
+  font-size: clamp(1.85rem, 4.5vw, 2.75rem);
   font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: var(--heading);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-.period-guide .pg-acc__preview {
-  display: block;
-  margin-top: 0.35rem;
-  font-family: var(--font-body);
-  font-size: 0.91rem;
-  font-weight: 500;
-  color: var(--muted);
-  line-height: 1.45;
+.period-guide .pg-story__answer {
+  margin-top: clamp(1.35rem, 3.2vw, 2rem);
+  max-width: 36rem;
 }
 
-.period-guide .pg-acc__icon {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  width: 2.35rem;
-  height: 2.35rem;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: color-mix(in srgb, var(--beige) 75%, var(--surface));
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--taupe) 8%, transparent);
-  transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.3s ease;
-}
-
-.period-guide .pg-acc__icon::after {
-  content: "";
-  width: 0.45rem;
-  height: 0.45rem;
-  margin-top: -0.2rem;
-  border-right: 2px solid var(--burgundy);
-  border-bottom: 2px solid var(--burgundy);
-  transform: rotate(45deg);
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.period-guide .pg-acc__item.is-open .pg-acc__icon::after {
-  margin-top: 0.15rem;
-  transform: rotate(-135deg);
-}
-
-.period-guide .pg-acc__panel {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.period-guide .pg-acc__item.is-open .pg-acc__panel {
-  grid-template-rows: 1fr;
-}
-
-.period-guide .pg-acc-stack--reduce-motion .pg-acc__panel {
-  transition: none;
-}
-
-.period-guide .pg-acc__panel-inner {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.period-guide .pg-acc__item.is-open .pg-acc__panel-inner {
-  border-top: 1px solid color-mix(in srgb, var(--border-soft) 80%, transparent);
-}
-
-.period-guide .pg-acc__content {
-  padding: 0.35rem clamp(1.05rem, 2.2vw, 1.25rem) clamp(1.15rem, 2.5vw, 1.4rem);
-}
-
-.period-guide .pg-acc__content p {
-  margin: 0 0 0.8rem;
-  font-size: clamp(0.97rem, 1.85vw, 1.05rem);
-  line-height: 1.74;
+.period-guide .pg-story__answer p {
+  margin: 0 0 1rem;
+  font-size: clamp(0.98rem, 1.9vw, 1.06rem);
+  line-height: 1.78;
   color: var(--text);
   text-wrap: pretty;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.period-guide .pg-acc__content p:last-child {
+.period-guide .pg-story__answer p:last-child {
   margin-bottom: 0;
 }
 
-.period-guide .pg-acc__content em {
+.period-guide .pg-story__answer.is-revealed p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.period-guide .pg-story__answer.is-revealed p:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.period-guide .pg-story__answer.is-revealed p:nth-child(2) {
+  transition-delay: 75ms;
+}
+
+.period-guide .pg-story__answer.is-revealed p:nth-child(3) {
+  transition-delay: 150ms;
+}
+
+.period-guide .pg-story__answer.is-revealed p:nth-child(4) {
+  transition-delay: 225ms;
+}
+
+.period-guide .pg-story__answer em {
   font-style: italic;
-  color: color-mix(in srgb, var(--text) 88%, var(--heading));
-}
-
-/* Glassy content cards */
-.period-guide .pg-soft-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: clamp(22px, 3.2vw, 30px);
-  padding: clamp(1.4rem, 3.2vw, 1.85rem) clamp(1.3rem, 2.8vw, 1.75rem);
-  background: color-mix(in srgb, var(--surface) 78%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border-soft) 55%, var(--warm-white));
-  box-shadow:
-    0 6px 32px color-mix(in srgb, var(--taupe) 11%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--warm-white) 55%, transparent) inset,
-    0 1px 0 color-mix(in srgb, var(--warm-white) 40%, transparent) inset;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.period-guide .pg-soft-card__glow {
-  position: absolute;
-  z-index: 0;
-  top: -45%;
-  right: -25%;
-  width: 58%;
-  height: 95%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 40% 40%,
-    color-mix(in srgb, var(--burgundy) 14%, transparent) 0%,
-    transparent 68%
-  );
-  filter: blur(42px);
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-.period-guide .pg-soft-card__title {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-family: var(--font-heading);
-  font-size: clamp(1.32rem, 2.7vw, 1.62rem);
-  font-weight: 700;
-  color: var(--heading);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-}
-
-.period-guide .pg-soft-card__sub {
-  position: relative;
-  z-index: 1;
-  margin: 0.4rem 0 0;
-  font-size: 0.94rem;
-  font-weight: 500;
-  color: var(--muted);
-  line-height: 1.48;
-}
-
-.period-guide .pg-soft-card__body {
-  position: relative;
-  z-index: 1;
-  margin-top: 0.95rem;
-}
-
-.period-guide .pg-soft-card__body p {
-  margin: 0;
-  font-size: clamp(0.98rem, 1.85vw, 1.06rem);
-  line-height: 1.74;
-  color: var(--text);
-  text-wrap: pretty;
-}
-
-/* Reassurance callouts — distinct from cards */
-.period-guide .pg-callout {
-  position: relative;
-  border-radius: clamp(20px, 2.6vw, 26px);
-  padding: 1.3rem 1.4rem 1.35rem;
-  overflow: hidden;
-}
-
-.period-guide .pg-callout__petal {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.45rem;
-  opacity: 0.72;
-  line-height: 1;
-}
-
-.period-guide .pg-callout__text {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: clamp(1.02rem, 2vw, 1.1rem);
-  line-height: 1.62;
-  font-weight: 600;
-  color: color-mix(in srgb, var(--heading) 88%, var(--text));
-  text-wrap: pretty;
-}
-
-.period-guide .pg-callout--whisper {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--beige) 72%, var(--surface)) 0%,
-    color-mix(in srgb, var(--surface) 88%, var(--gray-light)) 100%
-  );
-  border: 1px solid color-mix(in srgb, var(--burgundy) 12%, var(--border-soft));
-  box-shadow:
-    0 10px 36px color-mix(in srgb, var(--taupe) 9%, transparent),
-    0 0 0 1px color-mix(in srgb, var(--warm-white) 50%, transparent) inset;
-}
-
-.period-guide .pg-callout--whisper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 90% 70% at 0% 50%,
-    color-mix(in srgb, var(--burgundy) 8%, transparent) 0%,
-    transparent 55%
-  );
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-.period-guide .pg-callout--warm {
-  background: linear-gradient(
-    125deg,
-    color-mix(in srgb, var(--beige) 85%, transparent) 0%,
-    color-mix(in srgb, var(--surface) 65%, var(--beige)) 100%
-  );
-  border: 1px solid color-mix(in srgb, var(--burgundy) 10%, var(--border-soft));
-  border-left: 4px solid color-mix(in srgb, var(--burgundy) 48%, var(--taupe));
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--taupe) 10%, transparent);
-}
-
-.period-guide .pg-callout--warm::after {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -15%;
-  width: 45%;
-  height: 90%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--gray-light) 50%, transparent) 0%,
-    transparent 65%
-  );
-  filter: blur(28px);
-  pointer-events: none;
-  opacity: 0.85;
-}
-
-/* Scroll reveal */
-.period-guide .pg-reveal {
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .period-guide .pg-reveal.is-visible {
-    animation: pgRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    animation-delay: calc(var(--reveal-index, 0) * 72ms);
-  }
-
-  @keyframes pgRevealUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  color: color-mix(in srgb, var(--text) 85%, var(--heading));
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .period-guide .pg-reveal {
+  .period-guide .pg-story__answer p {
     opacity: 1;
     transform: none;
+    transition: none;
   }
+}
 
-  .period-guide .pg-reveal.is-visible {
-    animation: none;
-  }
+/* Soft divider between chapters */
+.period-guide .pg-story__rule {
+  border: none;
+  height: 1px;
+  margin: 0;
+  max-width: 12rem;
+  margin-inline: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--burgundy) 22%, transparent),
+    transparent 100%
+  );
+  opacity: 0.55;
+}
+
+/* Light reassurance — no box */
+.period-guide .pg-story__whisper {
+  margin-block: clamp(1.25rem, 3vw, 2rem);
+  margin-inline: 0;
+  padding: 0.15rem 0 0.15rem 1.1rem;
+  max-width: 34rem;
+  border-left: 3px solid color-mix(in srgb, var(--burgundy) 25%, var(--taupe));
+  font-size: clamp(0.96rem, 1.85vw, 1.04rem);
+  line-height: 1.65;
+  font-style: italic;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--muted) 35%, var(--heading));
+  text-wrap: pretty;
 }
 
 .period-guide > .pg-cta {
