@@ -1919,3 +1919,191 @@ main.period-guide {
   margin-top: clamp(1.25rem, 3.5vw, 2.25rem);
 }
 
+/* ---------- “What Might I Feel?” — scroll reveal + soft list polish ---------- */
+
+.period-guide .feelings-section {
+  margin-top: clamp(1.35rem, 3.2vw, 2rem);
+  max-width: 100%;
+}
+
+.period-guide .feelings-section .fade-copy {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.65s ease-out;
+}
+
+.period-guide .feelings-section .fade-item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.45s ease-out,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.period-guide .feelings-section.is-visible .fade-copy--intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.period-guide .feelings-section.is-visible .fade-copy--list-label {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.08s;
+}
+
+/* Stagger matches requested 0.08s steps, shifted so the list label reads first */
+.period-guide .feelings-section.is-visible .fade-item:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.16s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.24s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.32s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.48s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.56s;
+}
+
+.period-guide .feelings-section.is-visible .fade-item:nth-child(7) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.64s;
+}
+
+.period-guide .feelings-section.is-visible .fade-copy--mid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.76s;
+}
+
+.period-guide .feelings-section.is-visible .fade-copy--closing {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.92s;
+}
+
+.period-guide .feelings-section .fade-copy {
+  margin: 0 0 1rem;
+  font-size: clamp(0.98rem, 1.85vw, 1.06rem);
+  line-height: 1.78;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.period-guide .feelings-section .fade-copy--list-label {
+  margin-bottom: 0.65rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--text) 88%, var(--heading));
+}
+
+.period-guide .feelings-section .fade-copy--mid {
+  margin-top: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.period-guide .feelings-section .fade-copy--closing {
+  margin-bottom: 0;
+}
+
+.period-guide .feelings-list {
+  list-style: none;
+  margin: 0;
+  padding: clamp(1rem, 2.2vw, 1.25rem) clamp(1rem, 2.5vw, 1.35rem);
+  max-width: min(36rem, 100%);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 52%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-soft) 65%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--taupe) 8%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.period-guide .feelings-list .fade-item {
+  margin: 0;
+  padding: 0.35rem 0.15rem;
+  font-size: clamp(0.97rem, 1.8vw, 1.04rem);
+  line-height: 1.72;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  border-radius: 12px;
+  transition:
+    opacity 0.65s ease-out,
+    transform 0.45s ease-out,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.period-guide .fade-item__emoji {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  transition: transform 0.28s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .period-guide .feelings-section.is-visible .feelings-list .fade-item:hover {
+    transform: translateY(-3px);
+    background: color-mix(in srgb, var(--warm-white) 45%, transparent);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--taupe) 10%, transparent);
+  }
+
+  .period-guide .feelings-section.is-visible .feelings-list .fade-item:hover .fade-item__emoji {
+    transform: scale(1.06) translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .period-guide .feelings-section .fade-copy,
+  .period-guide .feelings-section .fade-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .period-guide .fade-item__emoji {
+    transition: none;
+  }
+
+  .period-guide .feelings-section.is-visible .feelings-list .fade-item:hover {
+    transform: none;
+  }
+
+  .period-guide .feelings-section.is-visible .feelings-list .fade-item:hover .fade-item__emoji {
+    transform: none;
+  }
+}
+
