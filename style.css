@@ -1732,6 +1732,204 @@ main.period-guide {
   padding-block: clamp(0.35rem, 1.5vw, 1rem) clamp(2.25rem, 5vw, 3.75rem);
 }
 
+.period-guide .pg-flow--acc {
+  gap: 0;
+  padding-block: clamp(0.45rem, 1.8vw, 1.1rem) clamp(1.85rem, 4.5vw, 3.35rem);
+}
+
+/* ---------- Accordion (What Is a Period?) ---------- */
+
+.period-guide .pg-acc-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.2rem, 2.8vw, 1.75rem);
+  width: 100%;
+}
+
+.period-guide .pg-acc__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(22px, 3.2vw, 30px);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-soft) 55%, var(--warm-white));
+  box-shadow:
+    0 6px 32px color-mix(in srgb, var(--taupe) 11%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--warm-white) 55%, transparent) inset,
+    0 1px 0 color-mix(in srgb, var(--warm-white) 40%, transparent) inset;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.35s ease;
+}
+
+.period-guide .pg-acc__item::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -18%;
+  width: 52%;
+  height: 88%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    color-mix(in srgb, var(--burgundy) 11%, transparent) 0%,
+    transparent 68%
+  );
+  filter: blur(40px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.period-guide .pg-acc__item.is-open {
+  border-color: color-mix(in srgb, var(--border-soft) 40%, var(--taupe));
+  box-shadow:
+    0 10px 40px color-mix(in srgb, var(--taupe) 14%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--warm-white) 60%, transparent) inset,
+    0 0 28px color-mix(in srgb, var(--burgundy) 6%, transparent);
+}
+
+.period-guide .pg-acc__heading {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font: inherit;
+}
+
+.period-guide .pg-acc__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.05rem, 2.4vw, 1.3rem) clamp(1.05rem, 2.2vw, 1.2rem);
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  transition: background 0.25s ease;
+}
+
+.period-guide .pg-acc__trigger:hover {
+  background: color-mix(in srgb, var(--warm-white) 35%, transparent);
+}
+
+.period-guide .pg-acc__trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: clamp(18px, 2.5vw, 24px);
+}
+
+.period-guide .pg-acc__trigger-text {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  flex: 1;
+}
+
+.period-guide .pg-acc__title {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.12rem, 2.5vw, 1.34rem);
+  font-weight: 700;
+  color: var(--heading);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.period-guide .pg-acc__preview {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.91rem;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.period-guide .pg-acc__icon {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--beige) 75%, var(--surface));
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--taupe) 8%, transparent);
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.3s ease;
+}
+
+.period-guide .pg-acc__icon::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: -0.2rem;
+  border-right: 2px solid var(--burgundy);
+  border-bottom: 2px solid var(--burgundy);
+  transform: rotate(45deg);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.period-guide .pg-acc__item.is-open .pg-acc__icon::after {
+  margin-top: 0.15rem;
+  transform: rotate(-135deg);
+}
+
+.period-guide .pg-acc__panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.period-guide .pg-acc__item.is-open .pg-acc__panel {
+  grid-template-rows: 1fr;
+}
+
+.period-guide .pg-acc-stack--reduce-motion .pg-acc__panel {
+  transition: none;
+}
+
+.period-guide .pg-acc__panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.period-guide .pg-acc__item.is-open .pg-acc__panel-inner {
+  border-top: 1px solid color-mix(in srgb, var(--border-soft) 80%, transparent);
+}
+
+.period-guide .pg-acc__content {
+  padding: 0.35rem clamp(1.05rem, 2.2vw, 1.25rem) clamp(1.15rem, 2.5vw, 1.4rem);
+}
+
+.period-guide .pg-acc__content p {
+  margin: 0 0 0.8rem;
+  font-size: clamp(0.97rem, 1.85vw, 1.05rem);
+  line-height: 1.74;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.period-guide .pg-acc__content p:last-child {
+  margin-bottom: 0;
+}
+
+.period-guide .pg-acc__content em {
+  font-style: italic;
+  color: color-mix(in srgb, var(--text) 88%, var(--heading));
+}
+
 /* Glassy content cards */
 .period-guide .pg-soft-card {
   position: relative;
