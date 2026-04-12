@@ -1732,24 +1732,48 @@ main.period-guide {
   padding-block: clamp(0.35rem, 1.5vw, 1rem) clamp(2.25rem, 5vw, 3.75rem);
 }
 
-/* Immersive story scroll (What Is a Period?) */
+/* Immersive story scroll (What Is a Period?) — editorial zig-zag on larger screens */
 .period-guide .pg-flow--story {
   gap: 0;
-  max-width: min(46rem, 100%);
+  width: 100%;
+  max-width: min(76rem, 100%);
   margin-inline: auto;
   padding-block: clamp(1.25rem, 3.5vw, 2.25rem) clamp(2.25rem, 5.5vw, 4rem);
 }
 
 .period-guide .pg-story-stream {
   width: 100%;
+  padding-inline: clamp(1rem, 4vw, 2.75rem);
+  box-sizing: border-box;
 }
 
 .period-guide .pg-story {
-  padding-block: clamp(2.75rem, 7vw, 5.25rem);
+  width: 100%;
+  padding-block: clamp(3rem, 7.5vw, 5.75rem);
 }
 
 .period-guide .pg-story:first-child {
-  padding-top: clamp(1.5rem, 4vw, 2.75rem);
+  padding-top: clamp(1.75rem, 4.5vw, 3rem);
+}
+
+/* Readable column; centered on small screens */
+.period-guide .pg-story__column {
+  width: 100%;
+  max-width: min(42rem, 100%);
+  margin-inline: auto;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .period-guide .pg-story--left .pg-story__column {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .period-guide .pg-story--right .pg-story__column {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 .period-guide .pg-story__question {
@@ -1766,7 +1790,7 @@ main.period-guide {
 
 .period-guide .pg-story__answer {
   margin-top: clamp(1.35rem, 3.2vw, 2rem);
-  max-width: 36rem;
+  max-width: 100%;
 }
 
 .period-guide .pg-story__answer p {
@@ -1826,7 +1850,6 @@ main.period-guide {
   height: 1px;
   margin: 0;
   max-width: 12rem;
-  margin-inline: 0;
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--burgundy) 22%, transparent),
@@ -1835,12 +1858,41 @@ main.period-guide {
   opacity: 0.55;
 }
 
+.period-guide .pg-story__rule--left {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.period-guide .pg-story__rule--right {
+  margin-left: auto;
+  margin-right: 0;
+  background: linear-gradient(
+    270deg,
+    color-mix(in srgb, var(--burgundy) 22%, transparent),
+    transparent 100%
+  );
+}
+
+@media (max-width: 767px) {
+  .period-guide .pg-story__rule--left,
+  .period-guide .pg-story__rule--right {
+    margin-inline: auto;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--burgundy) 22%, transparent),
+      transparent
+    );
+    max-width: 10rem;
+  }
+}
+
 /* Light reassurance — no box */
 .period-guide .pg-story__whisper {
-  margin-block: clamp(1.25rem, 3vw, 2rem);
-  margin-inline: 0;
+  margin-block: clamp(1.35rem, 3.2vw, 2.15rem);
+  margin-inline: auto;
   padding: 0.15rem 0 0.15rem 1.1rem;
-  max-width: 34rem;
+  max-width: min(34rem, 100%);
   border-left: 3px solid color-mix(in srgb, var(--burgundy) 25%, var(--taupe));
   font-size: clamp(0.96rem, 1.85vw, 1.04rem);
   line-height: 1.65;
@@ -1848,6 +1900,19 @@ main.period-guide {
   font-weight: 500;
   color: color-mix(in srgb, var(--muted) 35%, var(--heading));
   text-wrap: pretty;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .period-guide .pg-story__whisper--end {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 1.1rem;
+    border-left: none;
+    border-right: 3px solid color-mix(in srgb, var(--burgundy) 25%, var(--taupe));
+    text-align: right;
+  }
 }
 
 .period-guide > .pg-cta {
