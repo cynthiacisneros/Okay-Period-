@@ -1,18 +1,19 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Warm neutrals + burgundy accent */
-  --warm-white: #fffcf7;
-  --beige: #f2ede4;
-  --taupe: #d8d2c8;
-  --gray-light: #eaeaea;
-  --burgundy: #6e2c2c;
-  --text-body: #454240;
-  --text-muted-mix: #7a756e;
+  /* Editorial palette — calm, soft, elevated (Okay, Period!) */
+  --warm-white: #faf7f5;
+  --beige: #e8dcd6;
+  --blush: #f3eaea;
+  --taupe: color-mix(in srgb, #e8dcd6 72%, #faf7f5);
+  --gray-light: #f3eaea;
+  --burgundy: #a44a4a;
+  --text-body: #2f2f2f;
+  --text-muted-mix: #6e6966;
 
   /* Legacy token names — mapped for existing color-mix() usage */
   --main-pink: var(--burgundy);
-  --hot-coral: color-mix(in srgb, var(--burgundy) 78%, #1a1514);
+  --hot-coral: color-mix(in srgb, var(--burgundy) 82%, #2f2f2f);
   --peachy-orange: var(--taupe);
   --butter-pop: var(--beige);
   --cream-bg: var(--warm-white);
@@ -25,40 +26,44 @@
   --butter-yellow: var(--beige);
   --warm-cream: var(--warm-white);
   --text-brown: var(--text-body);
-  --lavender: color-mix(in srgb, var(--burgundy) 10%, var(--warm-white));
+  --lavender: color-mix(in srgb, var(--burgundy) 12%, var(--warm-white));
 
-  --touch-pink: color-mix(in srgb, var(--taupe) 32%, var(--warm-white));
-  --touch-peach: color-mix(in srgb, var(--beige) 52%, var(--gray-light));
+  --touch-pink: color-mix(in srgb, var(--beige) 38%, var(--warm-white));
+  --touch-peach: color-mix(in srgb, var(--beige) 48%, var(--blush));
   --cream: var(--warm-white);
-  --lavender-mist: color-mix(in srgb, var(--burgundy) 6%, var(--beige));
+  --lavender-mist: color-mix(in srgb, var(--burgundy) 8%, var(--beige));
 
   --text: var(--text-body);
-  --text-muted: color-mix(in srgb, var(--text-body) 50%, var(--text-muted-mix));
+  --text-muted: color-mix(in srgb, var(--text-body) 42%, var(--text-muted-mix));
   --muted: var(--text-muted);
-  --heading: var(--burgundy);
+  --heading: color-mix(in srgb, var(--burgundy) 94%, #2f2f2f);
 
   --bg: var(--warm-white);
-  --surface: #ffffff;
-  --surface-warm: color-mix(in srgb, var(--surface) 88%, var(--beige));
-  --surface-cool: color-mix(in srgb, var(--surface) 90%, var(--gray-light));
+  --surface: color-mix(in srgb, #ffffff 93%, #faf7f5);
+  --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--beige));
+  --surface-cool: color-mix(in srgb, var(--surface) 78%, var(--blush));
 
   --accent: var(--burgundy);
-  --accent-secondary: color-mix(in srgb, var(--burgundy) 85%, #000);
-  --accent-deep: color-mix(in srgb, var(--burgundy) 70%, #1c1413);
-  --accent-soft: color-mix(in srgb, var(--beige) 45%, var(--warm-white));
-  --border: color-mix(in srgb, var(--taupe) 50%, var(--gray-light));
-  --border-soft: color-mix(in srgb, var(--border) 62%, var(--warm-white));
+  --accent-secondary: color-mix(in srgb, var(--burgundy) 88%, #2f2f2f);
+  --accent-deep: color-mix(in srgb, var(--burgundy) 75%, #2f2f2f);
+  --accent-soft: color-mix(in srgb, var(--beige) 42%, var(--warm-white));
+  --border: color-mix(in srgb, #e8dcd6 58%, #faf7f5);
+  --border-soft: color-mix(in srgb, #e8dcd6 40%, #faf7f5);
   --link: var(--burgundy);
-  --link-hover: color-mix(in srgb, var(--burgundy) 72%, #000);
-  --nav-link: color-mix(in srgb, var(--burgundy) 88%, #2c2624);
+  --link-hover: color-mix(in srgb, var(--burgundy) 78%, #2f2f2f);
+  --nav-link: color-mix(in srgb, var(--burgundy) 55%, #2f2f2f);
   --nav-link-hover: var(--burgundy);
-  --highlight-bg: color-mix(in srgb, var(--beige) 72%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--gray-light) 75%, var(--warm-white));
-  --text-on-accent: #faf9f7;
+  --highlight-bg: color-mix(in srgb, var(--blush) 65%, var(--warm-white));
+  --highlight-cool: color-mix(in srgb, var(--blush) 55%, var(--beige));
+  --text-on-accent: #fffdfb;
+
+  --btn-primary-border: var(--accent-secondary);
+  --btn-primary-hover-bg: color-mix(in srgb, var(--burgundy) 84%, var(--text-body));
+  --btn-primary-hover-border: var(--accent-deep);
 
   --btn-radius: 12px;
-  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--burgundy) 10%, transparent);
-  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--burgundy) 16%, transparent);
+  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--burgundy) 12%, transparent);
+  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--burgundy) 18%, transparent);
 
   --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
@@ -285,7 +290,7 @@ body.home {
   text-decoration: none;
   color: var(--text-on-accent);
   background: var(--burgundy);
-  border: 1px solid color-mix(in srgb, var(--burgundy) 88%, #000);
+  border: 1px solid var(--btn-primary-border);
   border-radius: 999px;
   box-shadow: var(--btn-shadow);
   transition:
@@ -297,9 +302,9 @@ body.home {
 
 .hero-intro__cta:hover {
   transform: translateY(-2px);
-  background: color-mix(in srgb, var(--burgundy) 90%, #000);
+  background: var(--btn-primary-hover-bg);
   box-shadow: var(--btn-shadow-hover);
-  border-color: color-mix(in srgb, var(--burgundy) 75%, #000);
+  border-color: var(--btn-primary-hover-border);
   color: var(--text-on-accent);
 }
 
@@ -495,14 +500,14 @@ body:not(.home) .site-tagline {
   background: var(--burgundy);
   color: var(--text-on-accent);
   font-weight: 700;
-  border-color: color-mix(in srgb, var(--burgundy) 85%, #000);
+  border-color: var(--btn-primary-border);
   box-shadow: var(--btn-shadow);
   transform: none;
 }
 
 .site-nav__link[aria-current="page"]:hover {
   color: var(--text-on-accent);
-  background: color-mix(in srgb, var(--burgundy) 90%, #000);
+  background: var(--btn-primary-hover-bg);
   transform: translateY(-1px);
   box-shadow: var(--btn-shadow-hover);
 }
@@ -1018,13 +1023,13 @@ main.tips-guide {
 .tips-btn--primary {
   color: var(--text-on-accent);
   background: var(--burgundy);
-  border: 1px solid color-mix(in srgb, var(--burgundy) 88%, #000);
+  border: 1px solid var(--btn-primary-border);
   box-shadow: var(--btn-shadow);
 }
 
 .tips-btn--primary:hover {
   transform: translateY(-2px);
-  background: color-mix(in srgb, var(--burgundy) 90%, #000);
+  background: var(--btn-primary-hover-bg);
   box-shadow: var(--btn-shadow-hover);
 }
 
@@ -1631,13 +1636,13 @@ main.period-guide {
 .period-guide .pg-btn--primary {
   color: var(--text-on-accent);
   background: var(--burgundy);
-  border-color: color-mix(in srgb, var(--burgundy) 88%, #000);
+  border-color: var(--btn-primary-border);
   box-shadow: var(--btn-shadow);
 }
 
 .period-guide .pg-btn--primary:hover {
   transform: translateY(-2px);
-  background: color-mix(in srgb, var(--burgundy) 90%, #000);
+  background: var(--btn-primary-hover-bg);
   box-shadow: var(--btn-shadow-hover);
 }
 
