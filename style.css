@@ -1925,6 +1925,13 @@ main.period-guide {
   box-sizing: border-box;
 }
 
+/* Cycle block at end of story stream (replaces former “Is This Normal?” slot) */
+.period-guide .pg-story-stream > .pg-cycle {
+  max-width: 100%;
+  padding-inline: 0;
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .period-guide .pg-cycle__wrap {
   max-width: min(52rem, 100%);
   margin-inline: auto;
@@ -2070,6 +2077,12 @@ main.period-guide {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.period-guide .pg-cycle__range--placeholder {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
 }
 
 .period-guide .pg-cycle__step--period .pg-cycle__mark {
