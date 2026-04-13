@@ -55,7 +55,72 @@
                 fetchpriority="high"
               />
             </div>
+            <figcaption class="pg-hero__credit">In my period era</figcaption>
+          </figure>
+        </div>
       </header>
+
+      <section class="pg-cycle" aria-labelledby="pg-cycle-title">
+        <div class="pg-cycle__wrap">
+          <h2 id="pg-cycle-title" class="pg-cycle__title">What’s a cycle like?</h2>
+          <p class="pg-cycle__intro">
+            A period is part of a cycle your body goes through each month. Here’s a simple way to understand it:
+          </p>
+
+          <div class="pg-cycle__timeline" id="cycle-timeline" data-cycle-timeline>
+            <div class="pg-cycle__line" aria-hidden="true"></div>
+            <ol class="pg-cycle__steps" role="list">
+              <li class="pg-cycle__item is-active" data-cycle-step>
+                <button
+                  type="button"
+                  class="pg-cycle__step pg-cycle__step--period"
+                  aria-pressed="true"
+                  aria-describedby="cycle-desc-1"
+                >
+                  <span class="pg-cycle__mark" aria-hidden="true"><span class="pg-cycle__emoji">🩸</span></span>
+                  <span class="pg-cycle__label">Period</span>
+                  <span class="pg-cycle__range">Days 1–7</span>
+                </button>
+                <p id="cycle-desc-1" class="pg-cycle__detail">
+                  This is when bleeding happens. It usually lasts about 3–7 days.
+                </p>
+              </li>
+              <li class="pg-cycle__item" data-cycle-step>
+                <button
+                  type="button"
+                  class="pg-cycle__step pg-cycle__step--rest"
+                  aria-pressed="false"
+                  aria-describedby="cycle-desc-2"
+                >
+                  <span class="pg-cycle__mark" aria-hidden="true"><span class="pg-cycle__emoji">🌿</span></span>
+                  <span class="pg-cycle__label">In Between</span>
+                  <span class="pg-cycle__range">Rest &amp; reset</span>
+                </button>
+                <p id="cycle-desc-2" class="pg-cycle__detail">
+                  Your body is resting and resetting after your period.
+                </p>
+              </li>
+              <li class="pg-cycle__item" data-cycle-step>
+                <button
+                  type="button"
+                  class="pg-cycle__step pg-cycle__step--next"
+                  aria-pressed="false"
+                  aria-describedby="cycle-desc-3"
+                >
+                  <span class="pg-cycle__mark" aria-hidden="true"><span class="pg-cycle__emoji">🔄</span></span>
+                  <span class="pg-cycle__label">Next Cycle</span>
+                  <span class="pg-cycle__range">About a month</span>
+                </button>
+                <p id="cycle-desc-3" class="pg-cycle__detail">
+                  About once a month, your next period begins again.
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <p class="pg-cycle__foot">Your body is learning its own pattern, and it’s okay if it takes time.</p>
+        </div>
+      </section>
 
       <div class="pg-flow pg-flow--story">
         <div class="pg-story-stream">
@@ -132,5 +197,6 @@
   <script src="nav.js" defer></script>
   <script src="period-story-reveal.js" defer></script>
   <script src="period-feelings.js" defer></script>
+  <script src="period-cycle.js" defer></script>
 </body>
 </html>
