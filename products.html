@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products — Okay Period</title>
+  <title>Products — Okay, Period!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="products-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="site-nav" id="site-nav" aria-label="Site pages">
     <div class="site-nav__inner">
@@ -26,30 +26,64 @@
       </ul>
     </div>
   </nav>
-  <div class="page-wrap">
+  <div class="page-wrap page-wrap--products">
     <header class="site-header">
       <h1 class="site-title logo-title"><a href="index.html">Okay Period</a></h1>
       <p class="site-tagline">Clear, kind information about menstruation</p>
     </header>
 
+    <main id="main-content" class="products-main" tabindex="-1">
+      <header class="products-intro">
+        <h1 class="products-intro__title">Products</h1>
+        <p class="products-intro__lede">
+          There is not one “right” product for everyone. What feels best can change with your flow,
+          your day, and what your body likes. This page is here so you can explore options slowly,
+          compare a few ideas, and choose what fits you—no rush, no pressure.
+        </p>
+      </header>
 
-    <main id="main-content" tabindex="-1">
-      <h1>Period Products (Overview)</h1>
-      <p>
-        There is no single “right” product—what works best depends on your flow, comfort,
-        activities, and personal preference. Common options include:
-      </p>
-      <ul>
-        <li><strong>Disposable pads</strong> — worn in underwear; come in many sizes and absorbencies.</li>
-        <li><strong>Tampons</strong> — inserted into the vagina to absorb blood; follow package directions and change as recommended.</li>
-        <li><strong>Menstrual cups</strong> — reusable cups that collect blood; need cleaning between uses.</li>
-        <li><strong>Period underwear</strong> — absorbent fabric built into underwear; washable and reusable.</li>
-      </ul>
-      <p>
-        Always read instructions for any product, especially for first-time use. If you use
-        tampons, know the rare but serious signs of toxic shock syndrome listed on product
-        leaflets and seek care if concerned.
-      </p>
+      <section class="products-filters" aria-label="Filter products">
+        <div class="products-filters__row">
+          <p class="products-filters__label" id="filter-category-label">Category</p>
+          <div class="products-filters__chips" role="group" aria-labelledby="filter-category-label">
+            <button type="button" class="products-chip" data-filter-cat="all" aria-pressed="true">All</button>
+            <button type="button" class="products-chip" data-filter-cat="Pads" aria-pressed="false">Pads</button>
+            <button type="button" class="products-chip" data-filter-cat="Tampons" aria-pressed="false">Tampons</button>
+            <button type="button" class="products-chip" data-filter-cat="Period Underwear" aria-pressed="false">Period Underwear</button>
+          </div>
+        </div>
+        <div class="products-filters__row">
+          <div class="products-filters__row-head">
+            <p class="products-filters__label" id="filter-tag-label">Tags</p>
+            <button type="button" class="products-filters__clear" id="products-clear-tags" hidden>Clear tags</button>
+          </div>
+          <p class="products-filters__hint" id="filter-tag-hint">Optional: choose one or more. Products that match any selected tag will show.</p>
+          <div class="products-filters__chips" role="group" aria-labelledby="filter-tag-label" aria-describedby="filter-tag-hint">
+            <button type="button" class="products-chip products-chip--tag" data-filter-tag="Beginner Friendly" aria-pressed="false">Beginner Friendly</button>
+            <button type="button" class="products-chip products-chip--tag" data-filter-tag="Budget" aria-pressed="false">Budget</button>
+            <button type="button" class="products-chip products-chip--tag" data-filter-tag="Organic Cotton" aria-pressed="false">Organic Cotton</button>
+            <button type="button" class="products-chip products-chip--tag" data-filter-tag="Overnight" aria-pressed="false">Overnight</button>
+            <button type="button" class="products-chip products-chip--tag" data-filter-tag="Reusable" aria-pressed="false">Reusable</button>
+          </div>
+        </div>
+      </section>
+
+      <div
+        id="product-grid"
+        class="products-grid"
+        role="list"
+        aria-busy="true"
+      ></div>
+      <p id="products-empty" class="products-empty" hidden>No products match these filters. Try clearing a tag or choosing a different category.</p>
+
+      <section class="products-reassure" aria-labelledby="products-reassure-heading">
+        <h2 id="products-reassure-heading" class="products-reassure__title">Not sure what to choose?</h2>
+        <p class="products-reassure__text">
+          That is completely okay. Many people start with something simple and adjust as they learn
+          what feels comfortable. You can take your time, try a small pack, and change your mind
+          whenever you need to—there is no wrong way to figure it out.
+        </p>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -57,5 +91,6 @@
     </footer>
   </div>
   <script src="nav.js" defer></script>
+  <script src="products.js" defer></script>
 </body>
 </html>
