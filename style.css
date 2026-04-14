@@ -1,21 +1,21 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Fresh soft palette — airy pink, clean accent (Okay, Period!) */
-  --warm-white: #fff7f8;
-  --pale-pink: #f9dde2;
-  --off-white: #fffdfd;
-  --beige: color-mix(in srgb, var(--pale-pink) 52%, var(--warm-white));
+  /* Cream + true red palette (Okay, Period!) */
+  --warm-white: #f8f6f2;
+  --pale-pink: #fbe4e4;
+  --off-white: #ffffff;
+  --beige: #f2ede6;
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, var(--pale-pink) 68%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--pale-pink) 42%, var(--off-white));
-  --burgundy: #c73e4d;
-  --text-body: #332e2e;
-  --text-muted-mix: #6a6262;
+  --taupe: color-mix(in srgb, #e5ded6 55%, var(--warm-white));
+  --gray-light: color-mix(in srgb, var(--pale-pink) 35%, var(--beige));
+  --burgundy: #d32f2f;
+  --text-body: #2f2f2f;
+  --text-muted-mix: #6b6b6b;
 
   /* Legacy token names — mapped for existing color-mix() usage */
   --main-pink: var(--burgundy);
-  --hot-coral: color-mix(in srgb, var(--burgundy) 80%, var(--text-body));
+  --hot-coral: #b71c1c;
   --peachy-orange: var(--taupe);
   --butter-pop: var(--beige);
   --cream-bg: var(--warm-white);
@@ -28,40 +28,40 @@
   --butter-yellow: var(--beige);
   --warm-cream: var(--warm-white);
   --text-brown: var(--text-body);
-  --lavender: color-mix(in srgb, var(--burgundy) 14%, var(--warm-white));
+  --lavender: color-mix(in srgb, var(--burgundy) 12%, var(--warm-white));
 
-  --touch-pink: color-mix(in srgb, var(--pale-pink) 35%, var(--warm-white));
-  --touch-peach: color-mix(in srgb, var(--pale-pink) 48%, var(--off-white));
+  --touch-pink: color-mix(in srgb, var(--pale-pink) 45%, var(--warm-white));
+  --touch-peach: color-mix(in srgb, var(--beige) 50%, var(--off-white));
   --cream: var(--warm-white);
-  --lavender-mist: color-mix(in srgb, var(--burgundy) 10%, var(--pale-pink));
+  --lavender-mist: color-mix(in srgb, var(--burgundy) 8%, var(--beige));
 
   --text: var(--text-body);
-  --text-muted: color-mix(in srgb, var(--text-body) 40%, var(--text-muted-mix));
+  --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
   --muted: var(--text-muted);
-  --heading: color-mix(in srgb, var(--burgundy) 92%, var(--text-body));
+  --heading: var(--burgundy);
 
   --bg: var(--warm-white);
   --surface: var(--off-white);
-  --surface-warm: color-mix(in srgb, var(--surface) 78%, var(--pale-pink));
-  --surface-cool: color-mix(in srgb, var(--surface) 72%, var(--pale-pink));
+  --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--beige));
+  --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
 
   --accent: var(--burgundy);
-  --accent-secondary: color-mix(in srgb, var(--burgundy) 86%, var(--text-body));
-  --accent-deep: color-mix(in srgb, var(--burgundy) 72%, var(--text-body));
-  --accent-soft: color-mix(in srgb, var(--pale-pink) 38%, var(--warm-white));
-  --border: color-mix(in srgb, var(--pale-pink) 52%, var(--warm-white));
-  --border-soft: color-mix(in srgb, var(--pale-pink) 38%, var(--warm-white));
+  --accent-secondary: #b71c1c;
+  --accent-deep: #b71c1c;
+  --accent-soft: color-mix(in srgb, var(--pale-pink) 55%, var(--warm-white));
+  --border: #e5ded6;
+  --border-soft: color-mix(in srgb, #e5ded6 72%, var(--warm-white));
   --link: var(--burgundy);
-  --link-hover: color-mix(in srgb, var(--burgundy) 76%, var(--text-body));
-  --nav-link: color-mix(in srgb, var(--burgundy) 58%, var(--text-body));
+  --link-hover: #b71c1c;
+  --nav-link: color-mix(in srgb, var(--burgundy) 52%, var(--text-body));
   --nav-link-hover: var(--burgundy);
-  --highlight-bg: color-mix(in srgb, var(--pale-pink) 58%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--pale-pink) 45%, var(--off-white));
-  --text-on-accent: #fffdfd;
+  --highlight-bg: color-mix(in srgb, var(--pale-pink) 62%, var(--warm-white));
+  --highlight-cool: color-mix(in srgb, var(--pale-pink) 48%, var(--beige));
+  --text-on-accent: #ffffff;
 
   --btn-primary-border: var(--accent-secondary);
-  --btn-primary-hover-bg: color-mix(in srgb, var(--burgundy) 82%, var(--text-body));
-  --btn-primary-hover-border: var(--accent-deep);
+  --btn-primary-hover-bg: #b71c1c;
+  --btn-primary-hover-border: #b71c1c;
 
   --btn-radius: 12px;
   --btn-shadow: 0 2px 14px color-mix(in srgb, var(--burgundy) 14%, transparent);
