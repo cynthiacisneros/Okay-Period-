@@ -2557,6 +2557,16 @@ body.products-page main .products-intro__title {
 .products-chip:hover {
   border-color: color-mix(in srgb, var(--burgundy) 22%, var(--border));
   color: var(--link-hover);
+  transform: translateY(-1px);
+}
+
+.products-chip:active {
+  transform: translateY(0);
+}
+
+.products-chip:focus {
+  outline: 2px solid var(--pale-pink);
+  outline-offset: 2px;
 }
 
 .products-chip:focus-visible {
@@ -2679,6 +2689,13 @@ body.products-page main .products-intro__title {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover .product-image img {
+    transform: scale(1.03);
+  }
 }
 
 .product-card__img {
