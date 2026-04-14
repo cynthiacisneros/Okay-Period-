@@ -79,6 +79,32 @@
       ></div>
       <p id="products-empty" class="products-empty" hidden>No products match these filters. Try clearing a tag or choosing a different category.</p>
 
+      <section class="products-quiz" id="products-quiz" aria-labelledby="products-quiz-title">
+        <div class="products-quiz__card">
+          <header class="products-quiz__head">
+            <h2 id="products-quiz-title" class="products-quiz__title">This or That ✨</h2>
+            <p class="products-quiz__subtext">Just for fun — your answers might say more about your vibe than you think 👀</p>
+          </header>
+
+          <form class="products-quiz__form" id="products-quiz-form" novalidate>
+            <div class="products-quiz__questions" id="products-quiz-questions"></div>
+
+            <p class="products-quiz__error pg-visually-hidden" id="products-quiz-error" aria-live="polite"></p>
+
+            <div class="products-quiz__actions">
+              <button type="submit" class="product-card__btn products-quiz__submit" id="products-quiz-submit">See My Result</button>
+            </div>
+          </form>
+
+          <div class="products-quiz__result" id="products-quiz-result" hidden aria-live="polite">
+            <h3 class="products-quiz__result-title">Your result ✨</h3>
+            <p class="products-quiz__result-text" id="products-quiz-result-text"></p>
+            <p class="products-quiz__result-note">This is just for fun — you can always explore different options.</p>
+            <button type="button" class="products-quiz__retake" id="products-quiz-retake">Retake Quiz</button>
+          </div>
+        </div>
+      </section>
+
       <section class="products-reassure" aria-labelledby="products-reassure-heading">
         <h2 id="products-reassure-heading" class="products-reassure__title">Not sure what to choose?</h2>
         <p class="products-reassure__text">
@@ -93,5 +119,6 @@
   </div>
   <script src="nav.js" defer></script>
   <script src="products.js" defer></script>
+  <script src="products-quiz.js" defer></script>
 </body>
 </html>
