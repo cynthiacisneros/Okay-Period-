@@ -1,14 +1,14 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Cream + true red palette (Okay, Period!) */
-  --warm-white: #f8f6f2;
+  /* Airy neutral ground + true red accents (Okay, Period!) */
+  --warm-white: #faf9f7;
   --pale-pink: #fbe4e4;
   --off-white: #ffffff;
-  --beige: #f2ede6;
+  --beige: #faf9f7;
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, #e5ded6 55%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--pale-pink) 35%, var(--beige));
+  --taupe: color-mix(in srgb, #eae6e1 55%, var(--warm-white));
+  --gray-light: color-mix(in srgb, var(--pale-pink) 35%, var(--warm-white));
   --burgundy: #d32f2f;
   --text-body: #2f2f2f;
   --text-muted-mix: #6b6b6b;
@@ -31,9 +31,9 @@
   --lavender: color-mix(in srgb, var(--burgundy) 12%, var(--warm-white));
 
   --touch-pink: color-mix(in srgb, var(--pale-pink) 45%, var(--warm-white));
-  --touch-peach: color-mix(in srgb, var(--beige) 50%, var(--off-white));
+  --touch-peach: color-mix(in srgb, var(--warm-white) 50%, var(--off-white));
   --cream: var(--warm-white);
-  --lavender-mist: color-mix(in srgb, var(--burgundy) 8%, var(--beige));
+  --lavender-mist: color-mix(in srgb, var(--burgundy) 8%, var(--warm-white));
 
   --text: var(--text-body);
   --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
@@ -42,21 +42,21 @@
 
   --bg: var(--warm-white);
   --surface: var(--off-white);
-  --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--beige));
+  --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--warm-white));
   --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
 
   --accent: var(--burgundy);
   --accent-secondary: #b71c1c;
   --accent-deep: #b71c1c;
   --accent-soft: color-mix(in srgb, var(--pale-pink) 55%, var(--warm-white));
-  --border: #e5ded6;
-  --border-soft: color-mix(in srgb, #e5ded6 72%, var(--warm-white));
+  --border: #eae6e1;
+  --border-soft: color-mix(in srgb, #eae6e1 72%, var(--warm-white));
   --link: var(--burgundy);
   --link-hover: #b71c1c;
   --nav-link: color-mix(in srgb, var(--burgundy) 52%, var(--text-body));
   --nav-link-hover: var(--burgundy);
   --highlight-bg: color-mix(in srgb, var(--pale-pink) 62%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--pale-pink) 48%, var(--beige));
+  --highlight-cool: color-mix(in srgb, var(--pale-pink) 48%, var(--warm-white));
   --text-on-accent: #ffffff;
 
   --btn-primary-border: var(--accent-secondary);
