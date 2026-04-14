@@ -2665,6 +2665,22 @@ body.products-page main .products-intro__title {
   justify-content: center;
 }
 
+.product-image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .product-card__img {
   width: 100%;
   height: 100%;
