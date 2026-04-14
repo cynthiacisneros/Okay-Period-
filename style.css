@@ -2800,3 +2800,52 @@ body.products-page main .products-reassure__title {
   color: var(--text);
 }
 
+/* =============================================================================
+   Pure white backgrounds — site-wide overrides (color only)
+   ============================================================================= */
+
+html {
+  background-color: #ffffff !important;
+}
+
+body {
+  background-color: #ffffff !important;
+}
+
+section,
+main,
+div,
+header,
+footer,
+nav {
+  background-color: transparent !important;
+}
+
+.main,
+.container,
+.page,
+.wrapper {
+  background-color: #ffffff !important;
+}
+
+.product-card,
+.card {
+  background-color: #ffffff !important;
+  border-color: #eae6e1 !important;
+}
+
+/* Flatten gradient/image fills so transparent containers read as true white */
+body.home .hero-intro,
+.tips-atmosphere,
+.tips-atmosphere::before,
+.period-atmosphere,
+.period-atmosphere::before,
+.site-footer {
+  background: #ffffff !important;
+  background-image: none !important;
+}
+
+body.home .site-footer--home {
+  background: #ffffff !important;
+}
+
