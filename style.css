@@ -1,11 +1,11 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Airy neutral ground + true red accents (Okay, Period!) */
-  --warm-white: #faf9f7;
+  /* Pure white ground + true red accents (Okay, Period!) */
+  --warm-white: #ffffff;
   --pale-pink: #fbe4e4;
   --off-white: #ffffff;
-  --beige: #faf9f7;
+  --beige: #ffffff;
   --blush: var(--pale-pink);
   --taupe: color-mix(in srgb, #eae6e1 55%, var(--warm-white));
   --gray-light: color-mix(in srgb, var(--pale-pink) 35%, var(--warm-white));
