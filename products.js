@@ -20,8 +20,8 @@
       description: "Simple and very affordable. A good starting option.",
       tags: ["Budget", "Beginner Friendly"],
       link: "https://sameday.dollartree.com/store/dollar-tree/products/32116940-bath-beauty-bpure-lavender-aloe-super-infused-pads-8-ct",
-      image: "",
-      alt: "B-Pure lavender and aloe disposable pads, eight count package",
+      image: "images/products/b-pure-pads.jpeg",
+      alt: "B-Pure Pads product package",
     },
     {
       name: "Breeze Maxi Pads",
@@ -30,8 +30,8 @@
       description: "Basic protection and easy to find in stores.",
       tags: ["Budget"],
       link: "https://www.dollargeneral.com/p/breeze-maxi-pads-wingless-super-24ct/090891949540",
-      image: "",
-      alt: "Breeze wingless super maxi pads, twenty-four count",
+      image: "images/products/breeze-maxi-pads.jpeg",
+      alt: "Breeze Maxi Pads product package",
     },
     {
       name: "H-E-B Maxi Pads",
@@ -40,8 +40,8 @@
       description: "Affordable and reliable for everyday use.",
       tags: ["Budget", "Beginner Friendly"],
       link: "https://www.heb.com/product-detail/3913008",
-      image: "",
-      alt: "H-E-B store brand maxi pads package",
+      image: "images/products/heb-maxi-pads.jpeg",
+      alt: "H-E-B Maxi Pads product package",
     },
     {
       name: "U by Kotex Overnight Pads",
