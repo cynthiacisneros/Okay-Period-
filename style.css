@@ -2439,6 +2439,10 @@ body.products-page main.products-main {
   border-radius: 0;
 }
 
+body.products-page .product-category {
+  margin-bottom: 80px;
+}
+
 .products-intro {
   text-align: center;
   padding: 0.5rem 0 2.75rem;
