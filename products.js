@@ -198,7 +198,7 @@
       article.setAttribute("data-index", String(index));
 
       var media = document.createElement("div");
-      media.className = "product-card__media";
+      media.className = "product-card__media product-image";
 
       var img = document.createElement("img");
       img.className = "product-card__img";
