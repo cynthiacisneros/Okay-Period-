@@ -690,6 +690,79 @@ main li {
   color: var(--link-hover);
 }
 
+/* ---------- Resources page — reassurance + Watch & Learn ---------- */
+body.resources-page .resources-reassure__title {
+  color: color-mix(in srgb, var(--heading) 88%, var(--muted));
+  font-weight: 600;
+}
+
+body.resources-page .resources-reassure__body {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+body.resources-page .resources-reassure__body p {
+  margin: 0 0 1.2rem;
+  line-height: 1.88;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--text) 93%, var(--muted));
+}
+
+body.resources-page .resources-reassure__body p:last-child {
+  margin-bottom: 0;
+}
+
+body.resources-page .resources-watch {
+  margin-top: clamp(2.75rem, 6.5vw, 4rem);
+}
+
+body.resources-page .resources-watch h2 {
+  margin-top: 0;
+}
+
+body.resources-page .resources-watch__lead {
+  margin: 0.45rem 0 1.4rem;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.58;
+  color: var(--muted);
+}
+
+body.resources-page .resources-watch__item {
+  margin-bottom: 2.35rem;
+}
+
+body.resources-page .resources-watch__item:last-child {
+  margin-bottom: 0;
+}
+
+body.resources-page .resources-watch__frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--text-body) 5.5%, transparent);
+}
+
+body.resources-page .resources-watch__frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+body.resources-page .resources-watch__caption {
+  margin: 0.7rem 0 0;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.62;
+  color: color-mix(in srgb, var(--text) 94%, var(--muted));
+}
+
 .site-footer {
   margin-top: 2rem;
   padding: 1.15rem 0.75rem 0.25rem;
