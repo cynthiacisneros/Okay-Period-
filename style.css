@@ -811,6 +811,124 @@ body.resources-page .resources-watch__caption {
     max-width: min(22rem, 100%);
     margin-inline: auto;
   }
+
+  body.resources-page .resources-track__layout {
+    grid-template-columns: 1fr;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  body.resources-page .resources-track__aside {
+    justify-content: stretch;
+  }
+
+  body.resources-page .resources-track-card {
+    max-width: min(22rem, 100%);
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Resources page — Track Your Cycle ---------- */
+body.resources-page .resources-track {
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+}
+
+body.resources-page .resources-track__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: clamp(1.85rem, 4.5vw, 3rem);
+  align-items: start;
+}
+
+body.resources-page .resources-track__text {
+  min-width: 0;
+  text-align: left;
+}
+
+body.resources-page .resources-track__title {
+  margin-top: 0;
+  color: color-mix(in srgb, var(--heading) 88%, var(--muted));
+  font-weight: 600;
+}
+
+body.resources-page .resources-track__text > p:not(.resources-track__note) {
+  margin: 0 0 1.05rem;
+  max-width: 34rem;
+  line-height: 1.85;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--text) 93%, var(--muted));
+}
+
+body.resources-page .resources-track__note {
+  margin: 0.85rem 0 0;
+  max-width: 34rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+body.resources-page .resources-track__aside {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+body.resources-page .resources-track-card {
+  width: 100%;
+  max-width: min(20.5rem, 100%);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, var(--warm-white));
+  border: 1px solid color-mix(in srgb, var(--border-soft) 88%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, white 75%, transparent),
+    0 10px 32px color-mix(in srgb, var(--text-body) 4%, transparent);
+}
+
+body.resources-page .resources-track-card__inner {
+  padding: clamp(0.85rem, 2vw, 1.1rem);
+  overflow-x: auto;
+  border-radius: inherit;
+}
+
+body.resources-page .resources-track-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+body.resources-page .resources-track-table th,
+body.resources-page .resources-track-table td {
+  padding: 0.55rem 0.45rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid color-mix(in srgb, var(--border-soft) 70%, transparent);
+}
+
+body.resources-page .resources-track-table th {
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--muted) 85%, var(--heading));
+}
+
+body.resources-page .resources-track-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+body.resources-page .resources-track-table__mood {
+  margin-right: 0.2rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.resources-page .resources-track-table tbody tr {
+    transition: background-color 0.18s ease;
+  }
+
+  body.resources-page .resources-track-table tbody tr:hover {
+    background: color-mix(in srgb, var(--warm-white) 65%, var(--beige));
+  }
 }
 
 .site-footer {
