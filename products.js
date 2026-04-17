@@ -105,8 +105,8 @@
       description: "A simple and affordable option if you’re curious about trying tampons.",
       tags: ["Budget"],
       link: "https://www.heb.com/product-detail/6911501",
-      image: "",
-      alt: "H-E-B store brand tampons box",
+      image: "images/products/heb-tampons.png",
+      alt: "H-E-B super absorbency plastic-applicator tampons box, eighteen count",
     },
     {
       name: "Tampax Pearl Regular Tampons, 18 Count",
