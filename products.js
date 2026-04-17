@@ -48,7 +48,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "Overnight maxi pads providing up to 12 hours of protection and designed to be up to 100% leak-free. This pack contains 39 pads.",
+        "Great for heavier days or when you’re drifting off to sleep and don’t want leak worries tagging along—big coverage, low drama.",
       tags: ["Overnight", "Beginner Friendly"],
       link: "https://www.target.com/p/u-by-kotex-core-maxi-overnight-pads-39ct/-/A-94912086",
       image: "images/products/kotex-u-maxi-night-defense.png",
@@ -59,7 +59,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "Size 3 pads designed for extra heavy flow. These pads are made without fragrances and feature a Pure Cotton top layer with FlexFoam technology for a zero feel, zero leaks experience. This pack contains 22 pads.",
+        "When your flow turns the volume up, a softer, more flexible pad can help you get through the day without constantly checking your outfit.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/always-pure-cotton-extra-heavy-flow-maxi-pads-size-3-22ct/-/A-84743594",
       image: "images/products/always-pure-cotton-flexfoam-size-3.png",
@@ -70,7 +70,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "These 100% organic cotton cover pads offer proven leak protection and are made without synthetic fragrances, pesticides, or chlorine. This 20-count pack features regular-absorbent pads with wings for a secure fit.",
+        "Organic cotton up top and wings that help things stay put—nice if your skin likes simpler stuff and you want a calmer, everyday-at-school feel.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/the-honey-pot-company-non-herbal-regular-pads-with-wings-organic-cotton-cover-20ct/-/A-81782449",
       image: "images/products/honeypot-cotton-comfort-pads.png",
@@ -81,7 +81,7 @@
       category: "Pads",
       priceTier: "Higher-end",
       description:
-        "100% organic cotton topsheet pads designed for a regular flow. This pack includes 32 pads.",
+        "Breathable organic cotton for regular-flow days when you want something gentle on your skin and a little “okay, I’m covered” in your pocket.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/cora-organic-cotton-ultra-thin-regular-fragrance-free-pads-with-wings-for-periods-regular-absorbency-32ct/-/A-76155164",
       image: "images/products/cora-peace-of-mind-pads.png",
@@ -92,7 +92,7 @@
       category: "Pads",
       priceTier: "Higher-end",
       description:
-        "These pads feature a 100% organic cotton top layer and provide all-day leak protection. This pack contains 42 super-absorbency pads designed for a comfortable and reliable experience.",
+        "A bit more absorbency for days that ask more of you—still aiming for a slimmer fit so you’re not doing the awkward waddle between classes.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/l-ultra-thin-super-menstrual-pads-42ct/-/A-93197760",
       image: "images/products/l-organic-cotton-pads-super.png",
@@ -113,7 +113,7 @@
       category: "Tampons",
       priceTier: "Mid-range",
       description:
-        "Tampax Pearl Regular Tampons offer up to 8 hours of comfort and protection. Features a Leakguard Braid to help stop leaks before they happen and a smooth plastic applicator for comfortable insertion.",
+        "A lot of people’s first tampon for a reason—the smooth applicator can make the learning curve feel a little less awkward when you’re still figuring things out.",
       tags: ["Beginner Friendly"],
       link: "https://www.target.com/p/tampax-pearl-tampons-with-leakguard-braid-regular-absorbency-unscented-18ct/-/A-13234608",
       image: "images/products/tampax-pearl-regular.png",
@@ -124,7 +124,7 @@
       category: "Tampons",
       priceTier: "Mid-range",
       description:
-        "100% organic cotton tampons in Super+ absorbency. This pack contains 16 tampons and features an improved applicator.",
+        "Organic cotton with extra absorbency for heavier days—plus a comfort-minded applicator when you want tampons to feel a bit less scary to try.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/cora-organic-cotton-tampons-super-plus-absorbency-16ct/-/A-75665030",
       image: "images/products/cora-comfort-fit-tampons.png",
@@ -135,7 +135,7 @@
       category: "Tampons",
       priceTier: "Mid-range",
       description:
-        "A pack of 42 regular absorbency tampons featuring 100% organic cotton core fibers. Part of the Love for Women artists series, this product comes in a clear, reusable container with a copper-toned lid and features a vibrant, floral-inspired packaging design.",
+        "Lots of regular tampons tucked into pretty, reusable packaging—so restocking feels less like a chore and more like future-you getting a tiny treat.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/l-organic-cotton-full-size-refill-tampons-regular-42ct/-/A-84743591",
       image: "images/products/l-organic-cotton-tampons.png",
@@ -146,7 +146,7 @@
       category: "Period Underwear",
       priceTier: "Higher-end",
       description:
-        "Leakproof period underwear in a Bikini style, featuring all-day absorbency for up to 12 hours.",
+        "Feels closer to normal underwear while catching leaks—handy for school, practice, or anytime you want less “what if” noise in your head.",
       tags: ["Reusable", "Beginner Friendly"],
       link: "https://www.target.com/p/thinx-teens-bikini-leakproof-period-underwear-black-x-large/-/A-90038243",
       image: "images/products/thinx-teens-bikini.png",
