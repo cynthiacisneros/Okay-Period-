@@ -1295,12 +1295,6 @@ main.tips-guide {
   background: var(--gray-light);
 }
 
-.tips-section.tips-reassure {
-  margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
-  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
-  background: var(--beige);
-}
-
 .tips-section.tips-help {
   margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
   padding-inline: clamp(1.1rem, 4vw, 2.35rem);
@@ -1554,47 +1548,6 @@ main.tips-guide {
 
 .tips-pill__list li {
   margin: 0.35rem 0;
-}
-
-/* Reassurance */
-.tips-reassure {
-  padding-block: clamp(2.5rem, 5.5vw, 4.5rem);
-}
-
-.tips-reassure__title {
-  margin: 0;
-  font-family: var(--font-heading);
-  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
-  font-weight: 800;
-  color: var(--heading);
-}
-
-.tips-reassure__content {
-  margin-top: 1rem;
-  border-radius: 28px;
-  padding: 1.6rem 1.45rem;
-  background: color-mix(in srgb, var(--surface) 90%, transparent);
-  border: 1px solid var(--border-soft);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 36px color-mix(in srgb, var(--taupe) 10%, transparent);
-}
-
-.tips-reassure__content p {
-  margin: 0;
-  color: var(--text);
-  font-weight: 700;
-}
-
-.tips-reassure__list {
-  margin: 0.95rem 0 0;
-  padding-left: 1.25rem;
-  color: var(--text);
-  line-height: 1.75;
-}
-
-.tips-reassure__list li {
-  margin: 0.4rem 0;
 }
 
 /* When to ask for help */
