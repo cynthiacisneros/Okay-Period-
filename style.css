@@ -279,51 +279,51 @@ body.home {
   letter-spacing: 0.5px;
 }
 
-.hero-intro__cta {
+.hero button,
+.hero .hero-intro__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-top: 0.75rem;
-  padding: 0.85rem 2.25rem;
+  background-color: #d64545; /* slightly softer red */
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px; /* pill shape */
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 500; /* not too bold */
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-decoration: none;
-  color: var(--text-on-accent);
-  background: var(--burgundy);
-  border: 1px solid var(--btn-primary-border);
-  border-radius: 999px;
-  box-shadow: var(--btn-shadow);
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    background 0.22s ease,
-    border-color 0.22s ease;
+  box-shadow: none;
 }
 
-.hero-intro__cta:hover {
-  transform: translateY(-2px);
-  background: var(--btn-primary-hover-bg);
-  box-shadow: var(--btn-shadow-hover);
-  border-color: var(--btn-primary-hover-border);
-  color: var(--text-on-accent);
+.hero button:hover,
+.hero .hero-intro__cta:hover {
+  background-color: #b93838; /* slightly deeper on hover */
+  transform: translateY(-1px);
+  color: white;
 }
 
-.hero-intro__cta:focus-visible {
+.hero button:focus-visible,
+.hero .hero-intro__cta:focus-visible {
   outline: 2px solid var(--heading);
   outline-offset: 4px;
-  color: var(--text-on-accent);
+  color: white;
 }
 
-.hero-intro__cta:active {
+.hero button:active,
+.hero .hero-intro__cta:active {
   transform: translateY(0);
-  box-shadow: var(--btn-shadow);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-intro__cta:hover,
-  .hero-intro__cta:active {
+  .hero button:hover,
+  .hero button:active,
+  .hero .hero-intro__cta:hover,
+  .hero .hero-intro__cta:active {
     transform: none;
   }
 }
