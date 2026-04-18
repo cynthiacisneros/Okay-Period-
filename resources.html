@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="resources-page">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="site-nav" id="site-nav" aria-label="Site pages">
     <div class="site-nav__inner">
@@ -34,26 +34,119 @@
 
 
     <main id="main-content" tabindex="-1">
-      <h1>Trusted Resources</h1>
-      <p>
-        For deeper reading, these organizations publish evidence-based information on
-        reproductive and menstrual health (links open in a new tab):
-      </p>
-      <ul class="resource-list">
-        <li>
-          <a href="https://www.womenshealth.gov/menstrual-cycle" target="_blank" rel="noopener noreferrer">Office on Women’s Health — Menstrual cycle</a>
-        </li>
-        <li>
-          <a href="https://www.plannedparenthood.org/learn/health-and-wellness/menstruation" target="_blank" rel="noopener noreferrer">Planned Parenthood — Menstruation</a>
-        </li>
-        <li>
-          <a href="https://www.acog.org/womens-health/faqs/your-menstrual-cycle" target="_blank" rel="noopener noreferrer">ACOG — Your menstrual cycle (FAQ)</a>
-        </li>
-      </ul>
-      <p>
-        Your school nurse, campus health center, or primary care clinician can also help
-        answer questions that are specific to you.
-      </p>
+      <div class="resources-layout">
+        <div class="resources-layout__text">
+          <div class="resources-reassure">
+            <h1 class="resources-reassure__title">A Little Reassurance ✨</h1>
+            <div class="resources-reassure__body">
+              <p>
+                Periods can feel a little scary, especially at first. Your body is changing, and it’s completely okay if that feels like a lot.
+              </p>
+              <p>
+                You’re learning, and you’ll figure it out in your own time. It won’t always feel this confusing.
+              </p>
+            </div>
+          </div>
+
+          <div class="resources-watch-heading">
+            <h2 id="watch-learn-heading">Watch &amp; Learn</h2>
+            <p class="resources-watch__lead">Sometimes it’s easier to understand when you can see it.</p>
+          </div>
+        </div>
+
+        <aside class="resources-layout__aside" aria-label="Watch and learn videos">
+          <div class="resources-video-card" role="region" aria-labelledby="watch-learn-heading">
+            <div class="resources-watch__item">
+              <div class="resources-watch__frame">
+                <iframe
+                  src="https://www.youtube.com/embed/eX1yGhzenp4"
+                  title="Video: simple explanation of why periods happen"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+              <p class="resources-watch__caption">A simple, easy-to-understand explanation of why periods happen.</p>
+            </div>
+
+            <div class="resources-watch__item">
+              <div class="resources-watch__frame">
+                <iframe
+                  src="https://www.youtube.com/embed/DBe7-PHRav8"
+                  title="Video: what getting your period can feel like"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+              <p class="resources-watch__caption">What getting your period can feel like—and what’s completely normal.</p>
+            </div>
+
+            <div class="resources-watch__item">
+              <div class="resources-watch__frame">
+                <iframe
+                  src="https://www.youtube.com/embed/z9fgxzfbYMQ"
+                  title="Video: periods explained in a friendly way"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+              </div>
+              <p class="resources-watch__caption">Because sometimes you just need someone to explain it without making it awkward.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="cycle-tracker-section" aria-labelledby="cycle-tracker-heading">
+        <div class="cycle-tracker-text">
+          <h2 id="cycle-tracker-heading">Track Your Cycle ✨</h2>
+          <p>You don’t need an app to understand your body.</p>
+          <p>A simple calendar can help you notice patterns, like when your period starts, how long it lasts, and how you feel from day to day.</p>
+          <p>Over time, this can help you feel more prepared and a little less surprised.</p>
+          <p class="cycle-note">💡 Most cycles happen about every 21–35 days. Yours may not feel regular at first, and that is completely okay.</p>
+        </div>
+
+        <div class="cycle-calendar-card">
+          <h3>Example Period Tracker</h3>
+          <p class="calendar-subtext">Tap the days to mark your flow.</p>
+
+          <div class="calendar-month">May 2026</div>
+
+          <div class="calendar-weekdays">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+          </div>
+
+          <div class="calendar-grid" id="periodCalendar"></div>
+
+          <div class="calendar-legend">
+            <span>🌸 Light</span>
+            <span>❤️ Medium</span>
+            <span>🌙 Heavy</span>
+          </div>
+
+          <p class="calendar-summary" id="calendarSummary">
+            Tap a few days to see an example pattern.
+          </p>
+
+          <p class="calendar-reassurance">
+            Everyone’s cycle is a little different, and that’s okay.
+          </p>
+
+          <button class="calendar-reset-btn" id="calendarResetBtn" type="button">
+            Clear calendar
+          </button>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -61,5 +154,6 @@
     </footer>
   </div>
   <script src="nav.js" defer></script>
+  <script src="resources-calendar.js" defer></script>
 </body>
 </html>
