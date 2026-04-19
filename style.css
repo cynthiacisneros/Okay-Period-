@@ -238,6 +238,12 @@ input[type="reset"]:disabled {
   padding: 2.25rem 1.75rem 4rem;
 }
 
+/* Inner pages: nav sits closer to real content (no tagline strip under nav) */
+body:not(.home) .page-wrap {
+  padding-top: clamp(22px, 3.5vw, 34px);
+  padding-bottom: 3.25rem;
+}
+
 /* Home — full-screen intro hero (landing) */
 body.home {
   background: var(--bg);
@@ -396,36 +402,7 @@ body.home .hero-intro__inner {
   }
 }
 
-.site-header {
-  text-align: center;
-  padding: 0.35rem 0 1.5rem;
-  border-bottom: 1px solid var(--border-soft);
-  margin-bottom: 1.85rem;
-}
-
-/* Non-home pages: tagline under sticky nav */
-body:not(.home) .site-header {
-  text-align: left;
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  gap: 0.85rem 1.1rem;
-}
-
-body:not(.home) .site-tagline {
-  margin: 0;
-  font-size: 0.9rem;
-  max-width: 38rem;
-}
-
-@media (max-width: 560px) {
-  body:not(.home) .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-}
-
+/* Legacy: site-header / site-tagline no longer used on inner pages */
 .site-tagline {
   margin: 0.35rem 0 0;
   font-family: var(--font-body);
@@ -666,7 +643,7 @@ body:not(.home) .site-tagline {
 
 main {
   background: var(--surface);
-  padding: 2rem 1.75rem 2.5rem;
+  padding: 1.5rem 1.5rem 2.25rem;
   border-radius: 14px;
   border: 1px solid var(--border-soft);
   box-shadow: 0 4px 28px color-mix(in srgb, var(--taupe) 14%, transparent);
@@ -744,7 +721,7 @@ body.resources-page .page-wrap {
   max-width: none;
   margin-left: auto;
   margin-right: auto;
-  padding: 60px 0 80px;
+  padding: clamp(22px, 3.5vw, 34px) 0 64px;
 }
 
 body.resources-page main {
@@ -776,7 +753,7 @@ body.resources-page .cycle-tracker-text h2 {
 body.resources-page .resources-top {
   width: 100%;
   max-width: none;
-  margin: 0 0 80px;
+  margin: 0 0 clamp(3rem, 7vw, 4rem);
 }
 
 body.resources-page .resources-reassure__title {
@@ -1290,23 +1267,12 @@ body.period-page {
   }
 }
 
-body.period-page .page-wrap.page-wrap--period {
-  position: relative;
-  z-index: 1;
-}
-
 body.period-page .site-nav {
   background: color-mix(in srgb, var(--warm-white) 88%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-soft);
   box-shadow: 0 1px 0 color-mix(in srgb, var(--gray-light) 35%, transparent);
-}
-
-body.period-page .site-header {
-  border-bottom: none;
-  margin-bottom: clamp(1rem, 3vw, 1.65rem);
-  padding-bottom: clamp(0.5rem, 2vw, 1rem);
 }
 
 body.period-page .site-footer {
@@ -1318,8 +1284,12 @@ body.period-page .site-footer {
 }
 
 body.period-page .page-wrap.page-wrap--period {
+  position: relative;
+  z-index: 1;
   max-width: min(76rem, 100%);
+  padding-top: clamp(22px, 3.5vw, 34px);
   padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+  padding-bottom: 3.25rem;
 }
 
 html:has(body.period-page) {
@@ -1350,7 +1320,7 @@ body.tips-page .page-wrap.page-wrap--tips {
   width: min(1100px, calc(100% - 64px));
   max-width: none;
   margin-inline: auto;
-  padding: 60px 0 80px;
+  padding: clamp(22px, 3.5vw, 34px) 0 64px;
   position: relative;
   z-index: 1;
 }
@@ -1470,7 +1440,7 @@ body.tips-page .tips-section.tips-help {
 
 /* Hero */
 .tips-hero {
-  padding-block: clamp(1.35rem, 3.5vw, 2.2rem) clamp(2.1rem, 4.5vw, 3.15rem);
+  padding-block: clamp(0.65rem, 2vw, 1.35rem) clamp(2rem, 4vw, 3rem);
 }
 
 .tips-hero__inner {
@@ -2167,14 +2137,14 @@ main.period-guide {
 /* ---------- What Is a Period? — soft cards, callouts, scroll reveal ---------- */
 
 .period-guide .pg-hero--soft {
-  padding-block: clamp(0.85rem, 2.2vw, 1.5rem) clamp(1.1rem, 2.8vw, 1.85rem);
+  padding-block: clamp(0.35rem, 1.5vw, 0.85rem) clamp(1.25rem, 3vw, 2rem);
 }
 
 .period-guide .pg-hero__inner--split {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.92fr);
   gap: clamp(1.35rem, 3.5vw, 2.5rem);
-  align-items: center;
+  align-items: start;
   text-align: left;
   max-width: min(72rem, 100%);
   margin-inline: auto;
@@ -2919,6 +2889,7 @@ body.products-page {
 
 body.products-page .page-wrap.page-wrap--products {
   max-width: min(70rem, 100%);
+  padding-top: clamp(22px, 3.5vw, 34px);
   padding-inline: clamp(1.1rem, 3.5vw, 2rem);
   padding-bottom: 4.5rem;
 }
@@ -2937,7 +2908,7 @@ body.products-page .product-category {
 
 .products-intro {
   text-align: center;
-  padding: 0.5rem 0 2.75rem;
+  padding: 0 0 2.5rem;
   max-width: 36rem;
   margin-inline: auto;
 }
