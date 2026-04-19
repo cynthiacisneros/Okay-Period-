@@ -705,17 +705,10 @@ main li {
   color: var(--link-hover);
 }
 
-/* ---------- Resources page — two-column reassurance + video card ---------- */
-body.resources-page .resources-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
-  gap: clamp(1.85rem, 4.5vw, 3.25rem);
-  align-items: start;
-}
-
-body.resources-page .resources-layout__text {
-  min-width: 0;
-  text-align: left;
+/* ---------- Resources page — reassurance intro ---------- */
+body.resources-page .resources-top {
+  max-width: min(52rem, 100%);
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
 }
 
 body.resources-page .resources-reassure__title {
@@ -740,14 +733,6 @@ body.resources-page .resources-reassure__body p:last-child {
   margin-bottom: 0;
 }
 
-body.resources-page .resources-watch-heading {
-  margin-top: clamp(2rem, 4.5vw, 2.85rem);
-}
-
-body.resources-page .resources-watch-heading h2 {
-  margin-top: 0;
-}
-
 body.resources-page .resources-watch__lead {
   margin: 0.45rem 0 0;
   max-width: 34rem;
@@ -757,76 +742,58 @@ body.resources-page .resources-watch__lead {
   color: var(--muted);
 }
 
-body.resources-page .resources-layout__aside {
-  min-width: 0;
-  display: flex;
-  justify-content: flex-end;
+/* ---------- Resources page — Watch & Learn (centered cards) ---------- */
+.watch-learn {
+  max-width: 760px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
 }
 
-body.resources-page .resources-video-card {
+.watch-learn > p {
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 540px;
+  margin: 0.75rem auto 2rem auto;
+  line-height: 1.6;
+}
+
+.watch-learn h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: color-mix(in srgb, var(--heading) 88%, var(--muted));
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.video-card iframe {
   width: 100%;
-  max-width: min(17.75rem, 100%);
-  padding: clamp(1rem, 2.2vw, 1.35rem);
-  border-radius: 16px;
-  background: color-mix(in srgb, var(--surface) 94%, var(--warm-white));
-  border: 1px solid color-mix(in srgb, var(--border-soft) 88%, transparent);
-  box-shadow:
-    0 1px 0 color-mix(in srgb, white 75%, transparent),
-    0 10px 32px color-mix(in srgb, var(--text-body) 4%, transparent);
+  height: 315px;
+  border: none;
+  border-radius: 12px;
 }
 
-body.resources-page .resources-watch__item {
-  margin-bottom: 1.35rem;
-}
-
-body.resources-page .resources-watch__item:last-child {
+.video-card p {
+  margin-top: 0.85rem;
   margin-bottom: 0;
-}
-
-body.resources-page .resources-watch__frame {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--text-body) 6%, var(--off-white));
-  box-shadow: 0 2px 12px color-mix(in srgb, var(--text-body) 5%, transparent);
-}
-
-body.resources-page .resources-watch__frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-body.resources-page .resources-watch__caption {
-  margin: 0.55rem 0 0;
-  font-size: 0.86rem;
-  font-weight: 400;
-  line-height: 1.55;
-  color: color-mix(in srgb, var(--text) 90%, var(--muted));
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.68);
+  text-align: left;
 }
 
 @media (max-width: 52rem) {
-  body.resources-page .resources-layout {
-    grid-template-columns: 1fr;
-    gap: clamp(2rem, 5vw, 2.75rem);
-  }
-
-  body.resources-page .resources-layout__aside {
-    justify-content: stretch;
-  }
-
-  body.resources-page .resources-video-card {
-    max-width: min(22rem, 100%);
-    margin-inline: auto;
-  }
-
   body.resources-page .cycle-tracker-section {
     grid-template-columns: 1fr;
     gap: clamp(1.75rem, 4vw, 2.5rem);
