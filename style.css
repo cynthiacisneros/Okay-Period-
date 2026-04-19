@@ -247,14 +247,18 @@ body.home {
   flex-direction: column;
 }
 
-.hero-intro {
+/* Landing page only — full-viewport centered hero (no nav on index) */
+body.home .hero.hero-intro {
   flex: 1;
-  min-height: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 1.5rem 3.5rem;
   text-align: center;
+  padding: 20px;
+  margin: 0;
   background:
     radial-gradient(
       ellipse 130% 85% at 50% -5%,
@@ -269,14 +273,23 @@ body.home {
     linear-gradient(180deg, var(--warm-white) 0%, var(--beige) 100%);
 }
 
-.hero {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #fdf4f4 100%
-  );
-  padding: 100px 20px;
-  text-align: center;
+body.home .hero h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+
+body.home .hero p {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+body.home .explore-btn {
+  margin-top: 10px;
+}
+
+body.home .hero-intro__inner {
+  gap: 0;
 }
 
 .hero-intro__inner {
@@ -325,17 +338,16 @@ body.home {
   font-size: 1.1rem;
   color: rgba(0, 0, 0, 0.6); /* softer opacity */
   font-weight: 400; /* lighter weight */
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
 }
 
 .hero button,
-.hero .hero-intro__cta {
+.hero .hero-intro__cta,
+.hero .explore-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.75rem;
+  margin-top: 0;
   background-color: #d64545; /* slightly softer red */
   color: white;
   border: none;
@@ -352,21 +364,24 @@ body.home {
 }
 
 .hero button:hover,
-.hero .hero-intro__cta:hover {
+.hero .hero-intro__cta:hover,
+.hero .explore-btn:hover {
   background-color: #b93838; /* slightly deeper on hover */
   transform: translateY(-1px);
   color: white;
 }
 
 .hero button:focus-visible,
-.hero .hero-intro__cta:focus-visible {
+.hero .hero-intro__cta:focus-visible,
+.hero .explore-btn:focus-visible {
   outline: 2px solid var(--heading);
   outline-offset: 4px;
   color: white;
 }
 
 .hero button:active,
-.hero .hero-intro__cta:active {
+.hero .hero-intro__cta:active,
+.hero .explore-btn:active {
   transform: translateY(0);
 }
 
@@ -374,7 +389,9 @@ body.home {
   .hero button:hover,
   .hero button:active,
   .hero .hero-intro__cta:hover,
-  .hero .hero-intro__cta:active {
+  .hero .hero-intro__cta:active,
+  .hero .explore-btn:hover,
+  .hero .explore-btn:active {
     transform: none;
   }
 }
