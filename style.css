@@ -838,6 +838,56 @@ body.resources-page .resources-watch__caption {
   }
 }
 
+/* ---------- Resources page — More places to learn (external links) ---------- */
+body.resources-page .resources-more-learn {
+  margin-top: clamp(2.5rem, 5.5vw, 3.5rem);
+  text-align: left;
+  max-width: 40rem;
+}
+
+body.resources-page .resources-more-learn h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.8vw, 1.95rem);
+  font-weight: 600;
+  color: color-mix(in srgb, var(--heading) 88%, var(--muted));
+}
+
+body.resources-page .resources-more-learn .resources-watch__lead {
+  margin: 0.6rem 0 0;
+}
+
+body.resources-page .resources-more-learn__list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+body.resources-page .resources-more-learn__list a {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--link);
+  text-decoration: none;
+}
+
+body.resources-page .resources-more-learn__list a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+body.resources-page .resources-more-learn__note {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 /* ---------- Resources page — Track Your Cycle (interactive calendar) ---------- */
 body.resources-page .cycle-tracker-section {
   display: grid;
