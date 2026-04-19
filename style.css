@@ -1303,9 +1303,7 @@ html:has(body.period-page) {
 body.tips-page {
   --tips-font-body: var(--font-body);
   background-color: var(--bg);
-}
-
-body.tips-page {
+  overflow-x: clip;
   font-family: var(--tips-font-body);
 }
 
@@ -1316,8 +1314,10 @@ body.tips-page li {
 }
 
 body.tips-page .page-wrap.page-wrap--tips {
-  max-width: min(76rem, 100%);
-  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+  width: min(1100px, calc(100% - 64px));
+  max-width: none;
+  margin-inline: auto;
+  padding: 60px 0 80px;
   position: relative;
   z-index: 1;
 }
@@ -1380,50 +1380,58 @@ main.tips-guide {
 
 .tips-container {
   width: 100%;
-  max-width: 64rem;
+  max-width: min(68rem, 100%);
   margin-inline: auto;
 }
 
 .tips-container--wide {
-  max-width: 70rem;
+  max-width: 100%;
 }
 
 .tips-section {
-  padding-block: clamp(2.5rem, 6vw, 5rem);
+  padding-block: clamp(2.75rem, 6vw, 5.25rem);
 }
 
-.tips-section__title {
+/* Editorial section titles — distinct from body copy */
+body.tips-page .tips-section__title {
   margin: 0;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.2vw, 2.35rem);
-  font-weight: 800;
+  font-size: clamp(1.85rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
   color: var(--heading);
-  letter-spacing: 0.015em;
 }
 
-.tips-section__lede {
-  margin: 0.7rem 0 0;
-  max-width: 48rem;
+body.tips-page .tips-section__lede {
+  margin: 0;
+  max-width: min(62ch, 100%);
   color: var(--muted);
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.72;
 }
 
-/* Full-bleed section bands — beige + light gray */
-.tips-section.tips-quick {
-  margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
-  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+/* Full-bleed section bands — align gutters with centered page column */
+body.tips-page .tips-section.tips-quick {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: max(1rem, calc((100vw - min(1100px, calc(100vw - 64px))) / 2));
   background: var(--beige);
 }
 
-.tips-section.tips-feature {
-  margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
-  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+body.tips-page .tips-section.tips-feature {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: max(1rem, calc((100vw - min(1100px, calc(100vw - 64px))) / 2));
   background: var(--gray-light);
 }
 
-.tips-section.tips-help {
-  margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
-  padding-inline: clamp(1.1rem, 4vw, 2.35rem);
+body.tips-page .tips-section.tips-help {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding-inline: max(1rem, calc((100vw - min(1100px, calc(100vw - 64px))) / 2));
   background: var(--gray-light);
 }
 
@@ -1446,27 +1454,27 @@ main.tips-guide {
   align-items: center;
 }
 
-.tips-hero__title {
+body.tips-page .tips-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5.6vw, 3.35rem);
-  font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: 0.02em;
+  font-size: clamp(2.35rem, 5.4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   color: var(--heading);
 }
 
-.tips-hero__subtitle {
+body.tips-page .tips-hero__subtitle {
   margin: 0.85rem 0 0;
   font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-  line-height: 1.55;
+  line-height: 1.62;
   color: var(--muted);
-  max-width: 42rem;
+  max-width: min(62ch, 100%);
 }
 
-.tips-hero__intro {
+body.tips-page .tips-hero__intro {
   margin: 1.05rem 0 0;
-  max-width: 46rem;
+  max-width: min(62ch, 100%);
   color: var(--text);
   line-height: 1.78;
 }
@@ -1584,14 +1592,17 @@ main.tips-guide {
   object-fit: contain;
 }
 
-/* Grid */
-.tips-grid {
+/* Grid — balanced, breathing layout */
+body.tips-page .tips-grid {
   list-style: none;
-  margin: 1.65rem 0 0;
+  width: 100%;
+  max-width: min(1024px, 100%);
+  margin: 2rem auto 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 2.5vw, 1.6rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: stretch;
 }
 
 .tips-card {
@@ -1636,15 +1647,15 @@ main.tips-guide {
   margin: 0;
   color: var(--muted);
   font-size: 0.95rem;
-  line-height: 1.65;
+  line-height: 1.68;
 }
 
 /* Feature columns */
-.tips-columns {
-  margin-top: 1.65rem;
+body.tips-page .tips-columns {
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 2.5vw, 1.65rem);
+  gap: clamp(1.35rem, 3vw, 2rem);
 }
 
 .tips-pill {
@@ -1668,17 +1679,22 @@ main.tips-guide {
 .tips-pill__list {
   margin: 0;
   padding-left: 1.25rem;
-  line-height: 1.7;
+  line-height: 1.72;
   color: var(--text);
 }
 
-.tips-pill__list li {
-  margin: 0.35rem 0;
+body.tips-page .tips-pill__list li {
+  margin: 0;
+  padding: 0.45rem 0;
+}
+
+body.tips-page .tips-pill__list li + li {
+  border-top: 1px solid color-mix(in srgb, var(--border) 48%, transparent);
 }
 
 /* When to ask for help */
 .tips-alert {
-  margin-top: 1.35rem;
+  margin-top: 1.65rem;
   border-radius: 26px;
   padding: 1.4rem 1.35rem;
   background: color-mix(in srgb, var(--beige) 55%, var(--surface));
@@ -1688,21 +1704,27 @@ main.tips-guide {
   box-shadow: 0 6px 28px color-mix(in srgb, var(--taupe) 12%, transparent);
 }
 
-.tips-alert__list {
+body.tips-page .tips-alert__list {
   margin: 0;
   padding-left: 1.25rem;
   color: var(--text);
-  line-height: 1.75;
+  line-height: 1.72;
 }
 
-.tips-alert__list li {
-  margin: 0.45rem 0;
+body.tips-page .tips-alert__list li {
+  margin: 0;
+  padding: clamp(0.65rem, 2vw, 0.85rem) 0;
 }
 
-.tips-alert__note {
-  margin: 1rem 0 0;
+body.tips-page .tips-alert__list li + li {
+  border-top: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+}
+
+body.tips-page .tips-alert__note {
+  margin: 1.35rem 0 0;
+  max-width: min(62ch, 100%);
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.68;
 }
 
 /* Subtle load-in motion (tasteful) */
@@ -1739,18 +1761,21 @@ main.tips-guide {
   }
 }
 
-@media (max-width: 900px) {
-  .tips-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tips-columns {
-    grid-template-columns: 1fr;
+@media (min-width: 36rem) {
+  body.tips-page .tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 520px) {
-  .tips-grid {
+@media (min-width: 62rem) {
+  body.tips-page .tips-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1.35rem, 2.25vw, 1.85rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .tips-columns {
     grid-template-columns: 1fr;
   }
 }
