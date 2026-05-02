@@ -12,6 +12,14 @@
     "Period Underwear": "images/products/period-underwear.svg",
   };
 
+  var CATEGORY_HEADINGS = {
+    Pads: "Menstrual Pads",
+    Tampons: "Tampons",
+    "Period Underwear": "Period Underwear",
+  };
+
+  var CATEGORY_ORDER = ["Pads", "Tampons", "Period Underwear"];
+
   var PRODUCTS = [
     {
       name: "B-Pure Pads",
@@ -195,9 +203,15 @@
     gridEl.innerHTML = "";
     var visible = 0;
 
-    PRODUCTS.forEach(function (p, index) {
-      var match = productMatches(p);
-      if (!match) return;
+    function renderHeading(category) {
+      var label = CATEGORY_HEADINGS[category] || category;
+      var heading = document.createElement("h2");
+      heading.className = "products-category-heading";
+      heading.textContent = label;
+      gridEl.appendChild(heading);
+    }
+
+    function renderCard(p, index) {
       visible++;
 
       var article = document.createElement("article");
@@ -267,6 +281,25 @@
       article.appendChild(media);
       article.appendChild(body);
       gridEl.appendChild(article);
+    }
+
+    // Render in a stable category order, adding a heading above each group.
+    // Cards are still rendered in their existing order within each category.
+    CATEGORY_ORDER.forEach(function (category) {
+      var didRenderHeading = false;
+
+      PRODUCTS.forEach(function (p, index) {
+        if (p.category !== category) return;
+        var match = productMatches(p);
+        if (!match) return;
+
+        if (!didRenderHeading) {
+          renderHeading(category);
+          didRenderHeading = true;
+        }
+
+        renderCard(p, index);
+      });
     });
 
     if (emptyEl) {

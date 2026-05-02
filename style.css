@@ -2961,6 +2961,20 @@ body.products-page .product-category {
   margin-bottom: 80px;
 }
 
+.products-category-heading {
+  grid-column: 1 / -1;
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+.products-category-heading:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
 .products-intro {
   text-align: center;
   padding: 0 0 2.5rem;
