@@ -7,12 +7,13 @@
   --interactive-blue: #95bbea;
 
   --warm-white: var(--cream);
-  --pale-pink: color-mix(in srgb, var(--interactive-blue) 18%, var(--warm-white));
-  --off-white: color-mix(in srgb, #ffffff 35%, var(--warm-white));
-  --beige: color-mix(in srgb, var(--warm-white) 55%, #ffffff);
+  --pale-pink: color-mix(in srgb, var(--interactive-blue) 42%, var(--warm-white));
+  --off-white: color-mix(in srgb, #ffffff 72%, var(--warm-white));
+  /* Very light neutral — barely cream, cooler than classic beige */
+  --beige: color-mix(in srgb, #ffffff 72%, color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white)));
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, #d9d4cf 55%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--interactive-blue) 12%, var(--warm-white));
+  --taupe: color-mix(in srgb, #d9d4cf 35%, var(--warm-white));
+  --gray-light: color-mix(in srgb, var(--interactive-blue) 34%, var(--warm-white));
   --burgundy: var(--brand-red);
   --text-body: #2f2f2f;
   --text-muted-mix: #6b6b6b;
@@ -32,11 +33,11 @@
   --butter-yellow: var(--beige);
   --warm-cream: var(--warm-white);
   --text-brown: var(--text-body);
-  --lavender: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
+  --lavender: color-mix(in srgb, var(--interactive-blue) 42%, var(--warm-white));
 
   --touch-pink: color-mix(in srgb, var(--pale-pink) 45%, var(--warm-white));
   --touch-peach: color-mix(in srgb, var(--warm-white) 50%, var(--off-white));
-  --lavender-mist: color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white));
+  --lavender-mist: color-mix(in srgb, var(--interactive-blue) 30%, var(--warm-white));
 
   --text: var(--text-body);
   --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
@@ -52,14 +53,14 @@
   --accent-secondary: color-mix(in srgb, var(--interactive-blue) 82%, #000000);
   --accent-deep: color-mix(in srgb, var(--interactive-blue) 72%, #000000);
   --accent-soft: color-mix(in srgb, var(--interactive-blue) 34%, var(--warm-white));
-  --border: color-mix(in srgb, #cfc8c2 55%, var(--warm-white));
+  --border: color-mix(in srgb, var(--interactive-blue) 16%, #ffffff);
   --border-soft: color-mix(in srgb, var(--border) 72%, var(--warm-white));
   --link: var(--interactive-blue);
   --link-hover: color-mix(in srgb, var(--interactive-blue) 78%, #000000);
   --nav-link: color-mix(in srgb, var(--text-body) 88%, var(--burgundy));
   --nav-link-hover: var(--link-hover);
-  --highlight-bg: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white));
+  --highlight-bg: color-mix(in srgb, var(--interactive-blue) 40%, var(--warm-white));
+  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 30%, var(--warm-white));
   /* Dark text on sky-blue buttons */
   --text-on-accent: #1a1a1a;
   /* Light text on deep-red surfaces (nav “current”, skip link, etc.) */
@@ -135,7 +136,18 @@ body {
   line-height: 1.6;
   letter-spacing: 0.2px;
   color: var(--text);
-  background: var(--bg);
+  background:
+    radial-gradient(
+      ellipse 120% 80% at 100% 0%,
+      color-mix(in srgb, var(--interactive-blue) 14%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 0% 100%,
+      color-mix(in srgb, var(--lavender-mist) 55%, transparent) 0%,
+      transparent 50%
+    ),
+    var(--bg);
 }
 
 /* Modern hierarchy defaults (page-specific styles can still override) */
@@ -289,7 +301,7 @@ body.home .hero.hero-intro {
   background:
     radial-gradient(
       ellipse 130% 85% at 50% -5%,
-      color-mix(in srgb, var(--beige) 85%, transparent) 0%,
+      color-mix(in srgb, var(--pale-pink) 65%, transparent) 0%,
       transparent 52%
     ),
     radial-gradient(
@@ -297,7 +309,7 @@ body.home .hero.hero-intro {
       color-mix(in srgb, var(--gray-light) 55%, transparent) 0%,
       transparent 48%
     ),
-    linear-gradient(180deg, var(--warm-white) 0%, var(--beige) 100%);
+    linear-gradient(180deg, var(--warm-white) 0%, var(--lavender-mist) 100%);
 }
 
 body.home .hero h1 {
@@ -518,9 +530,9 @@ body.home .hero-intro__inner {
 }
 
 .site-nav__link:hover {
-  background: var(--beige);
+  background: var(--highlight-cool);
   color: var(--nav-link-hover);
-  border-color: color-mix(in srgb, var(--taupe) 35%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
   box-shadow: none;
   transform: translateY(-1px);
 }
@@ -1244,7 +1256,7 @@ body.resources-page .calendar-reset-btn {
 }
 
 body.resources-page .calendar-reset-btn:hover {
-  background: color-mix(in srgb, var(--surface) 88%, var(--beige));
+  background: color-mix(in srgb, var(--surface) 80%, var(--lavender-mist));
   border-color: color-mix(in srgb, var(--burgundy) 22%, var(--border-soft));
 }
 
@@ -1308,8 +1320,8 @@ body.period-page {
   background: linear-gradient(
     180deg,
     var(--warm-white) 0%,
-    var(--beige) 38%,
-    color-mix(in srgb, var(--beige) 70%, var(--gray-light)) 72%,
+    var(--pale-pink) 38%,
+    color-mix(in srgb, var(--pale-pink) 58%, var(--gray-light)) 72%,
     var(--gray-light) 100%
   );
 }
@@ -1331,7 +1343,7 @@ body.period-page {
     ),
     radial-gradient(
       ellipse 95% 42% at 50% 100%,
-      color-mix(in srgb, var(--beige) 70%, transparent) 0%,
+      color-mix(in srgb, var(--lavender-mist) 62%, transparent) 0%,
       transparent 58%
     );
   filter: blur(56px);
@@ -1412,8 +1424,8 @@ body.tips-page .page-wrap.page-wrap--tips {
   background: linear-gradient(
     180deg,
     var(--warm-white) 0%,
-    var(--beige) 36%,
-    color-mix(in srgb, var(--beige) 65%, var(--gray-light)) 70%,
+    var(--pale-pink) 36%,
+    color-mix(in srgb, var(--pale-pink) 55%, var(--gray-light)) 70%,
     var(--gray-light) 100%
   );
 }
@@ -1499,7 +1511,7 @@ body.tips-page .tips-section.tips-quick {
   width: 100vw;
   margin-inline: calc(50% - 50vw);
   padding-inline: max(1rem, calc((100vw - min(1100px, calc(100vw - 64px))) / 2));
-  background: var(--beige);
+  background: var(--highlight-cool);
 }
 
 body.tips-page .tips-section.tips-feature {
@@ -1611,8 +1623,8 @@ body.tips-page .tips-hero__intro {
 
 .tips-btn--ghost:hover {
   transform: translateY(-2px);
-  background: var(--beige);
-  border-color: color-mix(in srgb, var(--taupe) 40%, var(--burgundy));
+  background: var(--highlight-cool);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
   color: var(--link-hover);
 }
 
@@ -1712,7 +1724,7 @@ body.tips-page .tips-grid {
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
-  background: var(--beige);
+  background: var(--lavender-mist);
   box-shadow: none;
   margin-bottom: 0.85rem;
 }
@@ -1779,7 +1791,7 @@ body.tips-page .tips-pill__list li + li {
   margin-top: 1.65rem;
   border-radius: 26px;
   padding: 1.4rem 1.35rem;
-  background: color-mix(in srgb, var(--beige) 55%, var(--surface));
+  background: color-mix(in srgb, var(--highlight-cool) 62%, var(--surface));
   border: 1px solid color-mix(in srgb, var(--burgundy) 22%, var(--border));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1992,7 +2004,7 @@ main.period-guide {
   padding-block: clamp(1.5rem, 3.5vw, 2.75rem);
   margin-inline: calc(-1 * clamp(1.1rem, 4vw, 2.35rem));
   padding-inline: clamp(1.1rem, 4vw, 2.35rem);
-  background: var(--beige);
+  background: var(--highlight-cool);
 }
 
 .period-guide .pg-intro__text {
@@ -2022,7 +2034,7 @@ main.period-guide {
 }
 
 .period-guide .pg-notice {
-  background: var(--beige);
+  background: var(--lavender-mist);
 }
 
 .period-guide .pg-explain__title,
@@ -2114,7 +2126,7 @@ main.period-guide {
   padding-inline: 0;
   margin-top: 0;
   border-radius: clamp(28px, 4vw, 40px);
-  background: color-mix(in srgb, var(--beige) 40%, var(--surface));
+  background: color-mix(in srgb, var(--highlight-cool) 52%, var(--surface));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-soft);
@@ -2200,9 +2212,9 @@ main.period-guide {
 }
 
 .period-guide .pg-btn--outline:hover {
-  background: var(--beige);
+  background: var(--highlight-cool);
   color: var(--link-hover);
-  border-color: color-mix(in srgb, var(--taupe) 35%, var(--burgundy));
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--burgundy));
   transform: translateY(-2px);
   box-shadow: var(--btn-shadow-hover);
 }
@@ -2599,7 +2611,7 @@ main.period-guide {
   width: 3.35rem;
   height: 3.35rem;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--beige) 80%, var(--surface));
+  background: color-mix(in srgb, var(--lavender-mist) 72%, var(--surface));
   border: 2px solid color-mix(in srgb, var(--border) 55%, transparent);
   transition:
     transform 0.35s ease,
@@ -3103,7 +3115,7 @@ body.products-page main .products-intro__title {
   font-weight: 600;
   line-height: 1.2;
   color: var(--nav-link);
-  background: color-mix(in srgb, var(--surface) 88%, var(--beige));
+  background: color-mix(in srgb, var(--surface) 78%, var(--lavender-mist));
   border: 1px solid var(--border-soft);
   border-radius: 10px;
   cursor: pointer;
@@ -3165,7 +3177,7 @@ body.products-page main .products-intro__title {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--muted);
-  background: color-mix(in srgb, var(--beige) 40%, var(--warm-white));
+  background: color-mix(in srgb, var(--highlight-cool) 48%, var(--warm-white));
   border: 1px solid var(--border-soft);
   border-radius: 12px;
 }
@@ -3174,7 +3186,7 @@ body.products-page main .products-intro__title {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: color-mix(in srgb, var(--surface) 70%, var(--beige));
+  background: color-mix(in srgb, var(--surface) 62%, var(--lavender-mist));
   border: 1px solid var(--border-soft);
   border-radius: 14px;
   overflow: hidden;
@@ -3318,7 +3330,7 @@ body.products-page main .products-intro__title {
   font-weight: 600;
   letter-spacing: 0.03em;
   color: color-mix(in srgb, var(--burgundy) 72%, var(--text-body));
-  background: color-mix(in srgb, var(--warm-white) 55%, var(--beige));
+  background: color-mix(in srgb, var(--warm-white) 58%, var(--lavender-mist));
   border: 1px solid var(--border-soft);
   border-radius: 999px;
   line-height: 1.3;
@@ -3371,7 +3383,7 @@ body.products-page main .products-intro__title {
   text-align: center;
   max-width: 38rem;
   margin-inline: auto;
-  background: color-mix(in srgb, var(--beige) 35%, var(--warm-white));
+  background: color-mix(in srgb, var(--highlight-cool) 42%, var(--warm-white));
   border: 1px solid var(--border-soft);
   border-radius: 16px;
 }
