@@ -1,26 +1,29 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Cream canvas + deep red brand + sky-blue interactions */
-  --cream: #fff8e7;
-  --brand-red: #930500;
-  --interactive-blue: #95bbea;
+  /* Garden green #475B35 + cream #F5F9E5 + coral #E19184 + raspberry #C63E4E + wine #620607 + white #ffffff */
+  --cream: #f5f9e5;
+  --pure-white: #ffffff;
+  --brand-red: #c63e4e;
+  --brand-wine: #620607;
+  --coral-soft: #e19184;
+  /* Legacy name: cool accent tint (here: garden green) */
+  --interactive-blue: #475b35;
 
   --warm-white: var(--cream);
-  --pale-pink: color-mix(in srgb, var(--interactive-blue) 42%, var(--warm-white));
-  --off-white: color-mix(in srgb, #ffffff 72%, var(--warm-white));
-  /* Very light neutral — barely cream, cooler than classic beige */
-  --beige: color-mix(in srgb, #ffffff 72%, color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white)));
+  --pale-pink: color-mix(in srgb, var(--coral-soft) 38%, var(--warm-white));
+  --off-white: color-mix(in srgb, var(--pure-white) 90%, var(--warm-white));
+  --beige: color-mix(in srgb, var(--pure-white) 62%, color-mix(in srgb, var(--coral-soft) 12%, var(--warm-white)));
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, #d9d4cf 35%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--interactive-blue) 34%, var(--warm-white));
+  --taupe: color-mix(in srgb, var(--brand-wine) 18%, var(--warm-white));
+  --gray-light: color-mix(in srgb, var(--interactive-blue) 26%, var(--warm-white));
   --burgundy: var(--brand-red);
   --text-body: #2f2f2f;
   --text-muted-mix: #6b6b6b;
 
   /* Legacy token names — mapped for existing color-mix() usage */
   --main-pink: var(--burgundy);
-  --hot-coral: color-mix(in srgb, var(--brand-red) 78%, #000000);
+  --hot-coral: color-mix(in srgb, var(--brand-wine) 55%, #000000);
   --peachy-orange: var(--taupe);
   --butter-pop: var(--beige);
   --cream-bg: var(--warm-white);
@@ -33,11 +36,11 @@
   --butter-yellow: var(--beige);
   --warm-cream: var(--warm-white);
   --text-brown: var(--text-body);
-  --lavender: color-mix(in srgb, var(--interactive-blue) 42%, var(--warm-white));
+  --lavender: color-mix(in srgb, var(--coral-soft) 34%, var(--warm-white));
 
   --touch-pink: color-mix(in srgb, var(--pale-pink) 45%, var(--warm-white));
   --touch-peach: color-mix(in srgb, var(--warm-white) 50%, var(--off-white));
-  --lavender-mist: color-mix(in srgb, var(--interactive-blue) 30%, var(--warm-white));
+  --lavender-mist: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
 
   --text: var(--text-body);
   --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
@@ -49,32 +52,32 @@
   --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--warm-white));
   --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
 
-  --accent: var(--interactive-blue);
-  --accent-secondary: color-mix(in srgb, var(--interactive-blue) 82%, #000000);
-  --accent-deep: color-mix(in srgb, var(--interactive-blue) 72%, #000000);
-  --accent-soft: color-mix(in srgb, var(--interactive-blue) 34%, var(--warm-white));
-  --border: color-mix(in srgb, var(--interactive-blue) 16%, #ffffff);
+  --accent: var(--brand-red);
+  --accent-secondary: color-mix(in srgb, var(--brand-red) 78%, #000000);
+  --accent-deep: color-mix(in srgb, var(--brand-wine) 55%, #000000);
+  --accent-soft: color-mix(in srgb, var(--coral-soft) 40%, var(--warm-white));
+  --border: color-mix(in srgb, var(--interactive-blue) 22%, var(--pure-white));
   --border-soft: color-mix(in srgb, var(--border) 72%, var(--warm-white));
   --link: var(--interactive-blue);
-  --link-hover: color-mix(in srgb, var(--interactive-blue) 78%, #000000);
-  --nav-link: color-mix(in srgb, var(--text-body) 88%, var(--burgundy));
+  --link-hover: color-mix(in srgb, var(--interactive-blue) 62%, #000000);
+  --nav-link: color-mix(in srgb, var(--text-body) 72%, var(--brand-wine));
   --nav-link-hover: var(--link-hover);
-  --highlight-bg: color-mix(in srgb, var(--interactive-blue) 40%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 30%, var(--warm-white));
-  /* Dark text on sky-blue buttons */
-  --text-on-accent: #1a1a1a;
-  /* Light text on deep-red surfaces (nav “current”, skip link, etc.) */
+  --highlight-bg: color-mix(in srgb, var(--coral-soft) 32%, var(--warm-white));
+  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 24%, var(--warm-white));
+  /* Primary buttons: raspberry fill */
+  --text-on-accent: #ffffff;
+  /* Wine / raspberry surfaces (skip link, nav current, etc.) */
   --text-on-brand: #ffffff;
 
-  --btn-primary-border: color-mix(in srgb, var(--interactive-blue) 70%, #000000);
-  --btn-primary-hover-bg: color-mix(in srgb, var(--interactive-blue) 82%, #000000);
-  --btn-primary-hover-border: color-mix(in srgb, var(--interactive-blue) 78%, #000000);
-  --brand-hover-bg: color-mix(in srgb, var(--brand-red) 82%, #000000);
-  --brand-hover-border: color-mix(in srgb, var(--brand-red) 78%, #000000);
+  --btn-primary-border: color-mix(in srgb, var(--brand-red) 72%, #000000);
+  --btn-primary-hover-bg: color-mix(in srgb, var(--brand-red) 55%, var(--brand-wine));
+  --btn-primary-hover-border: color-mix(in srgb, var(--brand-wine) 70%, #000000);
+  --brand-hover-bg: color-mix(in srgb, var(--brand-wine) 85%, #000000);
+  --brand-hover-border: color-mix(in srgb, var(--brand-wine) 78%, #000000);
 
   --btn-radius: 12px;
-  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--interactive-blue) 22%, transparent);
-  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--interactive-blue) 30%, transparent);
+  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--brand-red) 28%, transparent);
+  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--brand-wine) 22%, transparent);
 
   --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
