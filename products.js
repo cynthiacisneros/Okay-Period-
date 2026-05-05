@@ -78,7 +78,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "If you want a more comfortable option, these pads are a great option. They are organic cotton and have wings to help them stay in place. They also have herbal scents that help you feel fresh",
+        "If you want a more comfortable option, these pads are a great. They are organic cotton and have wings to help them stay in place. They also have herbal scents that help you feel fresh.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/the-honey-pot-company-non-herbal-regular-pads-with-wings-organic-cotton-cover-20ct/-/A-81782449",
       image: "images/products/honeypot-cotton-comfort-pads.png",
