@@ -56,7 +56,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "Great for heavier days or when you’re drifting off to sleep and don’t want leak worries tagging along—big coverage, low drama.",
+        "Great for heavier nights when you’re drifting off to sleep and don’t want leak worries.",
       tags: ["Overnight", "Beginner Friendly"],
       link: "https://www.target.com/p/u-by-kotex-core-maxi-overnight-pads-39ct/-/A-94912086",
       image: "images/products/kotex-u-maxi-night-defense.png",
@@ -67,7 +67,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "When your flow turns the volume up, a softer, more flexible pad can help you get through the day without constantly checking your outfit.",
+        "These pads are very absorbent and are a great option for heavier days.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/always-pure-cotton-extra-heavy-flow-maxi-pads-size-3-22ct/-/A-84743594",
       image: "images/products/always-pure-cotton-flexfoam-size-3.png",
@@ -78,7 +78,7 @@
       category: "Pads",
       priceTier: "Mid-range",
       description:
-        "Organic cotton up top and wings that help things stay put—nice if your skin likes simpler stuff and you want a calmer, everyday-at-school feel.",
+        "If you want a more comfortable option, these pads are a great option. They are organic cotton and have wings to help them stay in place. They also have herbal scents that help you feel fresh",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/the-honey-pot-company-non-herbal-regular-pads-with-wings-organic-cotton-cover-20ct/-/A-81782449",
       image: "images/products/honeypot-cotton-comfort-pads.png",
@@ -89,7 +89,7 @@
       category: "Pads",
       priceTier: "Higher-end",
       description:
-        "Breathable organic cotton for regular-flow days when you want something gentle on your skin and a little “okay, I’m covered” in your pocket.",
+        "Breathable organic cotton for regular-flow days when you want something gentle on your skin.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/cora-organic-cotton-ultra-thin-regular-fragrance-free-pads-with-wings-for-periods-regular-absorbency-32ct/-/A-76155164",
       image: "images/products/cora-peace-of-mind-pads.png",
@@ -100,7 +100,7 @@
       category: "Pads",
       priceTier: "Higher-end",
       description:
-        "A bit more absorbency for days that ask more of you—still aiming for a slimmer fit so you’re not doing the awkward waddle between classes.",
+        "A bit more absorbency for days that ask more of you, very comfortable and easy to use.",
       tags: ["Organic Cotton"],
       link: "https://www.target.com/p/l-ultra-thin-super-menstrual-pads-42ct/-/A-93197760",
       image: "images/products/l-organic-cotton-pads-super.png",
