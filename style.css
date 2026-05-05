@@ -1,21 +1,25 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Pure white ground + true red accents (Okay, Period!) */
-  --warm-white: #ffffff;
-  --pale-pink: #fbe4e4;
-  --off-white: #ffffff;
-  --beige: #ffffff;
+  /* Cream canvas + deep red brand + sky-blue interactions */
+  --cream: #fff8e7;
+  --brand-red: #930500;
+  --interactive-blue: #95bbea;
+
+  --warm-white: var(--cream);
+  --pale-pink: color-mix(in srgb, var(--interactive-blue) 18%, var(--warm-white));
+  --off-white: color-mix(in srgb, #ffffff 35%, var(--warm-white));
+  --beige: color-mix(in srgb, var(--warm-white) 55%, #ffffff);
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, #eae6e1 55%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--pale-pink) 35%, var(--warm-white));
-  --burgundy: #d32f2f;
+  --taupe: color-mix(in srgb, #d9d4cf 55%, var(--warm-white));
+  --gray-light: color-mix(in srgb, var(--interactive-blue) 12%, var(--warm-white));
+  --burgundy: var(--brand-red);
   --text-body: #2f2f2f;
   --text-muted-mix: #6b6b6b;
 
   /* Legacy token names — mapped for existing color-mix() usage */
   --main-pink: var(--burgundy);
-  --hot-coral: #b71c1c;
+  --hot-coral: color-mix(in srgb, var(--brand-red) 78%, #000000);
   --peachy-orange: var(--taupe);
   --butter-pop: var(--beige);
   --cream-bg: var(--warm-white);
@@ -28,12 +32,11 @@
   --butter-yellow: var(--beige);
   --warm-cream: var(--warm-white);
   --text-brown: var(--text-body);
-  --lavender: color-mix(in srgb, var(--burgundy) 12%, var(--warm-white));
+  --lavender: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
 
   --touch-pink: color-mix(in srgb, var(--pale-pink) 45%, var(--warm-white));
   --touch-peach: color-mix(in srgb, var(--warm-white) 50%, var(--off-white));
-  --cream: var(--warm-white);
-  --lavender-mist: color-mix(in srgb, var(--burgundy) 8%, var(--warm-white));
+  --lavender-mist: color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white));
 
   --text: var(--text-body);
   --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
@@ -45,27 +48,32 @@
   --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--warm-white));
   --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
 
-  --accent: var(--burgundy);
-  --accent-secondary: #b71c1c;
-  --accent-deep: #b71c1c;
-  --accent-soft: color-mix(in srgb, var(--pale-pink) 55%, var(--warm-white));
-  --border: #eae6e1;
-  --border-soft: color-mix(in srgb, #eae6e1 72%, var(--warm-white));
-  --link: var(--burgundy);
-  --link-hover: #b71c1c;
-  --nav-link: color-mix(in srgb, var(--burgundy) 52%, var(--text-body));
-  --nav-link-hover: var(--burgundy);
-  --highlight-bg: color-mix(in srgb, var(--pale-pink) 62%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--pale-pink) 48%, var(--warm-white));
-  --text-on-accent: #ffffff;
+  --accent: var(--interactive-blue);
+  --accent-secondary: color-mix(in srgb, var(--interactive-blue) 82%, #000000);
+  --accent-deep: color-mix(in srgb, var(--interactive-blue) 72%, #000000);
+  --accent-soft: color-mix(in srgb, var(--interactive-blue) 34%, var(--warm-white));
+  --border: color-mix(in srgb, #cfc8c2 55%, var(--warm-white));
+  --border-soft: color-mix(in srgb, var(--border) 72%, var(--warm-white));
+  --link: var(--interactive-blue);
+  --link-hover: color-mix(in srgb, var(--interactive-blue) 78%, #000000);
+  --nav-link: color-mix(in srgb, var(--text-body) 88%, var(--burgundy));
+  --nav-link-hover: var(--link-hover);
+  --highlight-bg: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
+  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 14%, var(--warm-white));
+  /* Dark text on sky-blue buttons */
+  --text-on-accent: #1a1a1a;
+  /* Light text on deep-red surfaces (nav “current”, skip link, etc.) */
+  --text-on-brand: #ffffff;
 
-  --btn-primary-border: var(--accent-secondary);
-  --btn-primary-hover-bg: #b71c1c;
-  --btn-primary-hover-border: #b71c1c;
+  --btn-primary-border: color-mix(in srgb, var(--interactive-blue) 70%, #000000);
+  --btn-primary-hover-bg: color-mix(in srgb, var(--interactive-blue) 82%, #000000);
+  --btn-primary-hover-border: color-mix(in srgb, var(--interactive-blue) 78%, #000000);
+  --brand-hover-bg: color-mix(in srgb, var(--brand-red) 82%, #000000);
+  --brand-hover-border: color-mix(in srgb, var(--brand-red) 78%, #000000);
 
   --btn-radius: 12px;
-  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--burgundy) 14%, transparent);
-  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--burgundy) 22%, transparent);
+  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--interactive-blue) 22%, transparent);
+  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--interactive-blue) 30%, transparent);
 
   --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
@@ -83,7 +91,7 @@
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 700;
-  color: #d64545;
+  color: var(--heading);
   text-decoration: none;
   letter-spacing: 0.2px;
   display: inline-flex;
@@ -152,6 +160,20 @@ p {
   margin-bottom: 1em;
 }
 
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 h1,
 h2 {
   margin-bottom: 0.5em;
@@ -169,9 +191,9 @@ input[type="reset"] {
   cursor: pointer;
   border-radius: var(--btn-radius);
   padding: 0.7rem 1.45rem;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--burgundy);
+  border: 1px solid var(--btn-primary-border);
+  background: var(--accent);
+  color: var(--text-on-accent);
   box-shadow: var(--btn-shadow);
   transition:
     background 0.25s ease,
@@ -185,9 +207,9 @@ button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover {
-  background: var(--highlight-bg);
-  color: var(--link-hover);
-  border-color: color-mix(in srgb, var(--taupe) 40%, var(--burgundy));
+  background: var(--btn-primary-hover-bg);
+  color: var(--text-on-accent);
+  border-color: var(--btn-primary-hover-border);
   box-shadow: var(--btn-shadow-hover);
   transform: translateY(-1px);
 }
@@ -353,9 +375,9 @@ body.home .hero-intro__inner {
   align-items: center;
   justify-content: center;
   margin-top: 0;
-  background-color: #d64545; /* slightly softer red */
-  color: white;
-  border: none;
+  background-color: var(--accent);
+  color: var(--text-on-accent);
+  border: 1px solid var(--btn-primary-border);
   padding: 10px 22px;
   border-radius: 999px; /* pill shape */
   font-family: var(--font-body);
@@ -371,17 +393,18 @@ body.home .hero-intro__inner {
 .hero button:hover,
 .hero .hero-intro__cta:hover,
 .hero .explore-btn:hover {
-  background-color: #b93838; /* slightly deeper on hover */
+  background-color: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
   transform: translateY(-1px);
-  color: white;
+  color: var(--text-on-accent);
 }
 
 .hero button:focus-visible,
 .hero .hero-intro__cta:focus-visible,
 .hero .explore-btn:focus-visible {
-  outline: 2px solid var(--heading);
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
-  color: white;
+  color: var(--text-on-accent);
 }
 
 .hero button:active,
@@ -420,7 +443,7 @@ body.home .hero-intro__inner {
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-on-accent);
+  color: var(--text-on-brand);
   background: var(--burgundy);
   border-radius: var(--btn-radius);
   text-decoration: none;
@@ -510,16 +533,16 @@ body.home .hero-intro__inner {
 
 .site-nav__link[aria-current="page"] {
   background: var(--burgundy);
-  color: var(--text-on-accent);
+  color: var(--text-on-brand);
   font-weight: 700;
-  border-color: var(--btn-primary-border);
+  border-color: var(--brand-hover-border);
   box-shadow: var(--btn-shadow);
   transform: none;
 }
 
 .site-nav__link[aria-current="page"]:hover {
-  color: var(--text-on-accent);
-  background: var(--btn-primary-hover-bg);
+  color: var(--text-on-brand);
+  background: var(--brand-hover-bg);
   transform: translateY(-1px);
   box-shadow: var(--btn-shadow-hover);
 }
@@ -1565,7 +1588,7 @@ body.tips-page .tips-hero__intro {
 
 .tips-btn--primary {
   color: var(--text-on-accent);
-  background: var(--burgundy);
+  background: var(--accent);
   border: 1px solid var(--btn-primary-border);
   box-shadow: var(--btn-shadow);
 }
@@ -1573,6 +1596,7 @@ body.tips-page .tips-hero__intro {
 .tips-btn--primary:hover {
   transform: translateY(-2px);
   background: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
   box-shadow: var(--btn-shadow-hover);
 }
 
@@ -2154,7 +2178,7 @@ main.period-guide {
 
 .period-guide .pg-btn--primary {
   color: var(--text-on-accent);
-  background: var(--burgundy);
+  background: var(--accent);
   border-color: var(--btn-primary-border);
   box-shadow: var(--btn-shadow);
 }
@@ -2162,6 +2186,7 @@ main.period-guide {
 .period-guide .pg-btn--primary:hover {
   transform: translateY(-2px);
   background: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
   box-shadow: var(--btn-shadow-hover);
 }
 
@@ -3112,8 +3137,8 @@ body.products-page main .products-intro__title {
 
 .products-chip[aria-pressed="true"]:not(.products-chip--tag) {
   background: var(--burgundy);
-  color: var(--text-on-accent);
-  border-color: var(--btn-primary-border);
+  color: var(--text-on-brand);
+  border-color: var(--brand-hover-border);
   box-shadow: 0 2px 10px color-mix(in srgb, var(--burgundy) 16%, transparent);
 }
 
@@ -3312,10 +3337,10 @@ body.products-page main .products-intro__title {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--text-on-accent);
-  background: var(--burgundy);
+  background: var(--accent);
   border: 1px solid var(--btn-primary-border);
   border-radius: 10px;
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--burgundy) 14%, transparent);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 22%, transparent);
   transition:
     background 0.22s ease,
     border-color 0.22s ease,
@@ -3374,11 +3399,11 @@ body.products-page main .products-reassure__title {
    ============================================================================= */
 
 html {
-  background-color: #ffffff !important;
+  background-color: var(--bg) !important;
 }
 
 body {
-  background-color: #ffffff !important;
+  background-color: var(--bg) !important;
 }
 
 section,
@@ -3394,13 +3419,13 @@ nav {
 .container,
 .page,
 .wrapper {
-  background-color: #ffffff !important;
+  background-color: var(--warm-white) !important;
 }
 
 .product-card,
 .card {
-  background-color: #ffffff !important;
-  border-color: #eae6e1 !important;
+  background-color: var(--surface) !important;
+  border-color: var(--border-soft) !important;
 }
 
 /* Flatten gradient/image fills so transparent containers read as true white */
@@ -3409,11 +3434,11 @@ nav {
 .period-atmosphere,
 .period-atmosphere::before,
 .site-footer {
-  background: #ffffff !important;
+  background: var(--warm-white) !important;
   background-image: none !important;
 }
 
 body.home .site-footer--home {
-  background: #ffffff !important;
+  background: var(--warm-white) !important;
 }
 
