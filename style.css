@@ -1,19 +1,20 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* Garden green #475B35 + cream #F5F9E5 + coral #E19184 + raspberry #C63E4E + wine #620607 + white #ffffff */
+  /* White page; garden/cream/coral/raspberry/wine = accents only (see --warm-white) */
   --cream: #f5f9e5;
   --pure-white: #ffffff;
   --brand-red: #c63e4e;
   --brand-wine: #620607;
   --coral-soft: #e19184;
-  /* Legacy name: cool accent tint (here: garden green) */
+  /* Legacy name: cool accent (garden green) */
   --interactive-blue: #475b35;
 
+  /* Mix base for accent tints (cream) — not the main page fill */
   --warm-white: var(--cream);
   --pale-pink: color-mix(in srgb, var(--coral-soft) 38%, var(--warm-white));
-  --off-white: color-mix(in srgb, var(--pure-white) 90%, var(--warm-white));
-  --beige: color-mix(in srgb, var(--pure-white) 62%, color-mix(in srgb, var(--coral-soft) 12%, var(--warm-white)));
+  --off-white: var(--pure-white);
+  --beige: color-mix(in srgb, var(--pure-white) 70%, color-mix(in srgb, var(--coral-soft) 10%, var(--warm-white)));
   --blush: var(--pale-pink);
   --taupe: color-mix(in srgb, var(--brand-wine) 18%, var(--warm-white));
   --gray-light: color-mix(in srgb, var(--interactive-blue) 26%, var(--warm-white));
@@ -47,8 +48,8 @@
   --muted: var(--text-muted);
   --heading: var(--burgundy);
 
-  --bg: var(--warm-white);
-  --surface: var(--off-white);
+  --bg: var(--pure-white);
+  --surface: var(--pure-white);
   --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--warm-white));
   --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
 
@@ -139,18 +140,7 @@ body {
   line-height: 1.6;
   letter-spacing: 0.2px;
   color: var(--text);
-  background:
-    radial-gradient(
-      ellipse 120% 80% at 100% 0%,
-      color-mix(in srgb, var(--interactive-blue) 14%, transparent) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 90% 70% at 0% 100%,
-      color-mix(in srgb, var(--lavender-mist) 55%, transparent) 0%,
-      transparent 50%
-    ),
-    var(--bg);
+  background: var(--bg);
 }
 
 /* Modern hierarchy defaults (page-specific styles can still override) */
@@ -312,7 +302,7 @@ body.home .hero.hero-intro {
       color-mix(in srgb, var(--gray-light) 55%, transparent) 0%,
       transparent 48%
     ),
-    linear-gradient(180deg, var(--warm-white) 0%, var(--lavender-mist) 100%);
+    linear-gradient(180deg, var(--pure-white) 0%, var(--lavender-mist) 100%);
 }
 
 body.home .hero h1 {
@@ -478,7 +468,7 @@ body.home .hero-intro__inner {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: color-mix(in srgb, var(--warm-white) 92%, transparent);
+  background: color-mix(in srgb, var(--pure-white) 94%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-soft);
@@ -1290,7 +1280,7 @@ body.home .site-footer--home {
   padding: 1.25rem 1.5rem 1.5rem;
   border-top: 1px solid var(--border-soft);
   flex-shrink: 0;
-  background: var(--warm-white);
+  background: var(--pure-white);
   border-radius: 0;
 }
 
@@ -1322,7 +1312,7 @@ body.period-page {
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    var(--warm-white) 0%,
+    var(--pure-white) 0%,
     var(--pale-pink) 38%,
     color-mix(in srgb, var(--pale-pink) 58%, var(--gray-light)) 72%,
     var(--gray-light) 100%
@@ -1350,18 +1340,18 @@ body.period-page {
       transparent 58%
     );
   filter: blur(56px);
-  opacity: 0.88;
+  opacity: 0.42;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .period-atmosphere::before {
     filter: blur(28px);
-    opacity: 0.85;
+    opacity: 0.38;
   }
 }
 
 body.period-page .site-nav {
-  background: color-mix(in srgb, var(--warm-white) 88%, transparent);
+  background: color-mix(in srgb, var(--pure-white) 92%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-soft);
@@ -1426,7 +1416,7 @@ body.tips-page .page-wrap.page-wrap--tips {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    var(--warm-white) 0%,
+    var(--pure-white) 0%,
     var(--pale-pink) 36%,
     color-mix(in srgb, var(--pale-pink) 55%, var(--gray-light)) 70%,
     var(--gray-light) 100%
@@ -1454,13 +1444,13 @@ body.tips-page .page-wrap.page-wrap--tips {
       transparent 56%
     );
   filter: blur(56px);
-  opacity: 0.88;
+  opacity: 0.42;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tips-atmosphere::before {
     filter: blur(28px);
-    opacity: 0.86;
+    opacity: 0.38;
   }
 }
 
@@ -3434,7 +3424,7 @@ nav {
 .container,
 .page,
 .wrapper {
-  background-color: var(--warm-white) !important;
+  background-color: var(--pure-white) !important;
 }
 
 .product-card,
@@ -3443,17 +3433,17 @@ nav {
   border-color: var(--border-soft) !important;
 }
 
-/* Flatten gradient/image fills so transparent containers read as true white */
+/* Let atmosphere stay decorative; page reads white via body --bg */
 .tips-atmosphere,
-.tips-atmosphere::before,
-.period-atmosphere,
-.period-atmosphere::before,
+.period-atmosphere {
+  background: transparent !important;
+}
+
 .site-footer {
-  background: var(--warm-white) !important;
-  background-image: none !important;
+  background: transparent !important;
 }
 
 body.home .site-footer--home {
-  background: var(--warm-white) !important;
+  background: var(--pure-white) !important;
 }
 
