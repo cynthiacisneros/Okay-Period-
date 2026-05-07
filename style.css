@@ -1,26 +1,35 @@
 /* Okay Period — shared layout and navigation */
 
 :root {
-  /* White page; garden/cream/coral/raspberry/wine = accents only (see --warm-white) */
-  --cream: #f5f9e5;
+  /* Bold modern red + warm beige editorial scheme */
   --pure-white: #ffffff;
-  --brand-red: #c63e4e;
-  --brand-wine: #620607;
-  --coral-soft: #e19184;
-  /* Legacy name: cool accent (garden green) */
-  --interactive-blue: #475b35;
+  --bg-beige: #f3efe8;
+  --brand-red: #d90416;
+  --text-body: #2b1a1a;
+  --border-base: #d8cfc5;
 
-  /* Mix base for accent tints (cream) — not the main page fill */
-  --warm-white: var(--cream);
-  --pale-pink: color-mix(in srgb, var(--coral-soft) 38%, var(--warm-white));
-  --off-white: var(--pure-white);
-  --beige: color-mix(in srgb, var(--pure-white) 70%, color-mix(in srgb, var(--coral-soft) 10%, var(--warm-white)));
+  /* Primary canvas + surfaces */
+  --bg: var(--bg-beige);
+  --surface: var(--pure-white);
+  --surface-warm: color-mix(in srgb, var(--surface) 85%, var(--bg));
+
+  /* Legacy palette names kept for existing rules (minimal decorative color) */
+  --cream: var(--bg);
+  --warm-white: var(--bg);
+  --off-white: var(--surface);
+  --beige: var(--bg);
+  --taupe: color-mix(in srgb, var(--border-base) 70%, var(--bg));
+  --gray-light: color-mix(in srgb, var(--bg) 80%, var(--surface));
+  --pale-pink: color-mix(in srgb, var(--brand-red) 8%, var(--bg));
   --blush: var(--pale-pink);
-  --taupe: color-mix(in srgb, var(--brand-wine) 18%, var(--warm-white));
-  --gray-light: color-mix(in srgb, var(--interactive-blue) 26%, var(--warm-white));
+  --lavender: var(--pale-pink);
+  --lavender-mist: color-mix(in srgb, var(--brand-red) 5%, var(--bg));
+  --coral-soft: color-mix(in srgb, var(--brand-red) 14%, var(--bg));
   --burgundy: var(--brand-red);
-  --text-body: #2f2f2f;
-  --text-muted-mix: #6b6b6b;
+  --brand-wine: color-mix(in srgb, var(--brand-red) 55%, #000000);
+  /* Legacy name: interactive accent */
+  --interactive-blue: var(--brand-red);
+  --text-muted-mix: color-mix(in srgb, var(--text-body) 35%, #ffffff);
 
   /* Legacy token names — mapped for existing color-mix() usage */
   --main-pink: var(--burgundy);
@@ -44,41 +53,40 @@
   --lavender-mist: color-mix(in srgb, var(--interactive-blue) 22%, var(--warm-white));
 
   --text: var(--text-body);
-  --text-muted: color-mix(in srgb, var(--text-body) 28%, var(--text-muted-mix));
+  --text-muted: color-mix(in srgb, var(--text-body) 65%, var(--bg));
   --muted: var(--text-muted);
   --heading: var(--burgundy);
 
-  --bg: var(--pure-white);
-  --surface: var(--pure-white);
-  --surface-warm: color-mix(in srgb, var(--surface) 82%, var(--warm-white));
-  --surface-cool: color-mix(in srgb, var(--surface) 75%, var(--pale-pink));
+  --surface-cool: var(--surface-warm);
 
   --accent: var(--brand-red);
   --accent-secondary: color-mix(in srgb, var(--brand-red) 78%, #000000);
-  --accent-deep: color-mix(in srgb, var(--brand-wine) 55%, #000000);
-  --accent-soft: color-mix(in srgb, var(--coral-soft) 40%, var(--warm-white));
-  --border: color-mix(in srgb, var(--interactive-blue) 22%, var(--pure-white));
-  --border-soft: color-mix(in srgb, var(--border) 72%, var(--warm-white));
-  --link: var(--interactive-blue);
-  --link-hover: color-mix(in srgb, var(--interactive-blue) 62%, #000000);
-  --nav-link: color-mix(in srgb, var(--text-body) 72%, var(--brand-wine));
+  --accent-deep: color-mix(in srgb, var(--brand-red) 60%, #000000);
+  --accent-soft: color-mix(in srgb, var(--brand-red) 10%, var(--bg));
+
+  --border: var(--border-base);
+  --border-soft: color-mix(in srgb, var(--border) 70%, var(--bg));
+
+  --link: var(--brand-red);
+  --link-hover: color-mix(in srgb, var(--brand-red) 70%, #000000);
+  --nav-link: color-mix(in srgb, var(--text-body) 92%, #000000);
   --nav-link-hover: var(--link-hover);
-  --highlight-bg: color-mix(in srgb, var(--coral-soft) 32%, var(--warm-white));
-  --highlight-cool: color-mix(in srgb, var(--interactive-blue) 24%, var(--warm-white));
-  /* Primary buttons: raspberry fill */
+
+  --highlight-bg: color-mix(in srgb, var(--brand-red) 6%, var(--bg));
+  --highlight-cool: var(--highlight-bg);
+
   --text-on-accent: #ffffff;
-  /* Wine / raspberry surfaces (skip link, nav current, etc.) */
   --text-on-brand: #ffffff;
 
-  --btn-primary-border: color-mix(in srgb, var(--brand-red) 72%, #000000);
-  --btn-primary-hover-bg: color-mix(in srgb, var(--brand-red) 55%, var(--brand-wine));
-  --btn-primary-hover-border: color-mix(in srgb, var(--brand-wine) 70%, #000000);
-  --brand-hover-bg: color-mix(in srgb, var(--brand-wine) 85%, #000000);
-  --brand-hover-border: color-mix(in srgb, var(--brand-wine) 78%, #000000);
+  --btn-primary-border: color-mix(in srgb, var(--brand-red) 70%, #000000);
+  --btn-primary-hover-bg: color-mix(in srgb, var(--brand-red) 82%, #000000);
+  --btn-primary-hover-border: color-mix(in srgb, var(--brand-red) 72%, #000000);
+  --brand-hover-bg: color-mix(in srgb, var(--brand-red) 82%, #000000);
+  --brand-hover-border: color-mix(in srgb, var(--brand-red) 72%, #000000);
 
   --btn-radius: 12px;
-  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--brand-red) 28%, transparent);
-  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--brand-wine) 22%, transparent);
+  --btn-shadow: 0 2px 14px color-mix(in srgb, var(--brand-red) 18%, transparent);
+  --btn-shadow-hover: 0 8px 24px color-mix(in srgb, var(--brand-red) 22%, transparent);
 
   --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
@@ -291,18 +299,7 @@ body.home .hero.hero-intro {
   text-align: center;
   padding: 20px;
   margin: 0;
-  background:
-    radial-gradient(
-      ellipse 130% 85% at 50% -5%,
-      color-mix(in srgb, var(--pale-pink) 65%, transparent) 0%,
-      transparent 52%
-    ),
-    radial-gradient(
-      ellipse 90% 55% at 100% 100%,
-      color-mix(in srgb, var(--gray-light) 55%, transparent) 0%,
-      transparent 48%
-    ),
-    linear-gradient(180deg, var(--pure-white) 0%, var(--lavender-mist) 100%);
+  background: var(--bg);
 }
 
 body.home .hero h1 {
@@ -341,8 +338,8 @@ body.home .hero-intro__inner {
 .hero-intro__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.85rem, 8.5vw, 4.1rem);
-  font-weight: 800;
+  font-size: clamp(3.15rem, 9vw, 4.75rem);
+  font-weight: 900;
   color: var(--heading);
   line-height: 1.08;
   letter-spacing: 0.015em;
@@ -468,7 +465,7 @@ body.home .hero-intro__inner {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: color-mix(in srgb, var(--pure-white) 94%, transparent);
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-soft);
@@ -3400,7 +3397,7 @@ body.products-page main .products-reassure__title {
 }
 
 /* =============================================================================
-   Pure white backgrounds — site-wide overrides (color only)
+   Background normalization (beige canvas + white cards)
    ============================================================================= */
 
 html {
@@ -3411,39 +3408,6 @@ body {
   background-color: var(--bg) !important;
 }
 
-section,
-main,
-div,
-header,
-footer,
-nav {
-  background-color: transparent !important;
-}
-
-.main,
-.container,
-.page,
-.wrapper {
-  background-color: var(--pure-white) !important;
-}
-
-.product-card,
-.card {
-  background-color: var(--surface) !important;
-  border-color: var(--border-soft) !important;
-}
-
-/* Let atmosphere stay decorative; page reads white via body --bg */
-.tips-atmosphere,
-.period-atmosphere {
-  background: transparent !important;
-}
-
-.site-footer {
-  background: transparent !important;
-}
-
-body.home .site-footer--home {
-  background: var(--pure-white) !important;
-}
+/* NOTE: Removed global \"force all containers transparent\" overrides.
+   Those made the design brittle and prevented a clean editorial surface system. */
 
